@@ -4,6 +4,7 @@ namespace App\Utilities;
 
 use App\Jobs\Auth\CreateUser;
 use App\Jobs\Common\CreateCompany;
+use App\Models\Common\Company;
 use App\Utilities\Console;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Config;
@@ -246,6 +247,19 @@ class Installer
         ]));
     }
 
+    public static function createCustomCompany($name, $email, $locale)
+    {
+        dispatch_sync(new CreateCompany([
+            'name' => $name,
+            'domain' => '',
+            'email' => $email,
+            'currency' => 'EUR',
+            'locale' => $locale,
+            'enabled' => '1',
+        ]));
+    }
+
+
     public static function createUser($email, $password, $locale)
     {
         dispatch_sync(new CreateUser([
@@ -259,6 +273,20 @@ class Installer
         ]));
     }
 
+    public static function createManageUser($email, $password, $locale, $role)
+    {
+        $id_podjetja = Company::latest()->first()->id;
+
+        dispatch_sync(new CreateUser([
+            'name' => '',
+            'email' => $email,
+            'password' => $password,
+            'locale' => $locale,
+            'companies'=> [$id_podjetja],
+            'roles' => $role,
+            'enabled' => '1',
+        ]));
+    }
     public static function finalTouches()
     {
         // Update .env file

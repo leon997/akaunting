@@ -20,6 +20,8 @@ return [
     'personal_information'  => 'Personal Information',
     'register_user'         => 'Register User',
     'register'              => 'Register',
+    'sign_up'               => 'Sign up',
+    'sign_up_to'            => 'Sign up to Akaunting',
 
     'form_description' => [
         'personal'          => 'The invitation link will be sent to the new user, so ensure that the email address is correct. They will be able to enter their password.',
