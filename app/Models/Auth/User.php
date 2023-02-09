@@ -195,7 +195,7 @@ class User extends Authenticatable implements HasLocalePreference
         /**
          * Modules that use the sort parameter in CRUD operations cause an error,
          * so this sort parameter set back to old value after the query is executed.
-         * 
+         *
          * for Custom Fields module
          */
         $request_sort = $request->get('sort');

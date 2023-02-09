@@ -43,9 +43,7 @@ class CreateUser extends Job implements HasOwner, HasSource, ShouldCreate
             if ($this->request->has('roles')) {
                 $this->model->roles()->attach($this->request->get('roles'));
             }
-
             if ($this->request->has('companies')) {
-                if (app()->runningInConsole() || request()->isInstall()) {
                     $this->model->companies()->attach($this->request->get('companies'));
                 } else {
                     $user = user();
@@ -58,7 +56,6 @@ class CreateUser extends Job implements HasOwner, HasSource, ShouldCreate
                         $this->model->companies()->attach($companies->toArray());
                     }
                 }
-            }
 
             if (empty($this->model->companies)) {
                 return;
@@ -94,7 +91,7 @@ class CreateUser extends Job implements HasOwner, HasSource, ShouldCreate
         if (request()->isInstall()) {
             return false;
         }
-
-        return true;
+        // spremen v true za production
+        return false;
     }
 }
