@@ -19,8 +19,7 @@ return [
     'credit_cards'          => 'Kreditna kartica|Kreditne kartice',
 
     'form_description' => [
-        'general'           => '
-Za negativno začetno stanje uporabite vrsto kreditne kartice. Številka je bistvena za pravilno uskladitev računov. Privzeti račun bo beležil vse transakcije, če ni drugače izbrano.',
+        'general'           => 'Za negativno začetno stanje uporabite vrsto kreditne kartice. Številka je bistvena za pravilno uskladitev računov. Privzeti račun bo beležil vse transakcije, če ni drugače izbrano.',
         'bank'              => 'Morda imate več bančnih računov v več kot eni banki. Beleženje informacij o vaši banki bo olajšalo ujemanje transakcij znotraj vaše banke.',
     ],
 
