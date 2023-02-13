@@ -41,8 +41,16 @@
 
                 <x-form.group.password
                     name="user_password"
-                    label="{{ trans('install.settings.admin_password') }}"
+                    label="{{ trans('auth.password.pass') }}"
+                    placeholder="{{ trans('auth.password.pass') }}"
                     form-group-class="sm:col-span-6" />
+
+                <x-form.group.password
+                    name="user_password_confirmation"
+                    label="{{ trans('auth.password.pass_confirm') }}"
+                    placeholder="{{ trans('auth.password.pass') }}"
+                    form-group-class="sm:col-span-6"
+                    input-group-class="input-group-alternative"/>
 
                 <x-button
                     type="submit"
