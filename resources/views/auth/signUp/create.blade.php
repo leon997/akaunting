@@ -11,6 +11,19 @@
                 {{ trans('auth.sign_up_to') }}
             </h1>
         </div>
+
+        <div :class="(form.response.success) ? 'w-full bg-green-100 text-green-600 p-3 rounded-sm font-semibold text-xs' : 'hidden'"
+            v-if="form.response.success"
+            v-html="form.response.message"
+            v-cloak
+        ></div>
+
+        <div :class="(form.response.error) ? 'w-full bg-red-100 text-red-600 p-3 rounded-sm font-semibold text-xs' : 'hidden'"
+            v-if="form.response.error"
+            v-html="form.response.message"
+            v-cloak
+        ></div>
+
         <x-form id="auth" route="signUp.store">
             <div class="grid sm:grid-cols-6 gap-x-8 gap-y-6 my-3.5">
 
@@ -46,4 +59,5 @@
             </div>
         </x-form>
     </x-slot>
+    <x-script folder="auth" file="common" />
 </x-layouts.auth>
