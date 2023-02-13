@@ -7,9 +7,14 @@ use App\Http\Requests\Install\Setting as Request;
 use App\Models\Common\Company;
 use App\Utilities\Installer;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class SignUp extends Controller
 {
+    use RegistersUsers;
+
+    protected $redirectTo = '/';
+
 
     public function __construct()
     {
@@ -39,6 +44,8 @@ class SignUp extends Controller
 
 
         // Redirect to dashboard
-        return redirect()->to(route('login'));
+        return response()->json([
+            'redirect' => url($this->redirectPath()),
+        ]);
     }
 }
