@@ -32,7 +32,7 @@ class SignUp extends Controller
     {
         DB::transaction(function () use ($request) {
             // Create company
-            Installer::createCustomCompany($request->get('company_name'), $request->get('company_email'), 'en-GB');
+            Installer::createCustomCompany($request->get('company_name'), $request->get('user_email'), 'en-GB');
             // Create user
             Installer::createManageUser($request->get('user_email'), $request->get('user_password'), 'en-GB', ['2']);
         });

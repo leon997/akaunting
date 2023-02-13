@@ -20,21 +20,15 @@
                     value="{{ old('user_email') }}"
                     form-group-class="sm:col-span-6" />
 
-                <x-form.group.password
-                    name="user_password"
-                    label="{{ trans('install.settings.admin_password') }}"
-                    form-group-class="sm:col-span-6" />
-
                 <x-form.group.text
                     name="company_name"
                     label="{{ trans('install.settings.company_name') }}"
                     value="{{ old('company_name') }}"
                     form-group-class="sm:col-span-6" />
 
-                <x-form.group.text
-                    name="company_email"
-                    label="{{ trans('install.settings.company_email') }}"
-                    value="{{ old('company_email') }}"
+                <x-form.group.password
+                    name="user_password"
+                    label="{{ trans('install.settings.admin_password') }}"
                     form-group-class="sm:col-span-6" />
 
                 <x-button
