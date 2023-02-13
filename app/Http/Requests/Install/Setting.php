@@ -15,7 +15,6 @@ class Setting extends FormRequest
     {
         return [
             'company_name' => 'required',
-            'company_email' => 'required|email',
             'user_email' => 'required|email',
             'user_password' => 'required'
         ];
