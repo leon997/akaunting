@@ -94,6 +94,7 @@ class Permissions extends Seeder
                 'common-search' => 'r',
                 'common-uploads' => 'r',
                 'common-widgets' => 'c,r,u,d',
+                'common-plans' => 'c,r,u,d',
                 'purchases-bills' => 'c,r,u,d',
                 'purchases-vendors' => 'c,r,u,d',
                 'sales-customers' => 'c,r,u,d',

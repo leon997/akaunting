@@ -15,7 +15,7 @@ class AddLandingPages
     public function handle(Event $event)
     {
         $user = user();
-        $role = ! empty($event->user->role) ? $event->user->role : false; 
+        $role = !empty($event->user->role) ? $event->user->role : false;
 
         $routes = [
             'dashboard' => [
@@ -62,6 +62,10 @@ class AddLandingPages
                 'permission' => 'read-common-reports',
                 'translate'  => trans_choice('general.reports', 2),
             ],
+            'plans.index' => [
+                'permission' => 'read-common-plans',
+                'translate'  => trans_choice('general.plans', 2),
+            ],
             'categories.index' => [
                 'permission' => 'read-settings-categories',
                 'translate'  => trans_choice('general.categories', 2),
@@ -80,10 +84,10 @@ class AddLandingPages
             ],
         ];
 
-        foreach($routes as $key => $route) {
-            if ($role && ! $role->hasPermission($route['permission'])) {
+        foreach ($routes as $key => $route) {
+            if ($role && !$role->hasPermission($route['permission'])) {
                 continue;
-            } else if (! $user->can($route['permission'])) {
+            } else if (!$user->can($route['permission'])) {
                 continue;
             }
 
