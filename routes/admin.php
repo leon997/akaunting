@@ -48,6 +48,9 @@ Route::group(['prefix' => 'common'], function () {
     Route::resource('reports', 'Common\Reports');
 
     Route::get('contacts/index', 'Common\Contacts@index')->name('contacts.index');
+
+    Route::resource('plans', 'Common\Plans');
+    
 });
 
 Route::group(['prefix' => 'auth'], function () {

@@ -115,5 +115,11 @@ class ShowInAdmin
             $active = (Str::contains(Route::currentRouteName(), 'apps')) ? true : false;
             $menu->route('apps.home.index', $title, [], 80, ['icon' => 'rocket_launch', 'active' => $active]);
         }
+
+        // Subscriptions
+        $title = trim(trans_choice('general.plans', 2));
+        if ($this->canAccessMenuItem($title, 'read-common-plans')) {
+            $menu->route('plans.index', $title, [], 60, ['icon' => 'card_membership']);
+        }
     }
 }
