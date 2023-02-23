@@ -17,7 +17,7 @@ class Setting extends FormRequest
     {
         return [
             'company_name' => 'required',
-            'user_email' => 'required|email',
+            'user_email' => 'required|unique:users,email|email',
             'user_password' => ['required', 'confirmed', Password::min(8)],
         ];
     }

@@ -30,7 +30,7 @@ return [
         'array' => ':attribute mora imeti med :min in :max elementov.',
     ],
     'boolean' => ':attribute polje mora biti 1 ali 0',
-    'confirmed' => ':attribute potrditev se ne ujema.',
+    'confirmed' => ':attribute se ne ujema.',
     'current_password' => 'Napačno geslo.',
     'date' => ':attribute ni veljaven datum.',
     'date_equals' => ':attribute mora biti datum primerljiv z :date.',
@@ -154,6 +154,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'user_email' => 'Email naslov',
+        'user_password' => 'Geslo'
+    ],
 
 ];
