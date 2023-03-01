@@ -54,6 +54,8 @@ return [
     'notifications'         => 'Obvestilo|Obvestila',
     'countries'             => 'Država|Države',
     'cities'                => 'Mesto/Mesta',
+    'plans'                 => 'Paket|Paketi',
+    'subscriptions'         => 'Naročnina|Naročnine',
 
     'welcome'               => 'Dobrodošli',
     'banking'               => 'Bančništvo',
