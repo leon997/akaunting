@@ -22,7 +22,6 @@ return [
     'payments'              => 'Payment|Payments',
     'recurring_transactions'=> 'Recurring Transaction|Recurring Transactions',
     'reports'               => 'Report|Reports',
-    'plans'                 => 'Plan|Plans',
     'settings'              => 'Setting|Settings',
     'categories'            => 'Category|Categories',
     'currencies'            => 'Currency|Currencies',
@@ -74,6 +73,8 @@ return [
     'histories'             => 'History|Histories',
     'your_notifications'    => 'Your notification|Your notifications',
     'employees'             => 'Employee|Employees',
+    'plans'                 => 'Plan|Plans',
+    'subscriptions'         => 'Subscription|Subscriptions',
 
     'welcome'               => 'Welcome',
     'banking'               => 'Banking',

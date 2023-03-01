@@ -73,6 +73,8 @@ return [
     'histories'             => 'Zgodovina|Zgodovina',
     'your_notifications'    => 'Tvoje obvestilo|Tvoja obvestila',
     'employees'             => 'Zaposlen|Zaposleni',
+    'plans'                 => 'Paket|Paketi',
+    'subscriptions'         => 'Naročnina|Naročnine',
 
     'welcome'               => 'Dobrodošli',
     'banking'               => 'Denar',
