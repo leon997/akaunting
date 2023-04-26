@@ -30,8 +30,6 @@ class Document extends Model
 
     protected $appends = ['attachment', 'amount_without_tax', 'discount', 'paid', 'received_at', 'status_label', 'sent_at', 'reconciled', 'contact_location'];
 
-    protected $dates = ['deleted_at', 'issued_at', 'due_at'];
-
     protected $fillable = [
         'company_id',
         'type',
@@ -67,8 +65,11 @@ class Document extends Model
      * @var array
      */
     protected $casts = [
-        'amount' => 'double',
+        'issued_at'     => 'datetime',
+        'due_at'        => 'datetime',
+        'amount'        => 'double',
         'currency_rate' => 'double',
+        'deleted_at'    => 'datetime',
     ];
 
     /**
@@ -216,7 +217,10 @@ class Document extends Model
 
     public function scopeInvoiceRecurring(Builder $query): Builder
     {
-        return $query->where($this->qualifyColumn('type'), '=', self::INVOICE_RECURRING_TYPE);
+        return $query->where($this->qualifyColumn('type'), '=', self::INVOICE_RECURRING_TYPE)
+                    ->whereHas('recurring', function (Builder $query) {
+                        $query->whereNull('deleted_at');
+                    });
     }
 
     public function scopeBill(Builder $query): Builder
@@ -226,7 +230,10 @@ class Document extends Model
 
     public function scopeBillRecurring(Builder $query): Builder
     {
-        return $query->where($this->qualifyColumn('type'), '=', self::BILL_RECURRING_TYPE);
+        return $query->where($this->qualifyColumn('type'), '=', self::BILL_RECURRING_TYPE)
+                    ->whereHas('recurring', function (Builder $query) {
+                        $query->whereNull('deleted_at');
+                    });
     }
 
     /**
@@ -614,7 +621,7 @@ class Document extends Model
             if (! in_array($this->status, ['cancelled', 'draft'])) {
                 try {
                     $actions[] = [
-                        'title' => trans('general.cancel'),
+                        'title' => trans('documents.actions.cancel'),
                         'icon' => 'cancel',
                         'url' => route($prefix . '.cancelled', $this->id),
                         'permission' => 'update-' . $group . '-' . $permission_prefix,

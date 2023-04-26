@@ -3,12 +3,16 @@
 namespace App\Jobs\Document;
 
 use App\Abstracts\Job;
+use App\Events\Document\DocumentSending;
 use App\Events\Document\DocumentSent;
+use App\Http\Requests\Common\CustomMail as Request;
 use App\Models\Document\Document;
 
 class SendDocumentAsCustomMail extends Job
 {
-    public function __construct($request, $template_alias)
+    public string $template_alias;
+
+    public function __construct(Request $request, string $template_alias)
     {
         $this->request = $request;
         $this->template_alias = $template_alias;
@@ -17,6 +21,8 @@ class SendDocumentAsCustomMail extends Job
     public function handle(): void
     {
         $document = Document::find($this->request->get('document_id'));
+
+        event(new DocumentSending($document));
 
         $custom_mail = $this->request->only(['to', 'subject', 'body']);
 

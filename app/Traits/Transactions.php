@@ -132,7 +132,7 @@ trait Transactions
         return Str::slug($transaction->id, $separator, language()->getShortCode());
     }
 
-    protected function getSettingKey(string $type, string $setting_key): string
+    protected function getTransactionSettingKey(string $type, string $setting_key): string
     {
         $key = '';
         $alias = config('type.transaction.' . $type . '.alias');
@@ -231,10 +231,26 @@ trait Transactions
     public function getNextTransactionNumber($suffix = ''): string
     {
         $prefix = setting('transaction' . $suffix . '.number_prefix');
-        $next   = setting('transaction' . $suffix . '.number_next');
-        $digit  = setting('transaction' . $suffix . '.number_digit');
+        $next   = (string) setting('transaction' . $suffix . '.number_next');
+        $digit  = (int) setting('transaction' . $suffix . '.number_digit');
 
-        return $prefix . str_pad($next, $digit, '0', STR_PAD_LEFT);
+        $get_number = fn($prefix, $next, $digit) => $prefix . str_pad($next, $digit, '0', STR_PAD_LEFT);
+        $number_exists = fn($number) => Transaction::where('number', $number)->exists();
+
+        $transaction_number = $get_number($prefix, $next, $digit);
+
+        if ($number_exists($transaction_number)) {
+            do {
+                $next++;
+
+                $transaction_number = $get_number($prefix, $next, $digit);
+            } while ($number_exists($transaction_number));
+
+            setting(['transaction' . $suffix . '.number_next' => $next]);
+            setting()->save();
+        }
+
+        return $transaction_number;
     }
 
     public function increaseNextTransactionNumber($suffix = ''): void

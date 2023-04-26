@@ -38,7 +38,8 @@ class User extends Authenticatable implements HasLocalePreference
      * @var array
      */
     protected $casts = [
-        'enabled' => 'boolean',
+        'enabled'       => 'boolean',
+        'deleted_at'    => 'datetime',
     ];
 
     /**
@@ -242,6 +243,11 @@ class User extends Authenticatable implements HasLocalePreference
     public function scopeIsNotCustomer($query)
     {
         return $query->wherePermissionIs('read-admin-panel');
+    }
+
+    public function scopeEmail($query, $email)
+    {
+        return $query->where('email', '=', $email);
     }
 
     /**

@@ -289,9 +289,11 @@ abstract class Form extends Component
 
         $this->model = ! empty($model) ? $model : $document;
         $this->document = $this->model;
-        $this->currencies = $this->getCurrencies($currencies);
-        $this->currency = $this->getCurrency($document, $currency, $currency_code);
+
         $this->currency_code = ! empty($this->currency) ? $this->currency->code : default_currency();
+        $this->currency = $this->getCurrency($document, $currency, $currency_code);
+        $this->currencies = $this->getCurrencies($currencies);
+
         $this->taxes = Tax::enabled()->orderBy('name')->get()->pluck('title', 'id');
 
         /* -- Content Start -- */
@@ -761,7 +763,7 @@ abstract class Form extends Component
             $issuedAt = Date::now()->toDateString();
         }
 
-        $addDays = setting($this->getSettingKey($type, 'payment_terms'), 0) ?: 0;
+        $addDays = setting($this->getDocumentSettingKey($type, 'payment_terms'), 0) ?: 0;
 
         $dueAt = Date::parse($issuedAt)->addDays($addDays)->toDateString();
 
@@ -867,15 +869,17 @@ abstract class Form extends Component
         return $hideItems;
     }
 
-    protected function getHideItemName($type, $hideItemName)
+    protected function getHideItemName($type, $hideItemName): bool
     {
         if (! empty($hideItemName)) {
             return $hideItemName;
         }
 
+        $hideItemName = setting($this->getDocumentSettingKey($type, 'item_name'), false);
+
         // if you use settting translation
-        if ($hideItemName = setting($this->getSettingKey($type, 'item_name'), false) && $hideItemName == 'hide') {
-            return $hideItemName;
+        if ($hideItemName === 'hide') {
+            return true;
         }
 
         $hide = $this->getHideFromConfig($type, 'name');
@@ -884,8 +888,7 @@ abstract class Form extends Component
             return $hide;
         }
 
-        // @todo what return value invoice or always false??
-        return setting('invoice.item_name', $hideItemName) == 'hide' ? true : false;
+        return false;
     }
 
     protected function getTextItemName($type, $textItemName)
@@ -895,18 +898,18 @@ abstract class Form extends Component
         }
 
         // if you use settting translation
-        if (setting($this->getSettingKey($type, 'item_name'), 'items') === 'custom') {
-            if (empty($textItemName = setting($this->getSettingKey($type, 'item_name_input')))) {
+        if (setting($this->getDocumentSettingKey($type, 'item_name'), 'items') === 'custom') {
+            if (empty($textItemName = setting($this->getDocumentSettingKey($type, 'item_name_input')))) {
                 $textItemName = 'general.items';
             }
 
             return $textItemName;
         }
 
-        if (setting($this->getSettingKey($type, 'item_name')) !== null
-            && (trans(setting($this->getSettingKey($type, 'item_name'))) != setting($this->getSettingKey($type, 'item_name')))
+        if (setting($this->getDocumentSettingKey($type, 'item_name')) !== null
+            && (trans(setting($this->getDocumentSettingKey($type, 'item_name'))) != setting($this->getDocumentSettingKey($type, 'item_name')))
         ) {
-            return setting($this->getSettingKey($type, 'item_name'));
+            return setting($this->getDocumentSettingKey($type, 'item_name'));
         }
 
         $translation = $this->getTextFromConfig($type, 'items');
@@ -918,15 +921,17 @@ abstract class Form extends Component
         return 'general.items';
     }
 
-    protected function getHideItemDescription($type, $hideItemDescription)
+    protected function getHideItemDescription($type, $hideItemDescription): bool
     {
         if (! empty($hideItemDescription)) {
             return $hideItemDescription;
         }
 
+
+
         // if you use settting translation
-        if ($hideItemDescription = setting($this->getSettingKey($type, 'hide_item_description'), false) && $hideItemDescription == 'hide') {
-            return $hideItemDescription;
+        if (setting($this->getDocumentSettingKey($type, 'hide_item_description'), false)) {
+            return true;
         }
 
         $hide = $this->getHideFromConfig($type, 'description');
@@ -935,8 +940,7 @@ abstract class Form extends Component
             return $hide;
         }
 
-        // @todo what return value invoice or always false??
-        return setting('invoice.hide_item_description', $hideItemDescription);
+        return false;
     }
 
     protected function getTextItemDescription($type, $textItemDescription)
@@ -954,15 +958,17 @@ abstract class Form extends Component
         return 'general.description';
     }
 
-    protected function getHideItemQuantity($type, $hideItemQuantity)
+    protected function getHideItemQuantity($type, $hideItemQuantity): bool
     {
         if (! empty($hideItemQuantity)) {
             return $hideItemQuantity;
         }
 
+        $hideItemQuantity = setting($this->getDocumentSettingKey($type, 'quantity_name'), false);
+
         // if you use settting translation
-        if ($hideItemQuantity = setting($this->getSettingKey($type, 'hide_quantity'), false) && $hideItemQuantity == 'hide') {
-            return $hideItemQuantity;
+        if ($hideItemQuantity === 'hide') {
+            return true;
         }
 
         $hide = $this->getHideFromConfig($type, 'quantity');
@@ -971,8 +977,7 @@ abstract class Form extends Component
             return $hide;
         }
 
-        // @todo what return value invoice or always false??
-        return setting('invoice.quantity_name', $hideItemQuantity) == 'hide' ? true : false;
+        return false;
     }
 
     protected function getTextItemQuantity($type, $textItemQuantity)
@@ -982,18 +987,18 @@ abstract class Form extends Component
         }
 
         // if you use settting translation
-        if (setting($this->getSettingKey($type, 'quantity_name'), 'quantity') === 'custom') {
-            if (empty($textItemQuantity = setting($this->getSettingKey($type, 'quantity_name_input')))) {
+        if (setting($this->getDocumentSettingKey($type, 'quantity_name'), 'quantity') === 'custom') {
+            if (empty($textItemQuantity = setting($this->getDocumentSettingKey($type, 'quantity_name_input')))) {
                 $textItemQuantity = 'invoices.quantity';
             }
 
             return $textItemQuantity;
         }
 
-        if (setting($this->getSettingKey($type, 'quantity_name')) !== null
-            && (trans(setting($this->getSettingKey($type, 'quantity_name'))) != setting($this->getSettingKey($type, 'quantity_name')))
+        if (setting($this->getDocumentSettingKey($type, 'quantity_name')) !== null
+            && (trans(setting($this->getDocumentSettingKey($type, 'quantity_name'))) != setting($this->getDocumentSettingKey($type, 'quantity_name')))
         ) {
-            return setting($this->getSettingKey($type, 'quantity_name'));
+            return setting($this->getDocumentSettingKey($type, 'quantity_name'));
         }
 
         $translation = $this->getTextFromConfig($type, 'quantity');
@@ -1005,15 +1010,17 @@ abstract class Form extends Component
         return 'invoices.quantity';
     }
 
-    protected function getHideItemPrice($type, $hideItemPrice)
+    protected function getHideItemPrice($type, $hideItemPrice): bool
     {
         if (! empty($hideItemPrice)) {
             return $hideItemPrice;
         }
 
+        $hideItemPrice = setting($this->getDocumentSettingKey($type, 'price_name'), false);
+
         // if you use settting translation
-        if ($hideItemPrice = setting($this->getSettingKey($type, 'hide_price'), false) && $hideItemPrice == 'hide') {
-            return $hideItemPrice;
+        if ($hideItemPrice === 'hide') {
+            return true;
         }
 
         $hide = $this->getHideFromConfig($type, 'price');
@@ -1022,8 +1029,7 @@ abstract class Form extends Component
             return $hide;
         }
 
-        // @todo what return value invoice or always false??
-        return setting('invoice.price_name', $hideItemPrice) == 'hide' ? true : false;
+        return false;
     }
 
     protected function getTextItemPrice($type, $textItemPrice)
@@ -1033,18 +1039,18 @@ abstract class Form extends Component
         }
 
         // if you use settting translation
-        if (setting($this->getSettingKey($type, 'price_name'), 'price') === 'custom') {
-            if (empty($textItemPrice = setting($this->getSettingKey($type, 'price_name_input')))) {
+        if (setting($this->getDocumentSettingKey($type, 'price_name'), 'price') === 'custom') {
+            if (empty($textItemPrice = setting($this->getDocumentSettingKey($type, 'price_name_input')))) {
                 $textItemPrice = 'invoices.price';
             }
 
             return $textItemPrice;
         }
 
-        if (setting($this->getSettingKey($type, 'price_name')) !== null
-            && (trans(setting($this->getSettingKey($type, 'price_name'))) != setting($this->getSettingKey($type, 'price_name')))
+        if (setting($this->getDocumentSettingKey($type, 'price_name')) !== null
+            && (trans(setting($this->getDocumentSettingKey($type, 'price_name'))) != setting($this->getDocumentSettingKey($type, 'price_name')))
         ) {
-            return setting($this->getSettingKey($type, 'price_name'));
+            return setting($this->getDocumentSettingKey($type, 'price_name'));
         }
 
         $translation = $this->getTextFromConfig($type, 'price');
@@ -1056,15 +1062,15 @@ abstract class Form extends Component
         return 'invoices.price';
     }
 
-    protected function getHideItemAmount($type, $hideItemAmount)
+    protected function getHideItemAmount($type, $hideItemAmount): bool
     {
         if (! empty($hideItemAmount)) {
             return $hideItemAmount;
         }
 
         // if you use settting translation
-        if ($hideAmount = setting($this->getSettingKey($type, 'hide_amount'), false)) {
-            return $hideAmount;
+        if (setting($this->getDocumentSettingKey($type, 'hide_amount'), false)) {
+            return true;
         }
 
         $hide = $this->getHideFromConfig($type, 'amount');
@@ -1073,8 +1079,7 @@ abstract class Form extends Component
             return $hide;
         }
 
-        // @todo what return value invoice or always false??
-        return setting('invoice.hide_amount', $hideAmount);
+        return false;
     }
 
     protected function getTextItemAmount($type, $textItemAmount)
@@ -1099,7 +1104,7 @@ abstract class Form extends Component
         }
 
         // if you use settting translation
-        if ($hideDiscount = setting($this->getSettingKey($type, 'hide_discount'), false)) {
+        if ($hideDiscount = setting($this->getDocumentSettingKey($type, 'hide_discount'), false)) {
             return $hideDiscount;
         }
 
@@ -1120,7 +1125,7 @@ abstract class Form extends Component
         }
 
         // if you use settting translation
-        if ($settingCharLimit = setting($this->getSettingKey($type, 'item_search_chart_limit'), false)) {
+        if ($settingCharLimit = setting($this->getDocumentSettingKey($type, 'item_search_chart_limit'), false)) {
             return $settingCharLimit;
         }
 
@@ -1144,7 +1149,7 @@ abstract class Form extends Component
             return $this->document->notes;
         }
 
-        return setting($this->getSettingKey($this->type, 'notes'));
+        return setting($this->getDocumentSettingKey($this->type, 'notes'));
     }
 
     protected function getTextSectionAdvancedTitle($type, $textSectionAdvancedTitle)
@@ -1171,7 +1176,7 @@ abstract class Form extends Component
             return $titleSetting;
         }
 
-        return setting($this->getSettingKey($type, 'title'));
+        return setting($this->getDocumentSettingKey($type, 'title'));
     }
 
     protected function getSubheadingSettingValue($type, $subheadingSetting)
@@ -1180,7 +1185,7 @@ abstract class Form extends Component
             return $subheadingSetting;
         }
 
-        return setting($this->getSettingKey($type, 'subheading'));
+        return setting($this->getDocumentSettingKey($type, 'subheading'));
     }
 
     protected function getFooterValue($footer)
@@ -1193,7 +1198,7 @@ abstract class Form extends Component
             return $this->document->footer;
         }
 
-        return setting($this->getSettingKey($this->type, 'footer'));
+        return setting($this->getDocumentSettingKey($this->type, 'footer'));
     }
 
     protected function getTypeCategory($type, $typeCategory)

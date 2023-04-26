@@ -30,8 +30,6 @@ class Transaction extends Model
 
     protected $table = 'transactions';
 
-    protected $dates = ['deleted_at', 'paid_at'];
-
     /**
      * Attributes that should be mass-assignable.
      *
@@ -64,8 +62,10 @@ class Transaction extends Model
      * @var array
      */
     protected $casts = [
-        'amount' => 'double',
-        'currency_rate' => 'double',
+        'paid_at'           => 'datetime',
+        'amount'            => 'double',
+        'currency_rate'     => 'double',
+        'deleted_at'        => 'datetime',
     ];
 
     /**
@@ -186,7 +186,10 @@ class Transaction extends Model
 
     public function scopeIncomeRecurring(Builder $query): Builder
     {
-        return $query->where($this->qualifyColumn('type'), '=', self::INCOME_RECURRING_TYPE);
+        return $query->where($this->qualifyColumn('type'), '=', self::INCOME_RECURRING_TYPE)
+                ->whereHas('recurring', function (Builder $query) {
+                    $query->whereNull('deleted_at');
+                });
     }
 
     public function scopeExpense(Builder $query): Builder
@@ -201,7 +204,10 @@ class Transaction extends Model
 
     public function scopeExpenseRecurring(Builder $query): Builder
     {
-        return $query->where($this->qualifyColumn('type'), '=', self::EXPENSE_RECURRING_TYPE);
+        return $query->where($this->qualifyColumn('type'), '=', self::EXPENSE_RECURRING_TYPE)
+                ->whereHas('recurring', function (Builder $query) {
+                    $query->whereNull('deleted_at');
+                });
     }
 
     public function scopeIsTransfer(Builder $query): Builder

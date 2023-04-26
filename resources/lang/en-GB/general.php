@@ -74,6 +74,7 @@ return [
     'your_notifications'    => 'Your notification|Your notifications',
     'plans'                 => 'Plan|Plans',
     'subscriptions'         => 'Subscription|Subscriptions',
+    'employees'             => 'Employee|Employees',
 
     'welcome'               => 'Welcome',
     'banking'               => 'Banking',
@@ -230,6 +231,7 @@ return [
     'preview_mode'          => 'Preview Mode',
     'go_back'               => 'Go back to :type',
     'validation_error'      => 'Validation error',
+    'dismiss'               => 'Dismiss',
 
     'card' => [
         'cards'                 => 'Card|Cards',

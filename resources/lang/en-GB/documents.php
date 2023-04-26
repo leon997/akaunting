@@ -10,6 +10,12 @@ return [
     'billing'                   => 'Billing',
     'advanced'                  => 'Advanced',
 
+    'item_price_hidden'         => 'This column is hidden on your :type.',
+
+    'actions' => [
+        'cancel'                => 'Cancel',
+    ],
+
     'invoice_detail' => [
         'marked'                => '<b>You</b> marked this invoice as',
         'services'              => 'Services',
