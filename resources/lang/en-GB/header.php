@@ -29,5 +29,4 @@ return [
         'added_favorite'    => 'Added to favorites',
         'add_favorite'      => 'Add to favorites',
     ],
-
 ];

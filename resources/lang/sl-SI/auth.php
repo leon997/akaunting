@@ -57,19 +57,16 @@ return [
     ],
 
     'invitation' => [
-        'message_1'         => '
-To e-pošto ste prejeli, ker ste vabljeni, da se pridružite Programu Akaunting.',
+        'message_1'         => 'To e-pošto ste prejeli, ker ste vabljeni, da se pridružite Programu Akaunting.',
         'message_2'         => 'Če se ne želite pridružiti, vam ni treba storiti ničesar več.',
-        'button'            => 'Začnite',
+        'button'            => 'Ponastavite geslo',
     ],
 
     'information' => [
         'invoice'           => 'Enostavno ustvarite račune',
         'reports'           => 'Pridobite podrobna poročila',
-        'expense'           => '
-Spremljajte kakršne koli stroške',
-        'customize'         => '
-Prilagodite svoj Akaunting',
+        'expense'           => 'Spremljajte kakršne koli stroške',
+        'customize'         => 'Prilagodite svoj Akaunting',
     ],
 
     'roles' => [

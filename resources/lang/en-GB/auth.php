@@ -91,5 +91,4 @@ return [
             'description'   => 'They can create expense claims and track time for assigned projects, but can only see their own information.',
         ],
     ],
-
 ];
