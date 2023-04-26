@@ -41,20 +41,11 @@ return [
     'error' => [
         'self_delete'       => 'Napaka: Ni morete izbrisati samega sebe!',
         'self_disable'      => 'Napaka: Ni morete onemogočiti samega sebe!',
-<<<<<<< HEAD
         'unassigned'        => 'Napaka: ni mogoče! Podjetju :company mora biti dodeljen vsaj en uporabnik.        ',
         'no_company'        => 'Napaka: Vašemu računu ni bilo dodeljeno nobeno podjetje. Prosimo, obrnite na skrbnika sistema.',
     ],
 
     'login_redirect'        => 'Preverjanje opravljeno! Preusmerjeni ste ...',
-=======
-        'unassigned'        => '
-Napaka: ni mogoče preklicati podjetja! Podjetju :company mora biti dodeljen vsaj en uporabnik.',
-        'no_company'        => 'Napaka: Vašemu računu ni bilo dodeljeno nobeno podjetje. Prosimo, obrnite na skrbnika sistema.',
-    ],
-
-    'login_redirect'        => 'Preverjanje opravljeno! Preusmerjamo...',
->>>>>>> upstream/master
     'failed'                => 'Podatki ne ustrezajo.',
     'throttle'              => 'Preveč poskusov prijave. Poskusite znova čez: sekund sekund.',
     'disabled'              => 'Ta račun je bil onemogočen. Kontaktirajte administratorja.',
