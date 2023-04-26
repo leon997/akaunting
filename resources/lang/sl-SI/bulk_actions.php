@@ -4,12 +4,10 @@ return [
 
     'bulk_actions'      => 'Množično | Množično',
     'selected'          => 'izbrano',
-    'no_action'         => '
-Na voljo ni nobenega dejanja',
+    'no_action'         => 'Na voljo ni nobenega dejanja',
 
     'message' => [
-        'duplicate'     => '
-Ali ste prepričani, da želite <b> podvojiti </b> izbrani zapis?',
+        'duplicate'     => 'Ali ste prepričani, da želite <b> podvojiti </b> izbrani zapis?',
         'delete'        => 'Ali ste prepričani, da želite <b> izbrisati </b> izbrani zapis? | Ali ste prepričani, da želite <b> izbrisati </b> izbrane zapise?',
         'export'        => 'Ali ste prepričani, da želite <b> izvoziti </b> izbrani zapis? | Ali ste prepričani, da želite <b> izvoziti </b> izbrane zapise?',
         'enable'        => 'Ali ste prepričani, da želite <b> omogočiti </b> izbrani zapis? | Ali ste prepričani, da želite <b> omogočiti </b> izbrane zapise?',

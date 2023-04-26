@@ -4,10 +4,10 @@ return [
 
     'dashboards'            => 'Dashboard|Dashboards',
     'items'                 => 'Item|Items',
+    'incomes'               => 'Income|Incomes',
     'invoices'              => 'Invoice|Invoices',
     'recurring_invoices'    => 'Recurring Invoice|Recurring Invoices',
     'customers'             => 'Customer|Customers',
-    'incomes'               => 'Income|Incomes',
     'recurring_incomes'     => 'Recurring Income|Recurring Incomes',
     'expenses'              => 'Expense|Expenses',
     'recurring_expenses'    => 'Recurring Expense|Recurring Expenses',

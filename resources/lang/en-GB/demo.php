@@ -27,5 +27,4 @@ return [
         'tax'               => 'Quarterly tax summary.',
         'profit_loss'       => 'Quarterly profit & loss by category.',
     ],
-
 ];

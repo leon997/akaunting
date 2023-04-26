@@ -57,19 +57,16 @@ return [
     ],
 
     'invitation' => [
-        'message_1'         => '
-To e-pošto ste prejeli, ker ste vabljeni, da se pridružite Programu Akaunting.',
+        'message_1'         => 'To e-pošto ste prejeli, ker ste vabljeni, da se pridružite Programu Akaunting.',
         'message_2'         => 'Če se ne želite pridružiti, vam ni treba storiti ničesar več.',
-        'button'            => 'Začnite',
+        'button'            => 'Ponastavite geslo',
     ],
 
     'information' => [
         'invoice'           => 'Enostavno ustvarite račune',
         'reports'           => 'Pridobite podrobna poročila',
-        'expense'           => '
-Spremljajte kakršne koli stroške',
-        'customize'         => '
-Prilagodite svoj Akaunting',
+        'expense'           => 'Spremljajte kakršne koli stroške',
+        'customize'         => 'Prilagodite svoj Akaunting',
     ],
 
     'roles' => [
@@ -94,41 +91,4 @@ Prilagodite svoj Akaunting',
             'description'   => 'Ustvarijo lahko zahtevke za stroške in spremljajo čas za dodeljene projekte, vendar lahko vidijo samo svoje podatke.',
         ],
     ],
-    
-    'invitation' => [
-        'message_1'         => 'To e-pošto ste prejeli, ker ste vabljeni, da se pridružite Akauntingu.',
-        'message_2'         => 'Če se ne želite pridružiti, vam ni treba storiti ničesar več.',
-        'button'            => 'Začnite',
-    ],
-
-    'information' => [
-        'invoice'           => 'Preprosta kreacija računov',
-        'reports'           => 'Ustvarjanje in izvoz podrobnih poročil',
-        'expense'           => 'Beležite vse stroške',
-        'customize'         => 'Preuredite svoj Akaunting po meri',
-    ],
-
-    'roles' => [
-        'admin' => [
-            'name'          => 'Admin',
-            'description'   => 'Dobijo popoln dostop do Akauntinga, vključno s strankami, računi, poročili, nastavitvami in aplikacijami.',
-        ],
-        'manager' => [
-            'name'          => 'Manager',
-            'description'   => 'Dobijo popoln dostop do Akauntinga, vendar ne morejo upravljati uporabnikov in aplikacij.',
-        ],
-        'customer' => [
-            'name'          => 'Stranka',
-            'description'   => 'Lahko dostopajo do portala za stranke in plačujejo svoje račune prek spleta s plačilnimi metodami, ki jih nastavite.',
-        ],
-        'accountant' => [
-            'name'          => 'Računovodja',
-            'description'   => 'Dostopajo lahko do računov, transakcij, poročil in ustvarjajo temeljnice.',
-        ],
-        'employee' => [
-            'name'          => 'Zaposleni',
-            'description'   => 'Ustvarijo lahko zahtevke za stroške in spremljajo čas za dodeljene projekte, vendar lahko vidijo samo svoje podatke.',
-        ],
-    ],
-
 ];

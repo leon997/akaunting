@@ -88,5 +88,4 @@ return [
             'document_number'   => 'The :type number will be automatically assigned when each recurring :type is generated.',
         ],
     ],
-
 ];

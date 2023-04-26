@@ -31,8 +31,8 @@ return [
         'invalid_apikey'    => 'Error: The API Key entered is invalid!',
         'import_column'     => 'Error: :message Column name: :column. Line number: :line.',
         'import_sheet'      => 'Error: Sheet name is not valid. Please, check the sample file.',
-        'same_amount'       => 'Error: The total amount of split must be exactly the same as the :transaction total: :amount',
-        'over_match'        => 'Error: :type not connected! The amount you entered can not exceed the payment total: :amount',
+        'same_amount'       => 'Napaka: skupni znesek delitve mora biti popolnoma enak kot :transaction total: :amount',
+        'over_match'        => 'Napaka: :tip ni povezan! Znesek, ki ste ga vnesli, ne sme preseči skupnega zneska plačila: : znesek',
     ],
 
     'warning' => [

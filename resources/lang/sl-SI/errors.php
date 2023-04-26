@@ -3,8 +3,7 @@
 return [
 
     'title' => [
-        '403'       => '
-Ups! Prepovedan dostop',
+        '403'       => 'Ups! Prepovedan dostop',
         '404'       => 'Ups! Stran ni najdena',
         '500'       => 'Ups! Prišlo je do napake',
     ],

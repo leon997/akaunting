@@ -22,6 +22,8 @@ return [
         'extension'         => ':extension razširitev mora niti nameščena in naložena!',
         'directory'         => ':direktorij mora biti zapisljiv!',
         'executable'        => 'Izvršljiva datoteka PHP CLI ni definirana / deluje ali njena različica ni :php_version ali novejša! Prosite svojega ponudnika gostovanja, da pravilno nastavi spremenljivko okolja PHP_BINARY ali PHP_PATH.',
+        'npm'               => '<b>Manjkajoče javascript datoteke !</b> <br><br><span>Poskusite pognati <em class="underline">npm install</em> ter <em class="underline">npm run dev</em> ukaza.</span>',
+
     ],
 
     'database' => [
