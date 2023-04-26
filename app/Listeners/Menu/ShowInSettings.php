@@ -68,5 +68,10 @@ class ShowInSettings
         if ($this->canAccessMenuItem($title, 'read-settings-taxes')) {
             $menu->route('taxes.index', $title, [], 100, ['icon' => 'percent', 'search_keywords' => trans('settings.taxes.search_keywords')]);
         }
+
+        $title = trim(trans_choice('general.subscriptions', 1));
+        if ($this->canAccessMenuItem($title, 'read-common-plans')) {
+            $menu->route('subscription.settings', $title, [], 100, ['icon' => 'card_membership', 'search_keywords' => trans('settings.taxes.search_keywords')]);
+        }
     }
 }
