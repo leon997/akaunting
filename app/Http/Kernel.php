@@ -65,6 +65,7 @@ class Kernel extends HttpKernel
             'bindings',
             'read.only',
             'wizard.redirect',
+            //'is.paying',
         ],
 
         'guest' => [
@@ -181,6 +182,7 @@ class Kernel extends HttpKernel
         'money' => \App\Http\Middleware\Money::class,
         'read.only' => \App\Http\Middleware\CheckForReadOnlyMode::class,
         'wizard.redirect' => \App\Http\Middleware\RedirectIfWizardNotCompleted::class,
+        //'is.paying' => \App\Http\Middleware\IsPayingUser::class,
 
         // Vendor
         'ability' => \Laratrust\Middleware\LaratrustAbility::class,

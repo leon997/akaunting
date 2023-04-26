@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PlanController;
 use Illuminate\Support\Facades\Route;
 
 /**
@@ -49,8 +50,10 @@ Route::group(['prefix' => 'common'], function () {
 
     Route::get('contacts/index', 'Common\Contacts@index')->name('contacts.index');
 
-    Route::resource('plans', 'Common\Plans');
-    
+    Route::get('plans', [PlanController::class, 'index'])->name('plans.index');
+    Route::get('plans/{plan}', [PlanController::class, 'show'])->name("plans.show");
+    Route::post('subscription', [PlanController::class, 'subscription'])->name("subscription.create");
+
 });
 
 Route::group(['prefix' => 'auth'], function () {
@@ -175,6 +178,8 @@ Route::group(['prefix' => 'settings'], function () {
     Route::post('taxes/import', 'Settings\Taxes@import')->middleware('import')->name('taxes.import');
     Route::get('taxes/export', 'Settings\Taxes@export')->name('taxes.export');
     Route::resource('taxes', 'Settings\Taxes');
+
+    Route::get('subscription', [PlanController::class, 'settings'])->name('subscription.settings');
 
     Route::group(['as' => 'settings.'], function () {
         Route::get('company', 'Settings\Company@edit')->name('company.edit');

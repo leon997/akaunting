@@ -23,8 +23,8 @@ Route::group(['prefix' => 'auth'], function () {
     Route::get('register/{token}', 'Auth\Register@create')->name('register');
     Route::post('register', 'Auth\Register@store')->name('register.store');
 
-    Route::get('signUp', 'Auth\signUp@create') ->name('signUp');
-    Route::post('signUp', 'Auth\signUp@store') ->name('signUp.store');
+    Route::get('signUp', 'Auth\SignUp@create') ->name('signUp');
+    Route::post('signUp', 'Auth\SignUp@store') ->name('signUp.store');
 
 });
 
