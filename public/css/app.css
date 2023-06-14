@@ -43433,6 +43433,7 @@ button, input, optgroup, select, textarea{
   line-height: 1;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 .text-base{
   font-size: 1rem;
   line-height: 1.5rem;
@@ -43470,6 +43471,11 @@ button, input, optgroup, select, textarea{
   font-weight: 100;
 >>>>>>> bb6f48040 (subscriptions p1)
 =======
+=======
+.text-\[42px\]{
+  font-size: 42px;
+}
+>>>>>>> bd31fe1f94d82e6fa63721c882827dfbaa508ca8
 .text-base{
   font-size: 1rem;
   line-height: 1.5rem;
@@ -62785,9 +62791,12 @@ body{
 .hover\:text-gray-800:hover{
   --tw-text-opacity: 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
   color: rgb(50 50 50 / var(--tw-text-opacity));
 >>>>>>> bb6f48040 (subscriptions p1)
 =======
+=======
+>>>>>>> bd31fe1f94d82e6fa63721c882827dfbaa508ca8
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
@@ -66045,6 +66054,7 @@ body{
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   .lg\:pl-12{
     padding-left: 3rem;
   }
@@ -66056,6 +66066,8 @@ body{
     .lg\:pt-\[120px\]{
     padding-top: 120px;
 =======
+=======
+>>>>>>> bd31fe1f94d82e6fa63721c882827dfbaa508ca8
   .lg\:py-10{
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
@@ -66064,7 +66076,10 @@ body{
   .lg\:py-4{
     padding-top: 1rem;
     padding-bottom: 1rem;
+<<<<<<< HEAD
 >>>>>>> bd31fe1f9 (stripe integration)
+=======
+>>>>>>> bd31fe1f94d82e6fa63721c882827dfbaa508ca8
   }
 
   .lg\:py-6{
@@ -66077,10 +66092,13 @@ body{
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     .lg\:pt-0{
     padding-top: 0px;
 >>>>>>> bb6f48040 (subscriptions p1)
 =======
+=======
+>>>>>>> bd31fe1f94d82e6fa63721c882827dfbaa508ca8
   .lg\:pl-12{
     padding-left: 3rem;
   }

@@ -72,6 +72,8 @@ return [
     'attachments'           => 'Attachment|Attachments',
     'histories'             => 'History|Histories',
     'your_notifications'    => 'Your notification|Your notifications',
+    'plans'                 => 'Plan|Plans',
+    'subscriptions'         => 'Subscription|Subscriptions',
     'employees'             => 'Employee|Employees',
     'plans'                 => 'Plan|Plans',
     'subscriptions'         => 'Subscription|Subscriptions',
