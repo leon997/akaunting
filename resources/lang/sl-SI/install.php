@@ -38,6 +38,7 @@ return [
         'company_email'     => 'Elektronski naslov podjetja',
         'admin_email'       => 'Elektronski naslov skrbnika',
         'admin_password'    => 'Geslo skrbnika',
+        'user_name'         => 'Ime in Priimek',
     ],
 
     'error' => [

@@ -66,6 +66,7 @@ class Kernel extends HttpKernel
             'read.only',
             'wizard.redirect',
             //'is.paying',
+            'subscribe.redirect',
         ],
 
         'guest' => [
@@ -84,6 +85,7 @@ class Kernel extends HttpKernel
             'wizard.redirect',
             'menu.admin',
             'permission:read-admin-panel',
+            'subscribe.redirect',
         ],
 
         'wizard' => [
@@ -182,6 +184,8 @@ class Kernel extends HttpKernel
         'money' => \App\Http\Middleware\Money::class,
         'read.only' => \App\Http\Middleware\CheckForReadOnlyMode::class,
         'wizard.redirect' => \App\Http\Middleware\RedirectIfWizardNotCompleted::class,
+        'subscribe.redirect' => \App\Http\Middleware\IsPayingUser::class,
+
         //'is.paying' => \App\Http\Middleware\IsPayingUser::class,
 
         // Vendor

@@ -41,7 +41,7 @@ return [
     'become_developer'      => 'Are you a developer? <a href=":url" target="_blank">Here</a> you can learn how to create an app and start selling today!',
     'recommended_apps'      => 'Recommended Apps',
     'can_not_install'       => 'Monthly subscriptions are available only on Cloud service. <a href="https://akaunting.com/upgrade-to-yearly" target="_blank">Learn more.</a>',
-    'apps_managing'         => 'Check the most trending apps and start managing your finances professionally today.',
+    'apps_managing'         => 'All done. Your Akaunting is ready to use.',
     'ready'                 => 'Ready',
     'popular_this_week'     => 'Popular this week',
     'install_cloud'         => 'Use on Cloud Service',

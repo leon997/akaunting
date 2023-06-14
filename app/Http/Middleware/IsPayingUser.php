@@ -2,26 +2,53 @@
 
 namespace App\Http\Middleware;
 
-use App\Http\Requests\Auth\User;
 use Closure;
 use Illuminate\Http\Request;
-use Stripe\Subscription;
+use Illuminate\Support\Carbon;
+use Symfony\Component\HttpFoundation\Response;
+use App\Models\Auth\User;
+use App\Models\Auth\Company;
+use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Auth;
+use phpDocumentor\Reflection\Types\Integer;
+use Laratrust\Models\LaratrustRole;
+
+
 
 class IsPayingUser
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
-     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
-     */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next): Response
     {
-        if ($request->user() && !$request->user()->subscribed('default')) {
-            // user has no valid subscription
-            return redirect()->route('plans.index');
+        if (Auth::user() && ! $this->isSubscribed() && $this->trialOver()) {
+            // This user is not a paying customer...
+            if (! $this->isAdmin()) {
+                Auth::user()->detachRole('manager');
+                Auth::user()->syncRoles(['neplacnik']);
+            } else {
+                return $next($request);
+            }
+        } else {
+            // This user is a paying customer...
+            Auth::user()->detachRole('neplacnik');
+            Auth::user()->syncRoles(['manager']);
         }
         return $next($request);
+    }
+
+    public function trialOver(){
+        $trial_period = Auth::user()->trial_ends_at;
+        if ($trial_period < Carbon::now()){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function isSubscribed(){
+        return Auth::user()->subscribed('basic');
+    }
+
+    public function isAdmin(){
+        return Auth::user()->hasRole('admin');
     }
 }
