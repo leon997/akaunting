@@ -6,7 +6,7 @@ return [
         'description'                => 'Spremeni podatke podjetja',
         'name'                       => 'Ime',
         'email'                      => 'Elektronski naslov',
-        'phone'                      => 'Telefon',
+        'phone'                      => 'Telefonska številka',
         'address'                    => 'Naslov',
         'edit_your_business_address' => 'Uredi naslov podjetja',
         'logo'                       => 'Logotip',
