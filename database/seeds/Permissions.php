@@ -94,8 +94,8 @@ class Permissions extends Seeder
                 'common-search' => 'r',
                 'common-uploads' => 'r',
                 'common-widgets' => 'c,r,u,d',
-                'common-plans' => 'c,r,u,d',
                 'purchases-bills' => 'c,r,u,d',
+                'common-plans' => 'c,r,u,d',
                 'purchases-vendors' => 'c,r,u,d',
                 'sales-customers' => 'c,r,u,d',
                 'sales-invoices' => 'c,r,u,d',
@@ -164,6 +164,16 @@ class Permissions extends Seeder
                 'widgets-payables' => 'r',
                 'widgets-profit-loss' => 'r',
                 'widgets-receivables' => 'r',
+            ],
+
+            'neplacnik' => [
+                'admin-panel' => 'r',
+                'auth-profile' => 'r',
+                'common-companies' => 'r',
+                'common-dashboards' => 'r',
+                'common-plans' => 'c,r,u,d',
+                'common-widgets' => 'r',
+                'notifications' => 'r',
             ],
         ];
 

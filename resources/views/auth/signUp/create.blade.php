@@ -25,11 +25,17 @@
         ></div>
 
         <x-form id="auth" route="signUp.store">
-            <div class="grid sm:grid-cols-6 gap-x-8 gap-y-6 my-3.5">
+            <div class="grid sm:grid-cols-6 gap-x-8 gap-y-6 my-2.5">
+
+                <x-form.group.text
+                    name="name"
+                    label="{{ trans('install.settings.user_name') }}"
+                    value="{{ old('name') }}"
+                    form-group-class="sm:col-span-6" />
 
                 <x-form.group.text
                     name="user_email"
-                    label="{{ trans('install.settings.admin_email') }}"
+                    label="{{ trans('settings.company.email') }}"
                     value="{{ old('user_email') }}"
                     form-group-class="sm:col-span-6" />
 

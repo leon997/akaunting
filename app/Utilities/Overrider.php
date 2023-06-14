@@ -36,21 +36,21 @@ class Overrider
         config(['app.timezone' => $timezone]);
         date_default_timezone_set(config('app.timezone'));
 
-        // Email
-        $email_protocol = setting('email.protocol', 'mail');
-        config(['mail.default' => $email_protocol]);
-        config(['mail.from.name' => setting('company.name')]);
-        config(['mail.from.address' => setting('company.email')]);
-
-        if ($email_protocol == 'sendmail') {
-            config(['mail.mailers.sendmail.path' => setting('email.sendmail_path')]);
-        } elseif ($email_protocol == 'smtp') {
-            config(['mail.mailers.smtp.host' => setting('email.smtp_host')]);
-            config(['mail.mailers.smtp.port' => setting('email.smtp_port')]);
-            config(['mail.mailers.smtp.username' => setting('email.smtp_username')]);
-            config(['mail.mailers.smtp.password' => setting('email.smtp_password')]);
-            config(['mail.mailers.smtp.encryption' => setting('email.smtp_encryption')]);
-        }
+//        // Email
+//        $email_protocol = setting('email.protocol', 'mail');
+//        config(['mail.default' => $email_protocol]);
+//        config(['mail.from.name' => setting('company.name')]);
+//        config(['mail.from.address' => setting('company.email')]);
+//
+//        if ($email_protocol == 'sendmail') {
+//            config(['mail.mailers.sendmail.path' => setting('email.sendmail_path')]);
+//        } elseif ($email_protocol == 'smtp') {
+//            config(['mail.mailers.smtp.host' => setting('email.smtp_host')]);
+//            config(['mail.mailers.smtp.port' => setting('email.smtp_port')]);
+//            config(['mail.mailers.smtp.username' => setting('email.smtp_username')]);
+//            config(['mail.mailers.smtp.password' => setting('email.smtp_password')]);
+//            config(['mail.mailers.smtp.encryption' => setting('email.smtp_encryption')]);
+//        }
 
         // Locale
         if (! session('locale')) {

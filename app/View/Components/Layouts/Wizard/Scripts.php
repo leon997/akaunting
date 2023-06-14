@@ -87,6 +87,7 @@ class Scripts extends Component
                 'skip' => trans('companies.skip_step'),
                 'save' => trans('general.save'),
                 'country' => trans_choice('general.countries', 1),
+                'phone' => trans('settings.company.phone'),
             ],
 
             'currencies' => [

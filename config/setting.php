@@ -102,7 +102,7 @@ return [
         'localisation' => [
             'financial_start'           => env('SETTING_FALLBACK_LOCALISATION_FINANCIAL_START', '01-01'),
             'financial_denote'          => env('SETTING_FALLBACK_LOCALISATION_FINANCIAL_DENOTE', 'ends'),
-            'timezone'                  => env('SETTING_FALLBACK_LOCALISATION_TIMEZONE', 'Europe/London'),
+            'timezone'                  => env('SETTING_FALLBACK_LOCALISATION_TIMEZONE', 'Europe/Ljubljana'),
             'date_format'               => env('SETTING_FALLBACK_LOCALISATION_DATE_FORMAT', 'd M Y'),
             'date_separator'            => env('SETTING_FALLBACK_LOCALISATION_DATE_SEPARATOR', 'space'),
             'percent_position'          => env('SETTING_FALLBACK_LOCALISATION_PERCENT_POSITION', 'after'),
@@ -150,7 +150,7 @@ return [
             'number_next'               => env('SETTING_FALLBACK_BILL_RECURRING_NUMBER_NEXT', '1'),
         ],
         'default' => [
-            'currency'                  => env('SETTING_FALLBACK_DEFAULT_CURRENCY', 'USD'),
+            'currency'                  => env('SETTING_FALLBACK_DEFAULT_CURRENCY', 'EUR'),
             'locale'                    => env('SETTING_FALLBACK_DEFAULT_LOCALE', 'en-GB'),
             'list_limit'                => env('SETTING_FALLBACK_DEFAULT_LIST_LIMIT', '25'),
             'payment_method'            => env('SETTING_FALLBACK_DEFAULT_PAYMENT_METHOD', 'offline-payments.cash.1'),

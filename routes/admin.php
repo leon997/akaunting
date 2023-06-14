@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PlanController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /**
  * 'admin' middleware applied to all routes
@@ -50,11 +51,29 @@ Route::group(['prefix' => 'common'], function () {
 
     Route::get('contacts/index', 'Common\Contacts@index')->name('contacts.index');
 
-    Route::get('plans', [PlanController::class, 'index'])->name('plans.index');
-    Route::get('plans/{plan}', [PlanController::class, 'show'])->name("plans.show");
-    Route::post('subscription', [PlanController::class, 'subscription'])->name("subscription.create");
-
 });
+
+Route::get('plans', [PlanController::class, 'index'])->name('plans.index');
+Route::get('plans/{plan}', [PlanController::class, 'show'])->name("plans.show");
+Route::post('subscription', [PlanController::class, 'subscription'])->name("subscription.create");
+Route::get('subscription/success', [PlanController::class, 'subscription_successfull'])->name("subscription.success");
+
+Route::get('subscribe', function () {
+    return view('subscription', [
+        'intent' => auth()->user()->createSetupIntent(),
+    ]);
+})->name('subscribe');
+
+Route::get('subscription/settings', [PlanController::class, 'settings'])->name('subscription.settings');
+Route::get('subscription/cancel', [PlanController::class, 'subscriptionCancel'])->name('subscription.cancel');
+Route::get('subscription/resume', [PlanController::class, 'subscriptionResume'])->name('subscription.resume');
+
+
+Route::post('subscribe', function (Request $request) {
+    auth()->user()->newSubscription('basic', $request->plan)->create($request->paymentMethod);
+
+    return redirect()->route('subscription.success');
+})->name('subscribe.post');
 
 Route::group(['prefix' => 'auth'], function () {
     Route::get('logout', 'Auth\Login@destroy')->name('logout');
@@ -178,8 +197,6 @@ Route::group(['prefix' => 'settings'], function () {
     Route::post('taxes/import', 'Settings\Taxes@import')->middleware('import')->name('taxes.import');
     Route::get('taxes/export', 'Settings\Taxes@export')->name('taxes.export');
     Route::resource('taxes', 'Settings\Taxes');
-
-    Route::get('subscription', [PlanController::class, 'settings'])->name('subscription.settings');
 
     Route::group(['as' => 'settings.'], function () {
         Route::get('company', 'Settings\Company@edit')->name('company.edit');

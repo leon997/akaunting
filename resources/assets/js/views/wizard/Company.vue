@@ -16,23 +16,17 @@
 
                         <div class="flex flex-col justify-between -mt-5 sm:mt-0">
                             <div class="grid sm:grid-cols-6 gap-x-8 gap-y-6 my-3.5 menu-scroll gap-10">
-                                <div class="sm:col-span-6">
+                                <div class="sm:col-span-3">
                                     <base-input
                                         not-required
-                                        :label="translations.company.api_key"
-                                        name="api_key"
-                                        data-name="api_key"
-                                        :placeholder="translations.company.api_key"
-                                        v-model="company.api_key"
-                                        :error="onFailErrorGet('api_key')"
+                                        type="text"
+                                        :label="translations.company.phone"
+                                        name="phone"
+                                        data-name="phone"
+                                        :placeholder="translations.company.phone"
+                                        v-model="company.phone_number"
+                                        :error="onFailErrorGet('phone')"
                                     />
-
-                                    <div class="mt-2">
-                                        <small>
-                                            <a href="https://akaunting.com/dashboard" class="text-green" target="_blank">Click here</a>
-                                                to get your API key.
-                                        </small>
-                                    </div>
                                 </div>
 
                                 <div class="sm:col-span-3">
@@ -50,7 +44,7 @@
 
                                 <div class="sm:col-span-3">
                                     <akaunting-date
-                                        not-required 
+                                        not-required
                                         :title="translations.company.financial_start"
                                         data-name="financial_start"
                                         :placeholder="translations.company.financial_start"
@@ -64,6 +58,15 @@
                                         v-model="company.financial_start"
                                         :form-error="onFailErrorGet('financial_start')"
                                     ></akaunting-date>
+
+                                        <label class="text-black text-sm font-medium">
+                                            {{  translations.company.logo }}
+                                        </label>
+
+                                        <akaunting-dropzone-file-upload ref="dropzoneWizard" class="form-file dropzone-column" style="width: 10.8rem; height: 10.8rem;" preview-classes="single" :attachments="logo" :v-model="logo">
+                                        </akaunting-dropzone-file-upload>
+
+                                        <div v-if="onFailErrorGet('logo')" class="text-red text-sm mt-1 block" v-html="onFailErrorGet('logo')"></div>
                                 </div>
 
                                 <div class="sm:col-span-3 grid gap-y-4">
@@ -90,16 +93,6 @@
                                     </div>
                                 </div>
 
-                                <div class="sm:col-span-3">
-                                    <label class="text-black text-sm font-medium">
-                                        {{  translations.company.logo }}
-                                    </label>
-
-                                    <akaunting-dropzone-file-upload ref="dropzoneWizard" class="form-file dropzone-column" style="width: 10.8rem; height: 10.8rem;" preview-classes="single" :attachments="logo" :v-model="logo">
-                                    </akaunting-dropzone-file-upload>
-
-                                    <div v-if="onFailErrorGet('logo')" class="text-red text-sm mt-1 block" v-html="onFailErrorGet('logo')"></div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -118,7 +111,7 @@
                     class="w-1/2 relative flex items-center justify-center bg-green hover:bg-green-700 text-white px-6 py-1.5 text-base rounded-lg disabled:bg-green-100"
                     @click="onEditSave($event)"
                 >
-                    <i v-if="button_loading_company" class="animate-submit delay-[0.28s] absolute w-2 h-2 rounded-full left-0 right-0 -top-3.5 m-auto before:absolute before:w-2 before:h-2 before:rounded-full before:animate-submit before:delay-[0.14s] after:absolute after:w-2 after:h-2 after:rounded-full after:animate-submit before:-left-3.5 after:-right-3.5 after:delay-[0.42s]"></i> 
+                    <i v-if="button_loading_company" class="animate-submit delay-[0.28s] absolute w-2 h-2 rounded-full left-0 right-0 -top-3.5 m-auto before:absolute before:w-2 before:h-2 before:rounded-full before:animate-submit before:delay-[0.14s] after:absolute after:w-2 after:h-2 after:rounded-full after:animate-submit before:-left-3.5 after:-right-3.5 after:delay-[0.42s]"></i>
                     <span :class="[{'opacity-0': button_loading_company}]">
                         {{ translations.company.save }}
                     </span>
@@ -305,7 +298,7 @@
                 event.preventDefault();
 
                 this.button_loading_company = true;
-                
+
                 FormData.prototype.appendRecursive = function (data, wrapper = null) {
                     for (var name in data) {
                         if (name == "previewElement" || name == "previewTemplate") {

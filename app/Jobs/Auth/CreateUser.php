@@ -92,6 +92,6 @@ class CreateUser extends Job implements HasOwner, HasSource, ShouldCreate
             return false;
         }
         // spremen v true za production
-        return false;
+        return true;
     }
 }

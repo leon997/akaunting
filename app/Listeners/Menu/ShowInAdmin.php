@@ -6,6 +6,7 @@ use App\Traits\Permissions;
 use App\Events\Menu\AdminCreated as Event;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class ShowInAdmin
 {
@@ -117,9 +118,11 @@ class ShowInAdmin
         }
 
         // Subscriptions
-        $title = trim(trans_choice('general.plans', 2));
-        if ($this->canAccessMenuItem($title, 'read-common-plans')) {
-            $menu->route('plans.index', $title, [], 60, ['icon' => 'card_membership']);
+        if (! Auth::user()->subscribed('basic')){
+            $title = trim(trans_choice('general.plans', 2));
+            if ($this->canAccessMenuItem($title, 'read-common-plans')) {
+                $menu->route('plans.index', $title, [], 60, ['icon' => 'card_membership']);
+            }
         }
     }
 }
