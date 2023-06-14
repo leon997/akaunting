@@ -79,7 +79,6 @@ return [
     'receipts'              => 'Potrdilo o prejemu|Potrdila o prejemu',
     'histories'             => 'Zgodovina|Zgodovine',
     'cities'                => 'Mesto/Mesta',
-<<<<<<< HEAD
     'email_services'        => 'E-poštna storitev|E-poštne storitve',
     'email_templates'       => 'E-poštna predloga|E-poštne predloge',
     'bank_transactions'     => 'Bančna transakcija|Bančne transakcije',
@@ -92,11 +91,8 @@ return [
     'histories'             => 'Zgodovina|Zgodovina',
     'your_notifications'    => 'Tvoje obvestilo|Tvoja obvestila',
     'employees'             => 'Zaposlen|Zaposleni',
-=======
->>>>>>> bd31fe1f94d82e6fa63721c882827dfbaa508ca8
     'plans'                 => 'Paket|Paketi',
     'subscriptions'         => 'Naročnina|Naročnine',
-    'employees'             => 'Zaposlen|Zaposleni',
 
     'welcome'               => 'Dobrodošli',
     'banking'               => 'Denar',
