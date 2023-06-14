@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Route;
  * @see \modules\PaypalStandard\Routes\guest.php for module example
  */
 
+Route::get('/', 'Auth\Login@landingPage')->name('landing');
+
 Route::group(['prefix' => 'auth'], function () {
     Route::get('login', 'Auth\Login@create')->name('login');
     Route::post('login', 'Auth\Login@store')->name('login.store');
@@ -28,6 +30,4 @@ Route::group(['prefix' => 'auth'], function () {
 
 });
 
-Route::get('/', function () {
-    return redirect()->route('login');
-});
+

@@ -23,6 +23,11 @@ class Login extends Controller
      *
      * @return void
      */
+
+    public function landingPage()
+    {
+        return view('landing');
+    }
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'destroy']);

@@ -7,10 +7,13 @@ use App\Jobs\Common\CreateCompany;
 use App\Models\Common\Company;
 use App\Utilities\Console;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
+use App\Models\Auth\User;
+use Carbon\Carbon;
 
 /**
  * Class Installer
@@ -273,18 +276,20 @@ class Installer
         ]));
     }
 
-    public static function createManageUser($email, $password, $locale, $role)
+    public static function createManageUser($name, $email, $password, $locale, $role)
     {
         $id_podjetja = Company::latest()->first()->id;
 
+
         dispatch_sync(new CreateUser([
-            'name' => '',
+            'name' => $name,
             'email' => $email,
             'password' => $password,
             'locale' => $locale,
             'companies'=> [$id_podjetja],
             'roles' => $role,
             'enabled' => '1',
+            'trial_ends_at' => Carbon::now()->addDays(14),
         ]));
     }
     public static function finalTouches()

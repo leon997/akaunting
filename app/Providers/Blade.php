@@ -7,8 +7,11 @@ use App\View\Components\Media\Ffile as MFile;
 use App\View\Components\Form\Input\Ffile;
 use App\View\Components\Index\Ddefault;
 use App\Traits\DateTime;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Blade as Facade;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Auth;
+use Hamcrest\core\Integer;
 
 class Blade extends ServiceProvider
 {
@@ -41,6 +44,10 @@ class Blade extends ServiceProvider
         Facade::component('media.file', MFile::class);
         Facade::component('form.input.file', Ffile::class);
         Facade::component('index.default', Ddefault::class);
+
+        view()->composer('*', function ($view) {
+            $view->with('user', $this->trialOver());
+        });
     }
 
     /**
@@ -51,5 +58,9 @@ class Blade extends ServiceProvider
     public function register()
     {
         //
+    }
+
+    public function trialOver(){
+        return Auth::user();
     }
 }

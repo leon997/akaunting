@@ -10,29 +10,6 @@
             <div class="flex flex-col lg:flex-row mt-6">
                 <div class="w-full lg:w-1/2 ltr:pr-10 rtl:pl-10 mt-3">
                     <div class="grid sm:grid-cols-6">
-                        <h1 class="sm:col-span-6 text-black-300 mb-2">
-                            {{ translations.finish.recommended_apps }}
-                        </h1>
-
-                        <div v-for="(item, index) in modules" :key="index" class="sm:col-span-6 mb-6">
-                            <a :href="route_url + '/apps/' + item.slug" class="flex items-center">
-                                <div class="w-1/4">
-                                    <img v-for="(file, indis) in item.files" :key="indis" v-if="file.media_type == 'image' && file.pivot.zone == 'thumbnail'"
-                                        :src="file.path_string"
-                                        :alt="item.name"
-                                        class="rounded-lg object-cover"
-                                    />
-                                </div>
-
-                                <div class="w-3/4 ltr:pl-8 rtl:pr-8">
-                                    <span class="font-medium">
-                                        {{ item.name }}
-                                    </span>
-
-                                    <div class="text-black-300 text-sm my-2 line-clamp-2 h-10" v-html="item.description"></div>
-                                </div>
-                            </a>
-                        </div>
                     </div>
 
                     <div class="lg:hidden">
@@ -58,7 +35,7 @@
                         :disabled="anchor_loading"
                         @click="finish()"
                     >
-                        <i v-if="anchor_loading" class="animate-submit_second delay-[0.28s] absolute w-2 h-2 rounded-full left-0 right-0 -top-2.5 m-auto before:absolute before:w-2 before:h-2 before:rounded-full before:animate-submit_second before:delay-[0.14s] after:absolute after:w-2 after:h-2 after:rounded-full after:animate-submit_second before:-left-3.5 after:-right-3.5 after:delay-[0.42s]"></i> 
+                        <i v-if="anchor_loading" class="animate-submit_second delay-[0.28s] absolute w-2 h-2 rounded-full left-0 right-0 -top-2.5 m-auto before:absolute before:w-2 before:h-2 before:rounded-full before:animate-submit_second before:delay-[0.14s] after:absolute after:w-2 after:h-2 after:rounded-full after:animate-submit_second before:-left-3.5 after:-right-3.5 after:delay-[0.42s]"></i>
 
                         <span :class="[{'opacity-0': anchor_loading}]">
                             {{ translations.finish.create_first_invoice }}

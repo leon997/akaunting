@@ -4,6 +4,7 @@ namespace App\Listeners\Menu;
 
 use App\Events\Menu\SettingsCreated as Event;
 use App\Traits\Permissions;
+use Illuminate\Support\Facades\Auth;
 
 class ShowInSettings
 {
@@ -69,9 +70,11 @@ class ShowInSettings
             $menu->route('taxes.index', $title, [], 100, ['icon' => 'percent', 'search_keywords' => trans('settings.taxes.search_keywords')]);
         }
 
-        $title = trim(trans_choice('general.subscriptions', 1));
-        if ($this->canAccessMenuItem($title, 'read-common-plans')) {
-            $menu->route('subscription.settings', $title, [], 100, ['icon' => 'card_membership', 'search_keywords' => trans('settings.taxes.search_keywords')]);
+        if (Auth::user()->subscribed('basic')) {
+            $title = trim(trans_choice('general.subscriptions', 1));
+            if ($this->canAccessMenuItem($title, 'read-common-plans')) {
+                $menu->route('subscription.settings', $title, [], 100, ['icon' => 'card_membership', 'search_keywords' => trans('settings.taxes.search_keywords')]);
+            }
         }
     }
 }

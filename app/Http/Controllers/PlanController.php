@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Abstracts\Http\Controller as Controller;
-use App\Models\Plan;
 use App\Models\Auth\User;
 use Illuminate\Http\Request;
+use App\Http\Controller\Role;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+use Carbon\Carbon;
 
 class PlanController extends Controller
 {
@@ -30,9 +33,8 @@ class PlanController extends Controller
      */
     public function index()
     {
-        $plans = Plan::get();
 
-        return view("plans", compact("plans"));
+        return view("plans");
     }
 
     /**
@@ -40,33 +42,50 @@ class PlanController extends Controller
      *
      * @return response()
      */
-    public function show(Plan $plan, Request $request)
+    public function show(Request $request)
     {
 
         $intent = auth()->user()->createSetupIntent();
 
-        return view("subscription", compact("plan", "intent"));
+        return view("subscription", compact( "intent"));
     }
     /**
      * Write code on Method
      *
      * @return response()
      */
-    public function subscription(Request $request)
+
+
+    public function subscription_successfull(Request $request)
     {
-        $plan = Plan::find($request->plan);
-
-        $subscription = $request->user()->newSubscription($request->plan, $plan->stripe_plan)
-            ->create($request->token);
-
         return view("subscription_success");
     }
 
-    public  function settings()
+    public function settings()
     {
-        $user = auth()->user('id');
-        $subscription = DB::table('subscriptions')->where('user_id', $user)->get();
+        $name = Auth::user()->name;
+        $sub_type = DB::table('subscriptions')->where('id', '=', Auth::user()->id)->value('name');
+        $user_expired = Auth::user()->subscription('basic')->ended();
 
-        return $this->response('plan_settings', compact('user', 'subscription'));
+
+
+        return view('plan_settings')->with('user_name', $name)->with('sub_name', $sub_type)->with('user_expired', $user_expired);
     }
+
+    public function subscriptionCancel()
+    {
+        Auth::user()->subscription('basic')->cancel();
+        $sub_end = DB::table('subscriptions')->where('id', '=', Auth::user()->id)->value('ends_at');
+
+        return view('subscription_cancel')->with('sub_end', $sub_end);
+
+    }
+
+    public function subscriptionResume()
+    {
+        Auth::user()->subscription('basic')->resume();
+        return redirect()->route('dashboard');
+    }
+
+
 }
