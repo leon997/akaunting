@@ -12,7 +12,7 @@
             </h1>
         </div>
 
-        <div :class="(form.response.success) ? 'w-full bg-green-100 text-green-600 p-3 rounded-sm font-semibold text-xs' : 'hidden'"
+        <div :class="(form.response.success) ? 'w-full bg-white-100 text-purple p-3 rounded-sm font-semibold text-xs' : 'hidden'"
             v-if="form.response.success"
             v-html="form.response.message"
             v-cloak
