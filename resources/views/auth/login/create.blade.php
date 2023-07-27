@@ -5,9 +5,9 @@
 
     <x-slot name="content">
         <div>
-            <img src="{{ asset('public/img/akaunting-logo-green.svg') }}" class="w-16" alt="Akaunting" />
+            <img src="{{ asset('public/img/new_logo.svg') }}" class="w-16" alt="Akaunting" />
 
-            <h1 class="text-lg my-3">
+            <h1 class="text-xl my-3 text-lighter-gray font-bold">
                 {{ trans('auth.login_to') }}
             </h1>
         </div>
@@ -38,7 +38,7 @@
                     name="password"
                     label="{{ trans('auth.password.pass') }}"
                     placeholder="{{ trans('auth.password.pass') }}"
-                    form-group-class="sm:col-span-6"
+                    form-group-class="sm:col-span-6 text-lighter-gray"
                     input-group-class="input-group-alternative"
                 />
 
@@ -51,13 +51,13 @@
                             value="1"
                             v-model="form.remember"
                             id="checkbox-remember"
-                            class="text-purple focus:outline-none focus:ring-purple focus:border-purple"
+                            class="text-lighter-gray focus:outline-none focus:ring-purple focus:border-purple"
                         />
                     </div>
                     @stack('remember_input_end')
 
                     @stack('forgotten-password-start')
-                    <x-link href="{{ route('forgot') }}" class="text-black-400 hover:text-black-700 text-sm" override="class">
+                    <x-link href="{{ route('forgot') }}" class="text-white hover:text-light-gray text-sm" override="class">
                         {{ trans('auth.forgot_password') }}
                     </x-link>
                     @stack('forgotten-password-end')
@@ -66,7 +66,7 @@
                 <x-button
                     type="submit"
                     ::disabled="form.loading"
-                    class="relative flex items-center justify-center bg-green hover:bg-green-700 text-white px-6 py-1.5 text-base rounded-lg disabled:bg-green-100 sm:col-span-6"
+                    class="relative flex items-center justify-center bg-purple hover:bg-purple-700 text-white font-bold px-6 py-1.5 text-base rounded-lg disabled:bg-purple-100 sm:col-span-3"
                     override="class"
                 >
                     <x-button.loading>
@@ -75,7 +75,7 @@
                 </x-button>
 
                 <div class="sm:col-span-6 flex flex-row justify-between items-center">
-                        <x-link href="{{ route('signUp') }}" class="text-black-400 hover:text-black-700 text-sm" override="class">
+                        <x-link href="{{ route('signUp') }}" class="text-white hover:text-light-gray text-base" override="class">
                             {{ trans('auth.sign_up') }}
                         </x-link>
                 </div>
