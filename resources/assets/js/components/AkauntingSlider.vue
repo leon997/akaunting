@@ -5,7 +5,7 @@
           <div class="swiper-slide" v-for="(screenshot, index) in screenshots" :key="index">
             <a :href="screenshot.path_string" class="glightbox">
                 <img class="rounded-lg object-cover cursor-pointer" :src="screenshot.path_string" :alt="screenshot.alt_attribute" />
-                <div class="text-gray-700 text-sm my-2">{{ screenshot.description }}</div>
+                <div class="text-white text-sm my-2">{{ screenshot.description }}</div>
             </a>
           </div>
         </div>

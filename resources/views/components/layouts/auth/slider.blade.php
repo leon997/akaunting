@@ -5,41 +5,31 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide flex justify-center flex-col items-center">
                     <div style="width:450px; height:450px;">
-                        <img src="{{ asset('public/img/auth/folder.png') }}" />
+                        <img src="{{ asset('public/img/auth/folder3.png') }}" />
                     </div>
 
-                    <h1 class="text-3xl text-black-400 font-bold">
+                    <h1 class="text-3xl text-white font-bold">
                         {{ trans('auth.information.invoice') }}
                     </h1>
                 </div>
 
                 <div class="swiper-slide flex justify-center flex-col items-center">
                     <div style="width:450px; height:450px;">
-                        <img src="{{ asset('public/img/auth/chart.png') }}" />
+                        <img src="{{ asset('public/img/auth/chart1234.png') }}" />
                     </div>
 
-                    <h1 class="text-3xl text-black-400 font-bold">
+                    <h1 class="text-3xl text-white font-bold">
                         {{ trans('auth.information.reports') }}
                     </h1>
                 </div>
 
                 <div class="swiper-slide flex justify-center flex-col items-center">
                     <div style="width:450px; height:450px;">
-                        <img src="{{ asset('public/img/auth/client.png') }}" />
+                        <img src="{{ asset('public/img/auth/client1.png') }}" />
                     </div>
 
-                    <h1 class="text-3xl text-black-400 font-bold">
+                    <h1 class="text-3xl text-white font-bold">
                         {{ trans('auth.information.expense') }}
-                    </h1>
-                </div>
-
-                <div class="swiper-slide flex justify-center flex-col items-center">
-                    <div style="width:450px; height:450px;">
-                        <img src="{{ asset('public/img/auth/layout.png') }}" />
-                    </div>
-
-                    <h1 class="text-3xl text-black-400 font-bold">
-                        {{ trans('auth.information.customize') }}
                     </h1>
                 </div>
             </div>
