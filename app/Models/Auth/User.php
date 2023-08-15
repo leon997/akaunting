@@ -18,8 +18,10 @@ use Illuminate\Notifications\Notifiable;
 use Laratrust\Traits\LaratrustUserTrait;
 use Laravel\Cashier\Billable;
 use Lorisleiva\LaravelSearchString\Concerns\SearchString;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-class User extends Authenticatable implements HasLocalePreference
+
+class User extends Authenticatable implements HasLocalePreference, MustVerifyEmail
 {
     use HasFactory, LaratrustUserTrait, Media, Notifiable, Owners, SearchString, SoftDeletes, Sortable, Sources, Tenants, Users, Billable;
 

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PlanController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 
 /**
@@ -53,6 +54,23 @@ Route::group(['prefix' => 'common'], function () {
     Route::get('contacts/index', 'Common\Contacts@index')->name('contacts.index');
 
 });
+
+//email verification
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+
+    return redirect()->route('login');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+
+    return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 Route::get('plans', [PlanController::class, 'index'])->name('plans.index');
 Route::get('plans/{plan}', [PlanController::class, 'show'])->name("plans.show");

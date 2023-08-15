@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class RedirectIfWizardNotCompleted
 {
@@ -25,7 +26,12 @@ class RedirectIfWizardNotCompleted
             return $next($request);
         }
 
+        $user = Auth::user();
         // Redirect to wizard
-        return redirect()->route('wizard.edit');
+        if ($user->hasVerifiedEmail()){
+            return redirect()->route('wizard.edit');
+        }
+
+        return $next($request);
     }
 }

@@ -11,6 +11,8 @@ use App\Interfaces\Job\ShouldCreate;
 use App\Models\Auth\User;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Str;
+use Illuminate\Auth\Events\Registered;
+
 
 class CreateUser extends Job implements HasOwner, HasSource, ShouldCreate
 {
@@ -75,6 +77,9 @@ class CreateUser extends Job implements HasOwner, HasSource, ShouldCreate
 
         event(new UserCreated($this->model, $this->request));
 
+        event(new Registered($this->model));
+
+        
         return $this->model;
     }
 

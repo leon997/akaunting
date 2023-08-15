@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RedirectIfAuthenticated
 {
@@ -18,13 +19,16 @@ class RedirectIfAuthenticated
     public function handle(Request $request, Closure $next, ...$guards)
     {
         $guards = empty($guards) ? [null] : $guards;
+        $user = Auth::user();
 
         foreach ($guards as $guard) {
             if (!auth()->guard($guard)->check()) {
                 continue;
             }
 
-            return redirect(user()->getLandingPageOfUser());
+            if ($user->hasVerifiedEmail()){
+                return redirect(user()->getLandingPageOfUser());
+            }
         }
 
         return $next($request);

@@ -62,6 +62,7 @@ class Kernel extends HttpKernel
         'common' => [
             'web',
             'company.identify',
+            'verified',
             'bindings',
             'read.only',
             'wizard.redirect',
@@ -91,6 +92,7 @@ class Kernel extends HttpKernel
         'wizard' => [
             'web',
             'auth',
+            'verified',
             'auth.disabled',
             'company.identify',
             'bindings',
@@ -209,5 +211,6 @@ class Kernel extends HttpKernel
         \Illuminate\Session\Middleware\AuthenticateSession::class,
         \Illuminate\Routing\Middleware\SubstituteBindings::class,
         \Illuminate\Auth\Middleware\Authorize::class,
+        \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
     ];
 }
