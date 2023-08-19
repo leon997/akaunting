@@ -21,6 +21,24 @@
         @endcan
     </x-slot>
 
+    <x-slot name="moreButtons">
+        <x-dropdown id="dropdown-more-actions">
+            <x-slot name="trigger">
+                <span class="material-icons pointer-events-none">more_horiz</span>
+            </x-slot>
+
+            @can('create-banking-transactions')
+                <x-dropdown.link href="{{ route('import.create', ['banking', 'recurring-transactions']) }}">
+                    {{ trans('import.import') }}
+                </x-dropdown.link>
+            @endcan
+
+            <x-dropdown.link href="{{ route('recurring-transactions.export', request()->input()) }}">
+                {{ trans('general.export') }}
+            </x-dropdown.link>
+        </x-dropdown>
+    </x-slot>
+
     <x-slot name="content">
         @if ($transactions->count() || request()->get('search', false))
             <x-index.container>
@@ -121,7 +139,7 @@
                                             </x-table.td>
 
                                             <x-table.td class="w-4/12 sm:w-2/12" kind="amount">
-                                                <x-money :amount="$item->amount" :currency="$item->currency_code" convert />
+                                                <x-money :amount="$item->amount" :currency="$item->currency_code" />
                                             </x-table.td>
 
                                             <x-table.td kind="action">
@@ -141,23 +159,29 @@
             <x-empty-page
                 group="banking"
                 page="recurring_templates"
-                hide-button-import
                 permission-create="create-banking-transactions"
                 :buttons="[
                     [
-                        'url' =>  route('recurring-transactions.create', ['type' => 'income-recurring']),
-                        'permission' => 'create-banking-transactions',
-                        'text' => trans('general.title.new', ['type' =>  trans_choice('general.recurring_incomes', 1)]),
-                        'description' => '',
-                        'active_badge' => true,
+                        'url'           =>  route('recurring-transactions.create', ['type' => 'income-recurring']),
+                        'permission'    => 'create-banking-transactions',
+                        'text'          => trans('general.title.new', ['type' =>  trans_choice('general.recurring_incomes', 1)]),
+                        'description'   => '',
+                        'active_badge'  => true,
                     ],
                     [
-                        'url' => route('recurring-transactions.create', ['type' => 'expense-recurring']),
-                        'permission' => 'create-banking-transactions',
-                        'text' => trans('general.title.new', ['type' =>  trans_choice('general.recurring_expenses', 1)]),
-                        'description' => '',
-                        'active_badge' => true,
+                        'url'           => route('recurring-transactions.create', ['type' => 'expense-recurring']),
+                        'permission'    => 'create-banking-transactions',
+                        'text'          => trans('general.title.new', ['type' =>  trans_choice('general.recurring_expenses', 1)]),
+                        'description'   => '',
+                        'active_badge'  => true,
                     ],
+                    [
+                        'url'           => route('import.create', ['banking', 'recurring-transactions']),
+                        'permission'    => 'create-banking-transactions',
+                        'text'          => trans('import.title', ['type' => trans_choice('general.recurring_transactions', 2)]),
+                        'description'   => trans('general.empty.actions.import', ['type' => strtolower(trans_choice('general.recurring_transactions', 2))]),
+                        'active_badge'  => false,
+        ],
                 ]"
             />
         @endif

@@ -2,9 +2,9 @@
     <div class="relative bg-body z-10 rounded-lg shadow-2xl p-5 sm:p-10 full-height-mobile overflow-hidden">
         <WizardSteps :active_state="active"></WizardSteps>
 
-        <div class="flex flex-col justify-between -mt-5 sm:mt-0" style="height:565px;">
+        <div class="flex flex-col justify-between -mt-5 sm:mt-0" style="height:523px;">
             <div v-if="pageLoad" class="absolute left-0 right-0 top-0 bottom-0 w-full h-full bg-white rounded-lg flex items-center justify-center z-50">
-                <span class="material-icons form-spin text-lg animate-spin text-9xl">data_usage</span>
+                <span class="material-icons form-spin animate-spin text-9xl">data_usage</span>
             </div>
 
             <div class="flex flex-col lg:flex-row mt-6 mr-8">
@@ -39,10 +39,19 @@
                     >
                         <i v-if="anchor_loading" class="animate-submit_second delay-[0.28s] absolute w-2 h-2 rounded-full left-0 right-0 -top-2.5 m-auto before:absolute before:w-2 before:h-2 before:rounded-full before:animate-submit_second before:delay-[0.14s] after:absolute after:w-2 after:h-2 after:rounded-full after:animate-submit_second before:-left-3.5 after:-right-3.5 after:delay-[0.42s]"></i>
 
-                        <span :class="[{'opacity-0': anchor_loading}]">
-                            {{ translations.finish.create_first_invoice }}
-                        </span>
-                    </base-button>
+                        <base-button
+                            class="relative ltr:-right-2 rtl:-left-2 flex items-center justify-center text-base rounded-lg m-auto mt-96 bg-default hover:bg-default-hover text-white py-1.5 px-7 font-medium"
+                            :disabled="anchor_loading"
+                            @click="finish()"
+                            style="top: 5.9rem;"
+                        >
+                            <i v-if="anchor_loading" class="animate-submit_second delay-[0.28s] absolute w-2 h-2 rounded-full left-0 right-0 -top-2.5 m-auto before:absolute before:w-2 before:h-2 before:rounded-full before:animate-submit_second before:delay-[0.14s] after:absolute after:w-2 after:h-2 after:rounded-full after:animate-submit_second before:-left-3.5 after:-right-3.5 after:delay-[0.42s]"></i>
+
+                            <span :class="[{'opacity-0': anchor_loading}]">
+                                {{ translations.finish.create_first_invoice }}
+                            </span>
+                        </base-button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -77,7 +86,7 @@ export default {
         return {
             active: 3,
             route_url: url,
-            image_src: app_url + "/public/img/wizard-modules.png",
+            image_src: app_url + "/public/img/wizard-rocket.gif",
             anchor_loading: false
         };
     },
@@ -119,9 +128,25 @@ export default {
 </script>
 
 <style scoped>
+    .sliding-app:hover {
+        animation: slidingAnimation 600ms ease-out forwards;
+    }
+
+    @keyframes slidingAnimation {
+        0% { transform: translateX(0); }
+        40% { transform: translateX(36px); }
+        60% { transform: translateX(24px); }
+        80% { transform: translateX(30px); }
+        100% { transform: translateX(24px); }
+    }
+
     @media only screen and (max-width: 991px) {
         [modal-container] {
             height: 100% !important;
+        }
+
+        .scroll{
+            height:450px;
         }
     }
 </style>

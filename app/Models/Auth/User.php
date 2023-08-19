@@ -19,11 +19,12 @@ use Laratrust\Traits\LaratrustUserTrait;
 use Laravel\Cashier\Billable;
 use Lorisleiva\LaravelSearchString\Concerns\SearchString;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Staudenmeir\EloquentHasManyDeep\HasRelationships;
 
 
 class User extends Authenticatable implements HasLocalePreference, MustVerifyEmail
 {
-    use HasFactory, LaratrustUserTrait, Media, Notifiable, Owners, SearchString, SoftDeletes, Sortable, Sources, Tenants, Users, Billable;
+    use HasFactory, HasRelationships, LaratrustUserTrait, Media, Notifiable, Owners, SearchString, SoftDeletes, Sortable, Sources, Tenants, Users, Billable;
 
     protected $table = 'users';
 

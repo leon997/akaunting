@@ -165,6 +165,11 @@ class Transaction extends Model
         return $this->belongsTo('App\Models\Auth\User', 'contact_id', 'id');
     }
 
+    public function scopeNumber(Builder $query, string $number): Builder
+    {
+        return $query->where('number', '=', $number);
+    }
+
     public function scopeType(Builder $query, $types): Builder
     {
         if (empty($types)) {
@@ -319,7 +324,7 @@ class Transaction extends Model
         // Convert amount if not same currency
         if ($this->account->currency_code != $this->currency_code) {
             $to_code = $this->account->currency_code;
-            $to_rate = config('money.' . $this->account->currency_code . '.rate');
+            $to_rate = config('money.currencies.' . $this->account->currency_code . '.rate');
 
             $amount = $this->convertBetween($amount, $this->currency_code, $this->currency_rate, $to_code, $to_rate);
         }

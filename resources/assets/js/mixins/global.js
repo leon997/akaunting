@@ -24,6 +24,7 @@ import AkauntingConnectTransactions from './../components/AkauntingConnectTransa
 import AkauntingSwitch from './../components/AkauntingSwitch';
 import AkauntingSlider from './../components/AkauntingSlider';
 import AkauntingColor from './../components/AkauntingColor';
+import AkauntingImport from './../components/AkauntingImport';
 import CardForm from './../components/CreditCard/CardForm';
 
 import NProgress from 'nprogress';
@@ -79,6 +80,7 @@ export default {
         AkauntingSwitch,
         AkauntingSlider,
         AkauntingColor,
+        AkauntingImport,
         CardForm,
         [Select.name]: Select,
         [Option.name]: Option,
@@ -1296,30 +1298,59 @@ export default {
         },
 
         settingsInvoice() {
+
             if (this.form.item_name == 'custom') {
                 this.item_name_input = true;
+
                 this.onSmallWidthColumn("item_name");
             } else {
                 this.item_name_input = false;
+
                 this.onFullWidthColumn("item_name");
             }
 
             if (this.form.price_name == 'custom') {
                 this.price_name_input = true;
+
                 this.onSmallWidthColumn("price_name");
             } else {
                 this.price_name_input = false;
+
                 this.onFullWidthColumn("price_name");
             }
 
             if (this.form.quantity_name == 'custom') {
                 this.quantity_name_input = true;
+
                 this.onSmallWidthColumn("quantity_name");
             } else {
                 this.quantity_name_input = false;
+
                 this.onFullWidthColumn("quantity_name");
             }
-            
+
+            if (this.form.item_name == 'hide' && this.form.hide_item_description === 1) {
+                this.form.hide_item_description = 0;
+
+                let type = 'warning';
+
+                if (this.$notifications.state != undefined && this.$notifications.state.length > 0) {
+                    this.$notifications.state.forEach((item, index) => {
+                        if (item.message == this.form.item_name_or_description_required) {
+                            return;
+                        }
+                    }, this);
+                }   
+
+                this.$notify({
+                    verticalAlign: 'bottom',
+                    horizontalAlign: 'left',
+                    message: this.form.message_name_or_description_required,
+                    timeout: 8000,
+                    icon: 'error_outline',
+                    type
+                });
+            }
         },
 
         // set minimum date for date component

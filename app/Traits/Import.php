@@ -14,7 +14,9 @@ use App\Jobs\Common\CreateItem;
 use App\Jobs\Setting\CreateCategory;
 use App\Jobs\Setting\CreateCurrency;
 use App\Jobs\Setting\CreateTax;
+use App\Models\Auth\User;
 use App\Models\Banking\Account;
+use App\Models\Banking\Transaction;
 use App\Models\Common\Contact;
 use App\Models\Common\Item;
 use App\Models\Document\Document;
@@ -94,11 +96,11 @@ trait Import
         $data = [
             'company_id'    => company_id(),
             'code'          => $row['currency_code'],
-            'name'          => isset($row['currency_name']) ? $row['currency_name'] : config('money.' . $row['currency_code'] . '.name'),
+            'name'          => isset($row['currency_name']) ? $row['currency_name'] : config('money.currencies.' . $row['currency_code'] . '.name'),
             'rate'          => isset($row['currency_rate']) ? $row['currency_rate'] : 1,
-            'symbol'        => isset($row['currency_symbol']) ? $row['currency_symbol'] : config('money.' . $row['currency_code'] . '.symbol'),
-            'precision'     => isset($row['currency_precision']) ? $row['currency_precision'] : config('money.' . $row['currency_code'] . '.precision'),
-            'decimal_mark'  => isset($row['currency_decimal_mark']) ? $row['currency_decimal_mark'] : config('money.' . $row['currency_code'] . '.decimal_mark'),
+            'symbol'        => isset($row['currency_symbol']) ? $row['currency_symbol'] : config('money.currencies.' . $row['currency_code'] . '.symbol'),
+            'precision'     => isset($row['currency_precision']) ? $row['currency_precision'] : config('money.currencies.' . $row['currency_code'] . '.precision'),
+            'decimal_mark'  => isset($row['currency_decimal_mark']) ? $row['currency_decimal_mark'] : config('money.currencies.' . $row['currency_code'] . '.decimal_mark'),
             'created_from'  => !empty($row['created_from']) ? $row['created_from'] : $this->getSourcePrefix() . 'import',
             'created_by'    => !empty($row['created_by']) ? $row['created_by'] : user()->id,
         ];
@@ -108,6 +110,17 @@ trait Import
         $currency = $this->dispatch(new CreateCurrency($data));
 
         return $currency->code;
+    }
+
+    public function getCreatedById($row)
+    {
+        $user = User::where('email', $row['created_by'])->first();
+
+        if (! empty($user)) {
+            return $user->id;
+        }
+
+        return $this->user->id;
     }
 
     public function getDocumentId($row)
@@ -132,6 +145,25 @@ trait Import
             } else {
                 $id = Document::bill()->number($row['invoice_bill_number'])->pluck('id')->first();
             }
+        }
+
+        return is_null($id) ? $id : (int) $id;
+    }
+
+    public function getParentId($row)
+    {
+        $id = isset($row['parent_id']) ? $row['parent_id'] : null;
+
+        if (empty($row['parent_number'])) {
+            return null;
+        }
+
+        if (empty($id) && (!empty($row['document_number']) || !empty($row['invoice_number']) || !empty($row['bill_number']))) {
+            $id = Document::number($row['parent_number'])->pluck('id')->first();
+        }
+
+        if (empty($id) && isset($row['number'])) {
+            $id = Transaction::number($row['parent_number'])->pluck('id')->first();
         }
 
         return is_null($id) ? $id : (int) $id;
