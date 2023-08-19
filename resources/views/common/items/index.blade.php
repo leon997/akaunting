@@ -23,7 +23,7 @@
 
             @can('create-common-items')
                 <x-dropdown.link href="{{ route('import.create', ['common', 'items']) }}" id="index-more-actions-import-item">
-                    {{ trans('import.import') }}
+                    'Uvozite Izdelke'
                 </x-dropdown.link>
             @endcan
 
@@ -86,7 +86,7 @@
                                 <x-table.td class="w-6/12 sm:w-4/12">
                                     <x-slot name="first" class="flex font-bold" override="class">
                                         {{ $item->name }}
-                                        
+
                                         @if (! $item->enabled)
                                             <x-index.disable text="{{ trans_choice('general.items', 1) }}" />
                                         @endif

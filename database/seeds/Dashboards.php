@@ -32,7 +32,7 @@ class Dashboards extends Seeder
 
         $this->dispatch(new CreateDashboard([
             'company_id' => $company_id,
-            'name' => trans_choice('general.dashboards', 1),
+            'name' => 'Nadzorna plošča',
             'custom_widgets' => [
                 'App\Widgets\Receivables',
                 'App\Widgets\Payables',
@@ -40,7 +40,6 @@ class Dashboards extends Seeder
                 'App\Widgets\ProfitLoss',
                 'App\Widgets\ExpensesByCategory',
                 'App\Widgets\AccountBalance',
-                'App\Widgets\BankFeeds',
             ],
             'users' => $user_id,
             'created_from' => 'core::seed',

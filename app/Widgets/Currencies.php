@@ -7,7 +7,7 @@ use App\Models\Setting\Currency;
 
 class Currencies extends Widget
 {
-    public $default_name = 'widgets.currencies';
+    public $default_name = 'Valute';
 
     public function show()
     {

@@ -15,7 +15,7 @@ class ProfitLoss extends Widget
 {
     use Currencies, DateTime;
 
-    public $default_name = 'widgets.profit_loss';
+    public $default_name = 'Profit/Izguba';
 
     public $description = 'widgets.description.profit_loss';
 

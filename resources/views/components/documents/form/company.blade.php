@@ -14,7 +14,7 @@
                 @endif
 
                 @if (! $hideDocumentSubheading)
-                    <x-form.group.text name="subheading" label="{{ trans('settings.invoice.subheading') }}" value="{{ $subheadingSetting }}" not-required data-field="setting" form-group-class="sm:col-span-6" />
+                    <x-form.group.text name="subheading" label="{{ trans('settings.invoice.subheading') }}" value=" " not-required data-field="setting" form-group-class="sm:col-span-6" />
                 @endif
             </div>
         </div>

@@ -35,7 +35,7 @@
                             <span class="material-icons hidden" data-dz-thumbnail-image>crop_original</span>
                             <span class="material-icons-outlined display-3 hidden" data-dz-thumbnail-pdf>picture_as_pdf</span>
                             <span class="material-icons-outlined hidden" data-dz-thumbnail-word>content_paste</span>
-                            <span class="material-icons-outlined hidden" data-dz-thumbnail-excel>table_chart</span>  
+                            <span class="material-icons-outlined hidden" data-dz-thumbnail-excel>table_chart</span>
                         </div>
 
                         <div class="col text-gray-500 ml-3">
@@ -72,7 +72,7 @@ export default {
     props: {
         textDropFile: {
             type: String,
-            default: 'Drop files here to upload',
+            default: 'Tukaj naložite datoteko z vašim logotipom',
             description: 'Drop file text'
         },
         textChooseFile: {
@@ -175,7 +175,7 @@ export default {
 
                         self.onMaxFilesReached(self);
                     }),
- 
+
                     dropzone.on('removedfile', function (file) {
                         let index = self.files.findIndex(f => f.name === file.name)
 

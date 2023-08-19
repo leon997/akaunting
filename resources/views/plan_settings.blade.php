@@ -1,17 +1,21 @@
 <x-layouts.admin>
     <x-slot name="title">Upravljanje z naročnino</x-slot>
     <x-slot name="content">
-        <x-slot name="head">
-            <x-form.section.head title="{{ trans('general.general') }}" description="{{ trans('companies.form_description.general') }}" />
-        </x-slot>
+        <div class="border-b-2 border-gray-200 pt-8">
+            <h2 class="lg:text-lg font-medium text-black">
+                Preklic naročnine
+            </h2>
+            <span class="text-sm font-light text-black block gap-x-1 mt-1">
+                Vaša naročnina bo aktivna do spodaj navedenega datuma.
+            </span>
+        </div>
             @if($user_expired == false)
-                <form method="get" action={{route('subscription.cancel')}}>
-                    <label>{{ $user_name }}</label><br>
-                    <label>{{ $sub_name }}</label><br>
+                <form class="pt-4" method="get" action={{route('subscription.cancel')}}>
+                    <label> Veljavnost naročnine: {{ $sub_end }}</label><br>
                     <x-button
                         type="submit"
                         ::disabled="form.loading"
-                        class="relative flex items-center justify-center bg-green hover:bg-green-700 text-white px-6 py-1.5 text-base rounded-lg disabled:bg-green-100 sm:col-span-6 mt-20"
+                        class="relative flex items-center justify-center bg-green hover:bg-green-700 text-white px-6 py-1.5 text-base rounded-lg disabled:bg-green-100 sm:col-span-6 mt-4"
                         override="class"
                         data-loading-text="{{ trans('general.loading') }}"
                     >
@@ -20,13 +24,12 @@
                     </x-button>
                 </form>
             @else
-                <form method="get" action={{route('subscription.resume')}}>
-                    <label>{{ $user_name }}</label><br>
-                    <label>{{ $sub_name }}</label><br>
+                <form class="pt-4" method="get" action={{route('subscription.resume')}}>
+                    <label> Veljavnost naročnine: {{ $sub_end }}</label><br>
                     <x-button
                         type="submit"
                         ::disabled="form.loading"
-                        class="relative flex items-center justify-center bg-green hover:bg-green-700 text-white px-6 py-1.5 text-base rounded-lg disabled:bg-green-100 sm:col-span-6 mt-20"
+                        class="relative flex items-center justify-center bg-green hover:bg-green-700 text-white px-6 py-1.5 text-base rounded-lg disabled:bg-green-100 sm:col-span-6 mt-4"
                         override="class"
                         data-loading-text="{{ trans('general.loading') }}"
                     >

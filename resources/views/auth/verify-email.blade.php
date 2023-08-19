@@ -21,10 +21,11 @@
     <body class="bg-mainbg-sidebar">
         <div class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden py-6 sm:py-12">
             <div class="max-w-xl px-5 text-center">
-            <h2 class="mb-2 text-[42px] font-bold text-white">Preverite e-poštni nabiralnik</h2>
+            <h2 class="mb-2 text-[35px] font-bold text-white">Preverite e-poštni nabiralnik</h2>
             <p class="mb-2 text-lg text-gray-300">Poslali smo vam potrditveni email s katerim lahko potrdite svoj račun in pričnete nemoteno uporabljati aplikacijo.</p>
             <form method="post" action={{ route('verification.send') }}>
-                <button type="submit" class="mt-3 inline-block w-96 rounded bg-purple px-5 py-3 font-medium text-white shadow-md shadow-indigo-500/20 hover:bg-purple-300">Pošlji znova →</button>
+                @csrf
+                <button type="submit" class="mt-3 inline-block w-80 bg-purple px-5 py-3 font-medium text-white shadow-md shadow-indigo-500/20 hover:bg-purple-300 rounded-lg disabled:bg-purple-100">Pošlji znova →</button>
             </form>
             </div>
         </div>

@@ -8,7 +8,7 @@ use App\Utilities\Date;
 
 class Payables extends Widget
 {
-    public $default_name = 'widgets.payables';
+    public $default_name = 'Dolgovi';
 
     public $description = 'widgets.description.payables';
 

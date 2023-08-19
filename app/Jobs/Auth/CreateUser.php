@@ -79,7 +79,7 @@ class CreateUser extends Job implements HasOwner, HasSource, ShouldCreate
 
         event(new Registered($this->model));
 
-        
+
         return $this->model;
     }
 
@@ -97,6 +97,6 @@ class CreateUser extends Job implements HasOwner, HasSource, ShouldCreate
             return false;
         }
         // spremen v true za production
-        return true;
+        return false;
     }
 }

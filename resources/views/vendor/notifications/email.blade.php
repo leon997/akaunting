@@ -1,12 +1,12 @@
 @component('mail::message')
 {{-- Greeting --}}
 @if (! empty($greeting))
-# {{ $greeting }}
+    {{ $greeting }}
 @else
 @if ($level == 'error')
-# {{ trans('notifications.whoops') }}
+    {{ trans('notifications.whoops') }}
 @else
-# {{ trans('notifications.hello') }}
+    {{ trans('notifications.hello') }}
 @endif
 @endif
 

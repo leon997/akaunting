@@ -104,7 +104,7 @@ class Menu extends Presenter
         return '
         <details ' . $this->getActiveStateOnChild($item) . '>
             <summary class="block" href="#navbar-' . $id . '">
-                <div class="relative pb-2.5 flex items-center cursor-pointer text-purple text-sm">
+                <div class="relative pb-2.5 flex items-center cursor-pointer text-white text-sm">
                     ' . $this->getIcon($item) . '
                     ' . $item->title . '
                     ' . $this->getChevron($item) . '
@@ -132,7 +132,7 @@ class Menu extends Presenter
 
         return '<details class="relative" ' . $this->getActiveStateOnChild($item) . '>
                     <summary class="' . $this->getClass($item). '" href="#navbar-' . $id . '" aria-controls="navbar-' . $id . '">
-                        <div class="pb-2.5 flex items-center cursor-pointer text-purple text-sm '. $this->getActiveState($item) .'">
+                        <div class="pb-2.5 flex items-center cursor-pointer text-white text-sm '. $this->getActiveState($item) .'">
                             ' . $this->getIcon($item) . '
                             ' . $item->title . '
                             <span class="bg-purple absolute h-5 -right-5 rounded-tl-lg rounded-bl-lg opacity-0 group-hover:opacity-100 transition-all pointer-events-none" style="width: 5px;"></span>
@@ -172,7 +172,7 @@ class Menu extends Presenter
 
     public function getClass($item)
     {
-        $class = 'flex items-center text-purple';
+        $class = 'flex items-center text-white';
 
         $attributes = $item->attributes;
 
@@ -223,7 +223,7 @@ class Menu extends Presenter
 
             $icon_content = file_get_contents($path);
         } else {
-            $icon_content = '<span class="material-icons' . $state . ' text-purple text-2xl">' . $item->icon . '</span>';
+            $icon_content = '<span class="material-icons' . $state . ' text-white text-2xl">' . $item->icon . '</span>';
         }
 
         return '<div class="w-8 h-8 flex items-center justify-center ltr:mr-2 rtl:ml-2 pointer-events-none">
@@ -235,7 +235,7 @@ class Menu extends Presenter
     {
         $state = $this->chevronState($item);
 
-        return '<span class="material-icons text-purple absolute ltr:-right-1.5 rtl:-left-1.5 transform transition-all">expand' . $state . '</span>' . PHP_EOL;
+        return '<span class="material-icons text-white absolute ltr:-right-1.5 rtl:-left-1.5 transform transition-all">expand' . $state . '</span>' . PHP_EOL;
     }
 
     public function chevronState($item, $state = '_less')

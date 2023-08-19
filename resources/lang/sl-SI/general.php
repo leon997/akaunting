@@ -286,7 +286,7 @@ return [
         'add_new'           => 'Nov :field',
         'edit'              => 'Uredi :field',
         'contact_edit'      => 'Uredi :contact_name :field',
-        'drop_file'         => 'Spustite datoteko tukaj za nalaganje',
+        'drop_file'         => 'Tukaj naložite datoteko',
         'choose'            => 'Izberi :field',
         'choose_different'  => 'Izberi drugačen :field',
         'choose_file'       => 'Izberi datoteko',
@@ -313,11 +313,11 @@ return [
 
     'empty' => [
         'documentation' => 'Poglejte <a href=":url" target="_blank">dokumentacijo</a> za več informacij.',
-        'items' => 'Predmeti so lahko izdelki ali storitve. Elemente lahko uporabljate pri ustvarjanju računov in računov, da se izpolnijo polja za ceno, davek itd.',
-        'invoices' => 'Računi so lahko enkratni ali ponavljajoči se. Lahko jih pošljete strankam in začnete sprejemati spletna plačila.',
+        'items' => 'Predmeti so lahko izdelki ali storitve. Ustvarjene predmete lahko nato uporabljate pri ustvarjanju računov, da se samodejno izpolnijo polja za ceno, davek itd.',
+        'invoices' => 'Računi so lahko enkratni ali ponavljajoči. Lahko jih pošljete strankam in začnete sprejemati spletna plačila.',
         'revenues' => 'Prihodki so transakcija s plačanim dohodkom. Lahko je neodvisen zapis (tj. Polog) ali priložen računu.',
         'customers' => 'Kupci so potrebni, če želite ustvariti račune. Lahko se tudi prijavijo na odjemalski portal in si ogledajo svoje stanje.',
-        'bills' => 'Računi so lahko enkratni ali ponavljajoči se. Označujejo, kaj ste dolžni prodajalcem za izdelke ali storitve, ki jih kupite.',
+        'bills' => 'Računi so lahko enkratni ali ponavljajoči. Označujejo, kaj ste dolžni prodajalcem za izdelke ali storitve, ki jih kupite.',
         'payments' => 'Plačilo je plačana transakcija. Lahko je neodvisen zapis (tj. Prejem hrane) ali priložen računu.',
         'vendors' => 'Če želite ustvariti račune, so potrebni prodajalci. Ogledate si lahko dolgove in filtrirate poročila prodajalca.',
         'transfers' => 'Prenosi vam omogočajo premikanje denarja z enega računa na drugega, ne glede na to, ali uporabljajo isto valuto ali ne.',

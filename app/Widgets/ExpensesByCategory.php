@@ -7,7 +7,7 @@ use App\Models\Setting\Category;
 
 class ExpensesByCategory extends Widget
 {
-    public $default_name = 'widgets.expenses_by_category';
+    public $default_name = 'Stroški po kategorijah';
 
     public $description = 'widgets.description.expenses_by_category';
 

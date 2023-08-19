@@ -1,8 +1,8 @@
 <x-layouts.admin>
-    <x-slot name="title">{{ trans_choice('general.plans', 2) }}</x-slot>
+    <x-slot name="title">Naročnina</x-slot>
 
     <x-slot name="content">
-        <div class="container mt-10">
+        <div class="container mt-10 h-screen">
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
@@ -22,9 +22,9 @@
                                 <div id="payment-element" class="mt-10">
                                     <!--Stripe.js injects the Payment Element-->
                                 </div>
-                                <button id="btnSubmit" class="bg-gray-900 text-white px-4 py-2 rounded mt-5">
+                                <button id="btnSubmit" class="bg-purple text-white px-4 py-2 rounded mt-5">
                                     <div class="spinner hidden" id="spinner"></div>
-                                    <span id="button-text">Pay now</span>
+                                    <span id="button-text">Plačaj</span>
                                 </button>
                                 <div id="payment-message" class="hidden"></div>
                             </form>

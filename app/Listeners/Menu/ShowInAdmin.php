@@ -28,7 +28,7 @@ class ShowInAdmin
         $title = trim(trans_choice('general.dashboards', 1));
         if ($this->canAccessMenuItem($title, 'read-common-dashboards')) {
             $inactive = ('dashboard' != Route::currentRouteName()) ? true : false;
-            $menu->route('dashboard', $title, [], 10, ['icon' => 'speed', 'inactive' => $inactive]);
+            $menu->route('dashboard', $title, [], 10, ['icon' => 'dashboard', 'inactive' => $inactive]);
         }
 
         // Items
@@ -107,7 +107,7 @@ class ShowInAdmin
         // Reports
         $title = trim(trans_choice('general.reports', 2));
         if ($this->canAccessMenuItem($title, 'read-common-reports')) {
-            $menu->route('reports.index', $title, [], 60, ['icon' => 'donut_small']);
+            $menu->route('reports.index', $title, [], 60, ['icon' => 'analytics']);
         }
 
         // Apps

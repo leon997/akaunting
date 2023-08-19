@@ -1,10 +1,10 @@
 @props(['companies'])
 
 <div class="container flex items-center py-3 mb-4 border-b-2 xl:hidden">
-    <span class="material-icons text-black js-hamburger-menu">menu</span>
+    <span class="material-icons text-purple js-hamburger-menu">menu</span>
 
     <div class="flex items-center m-auto">
-        <img src="{{ asset('public/img/akaunting-logo-green.svg') }}" class="w-8 m-auto" alt="Akaunting" />
+        <img src="{{ asset('public/img/new_logo.svg') }}" class="w-8 m-auto" alt="Akaunting" />
         <span class="ltr:ml-2 rtl:mr-2">{{ Str::limit(setting('company.name'), 22) }}</span>
     </div>
 
@@ -33,14 +33,14 @@
     x-ref="realMenu"
     class="w-70 h-screen flex hidden fixed top-0 js-menu z-20 xl:z-10 transition-all ltr:-left-80 rtl:-right-80 xl:ltr:left-0 xl:rtl:right-0"
 >
-    <div class="w-14 py-7 px-1 bg-lilac-900 z-10 menu-scroll overflow-y-auto overflow-x-hidden">
+    <div class="w-14 py-7 px-1 bg-mainbg-smallsidebar z-10 menu-scroll overflow-y-auto overflow-x-hidden border-r-2 border-white">
         <div
             data-tooltip-target="tooltip-profile"
             data-tooltip-placement="right"
             class="flex flex-col items-center justify-center mb-5 cursor-pointer menu-button"
             data-menu="profile-menu"
         >
-            <span id="menu-profile-icon-cancel" name="account_circle" class="material-icons-outlined w-8 h-8 flex items-center justify-center text-purple text-2xl hidden pointer-events-none">
+            <span id="menu-profile-icon-cancel" name="account_circle" class="material-icons-outlined w-8 h-8 flex items-center justify-center text-white text-2xl hidden pointer-events-none">
                 account_circle
             </span>
 
@@ -49,7 +49,7 @@
             @elseif (is_object(user()->picture))
                 <img src="{{ Storage::url(user()->picture->id) }}" class="w-8 h-8 m-auto rounded-full text-transparent" alt="{{ user()->name }}" title="{{ user()->name }}">
             @else
-                <span id="menu-profile-icon" name="account_circle" class="material-icons-outlined text-purple w-8 h-8 flex items-center justify-center text-center text-2xl pointer-events-none" alt="{{ user()->name }}" title="{{ user()->name }}">
+                <span id="menu-profile-icon" name="account_circle" class="material-icons-outlined text-white w-8 h-8 flex items-center justify-center text-center text-2xl pointer-events-none" alt="{{ user()->name }}" title="{{ user()->name }}">
                     account_circle
                 </span>
             @endif
@@ -70,7 +70,7 @@
                     ])
                     data-menu="notifications-menu"
                 >
-                    <span id="menu-notification-icon" name="notifications" class="material-icons-outlined text-purple text-2xl pointer-events-none">notifications</span>
+                    <span id="menu-notification-icon" name="notifications" class="material-icons-outlined text-white text-2xl pointer-events-none">notifications</span>
 
                     @if ($notification_count)
                         <span data-notification-count class="w-2 h-2 absolute top-2 right-2 inline-flex items-center justify-center p-2.5 text-xs text-white font-bold leading-none transform translate-x-1/2 -translate-y-1/2 bg-orange rounded-full">
@@ -83,25 +83,25 @@
 
             <x-tooltip id="tooltip-search" placement="right" message="{{ trans('general.search') }}">
                 <button type="button" class="flex items-center menu-button justify-center w-8 h-8 mb-2.5 relative cursor-pointer">
-                    <span id="menu-search-icon" name="search" class="material-icons-outlined text-purple text-2xl pointer-events-none">search</span>
+                    <span id="menu-search-icon" name="search" class="material-icons-outlined text-white text-2xl pointer-events-none">search</span>
                 </button>
             </x-tooltip>
 
             <x-tooltip id="tooltip-new" placement="right" message="{{ trans('general.new') }}">
                 <button type="button" class="add-item menu-button flex items-center justify-center w-8 h-8 mb-2.5 cursor-pointer js-menu-toggles" data-menu="add-new-menu">
-                    <span id="menu-neww-icon" name="add_circle_outline" class="material-icons-outlined text-purple text-2xl pointer-events-none">add_circle_outline</span>
+                    <span id="menu-neww-icon" name="add_circle_outline" class="material-icons-outlined text-white text-2xl pointer-events-none">add_circle_outline</span>
                 </button>
             </x-tooltip>
 
             <x-tooltip id="tooltip-settings" placement="right" message="{{ trans_choice('general.settings', 2) }}">
                 <button type="button" class="settings-item menu-button flex items-center justify-center w-8 h-8 mb-2.5 cursor-pointer js-menu-toggles" data-menu="settings-menu">
-                    <span id="menu-settings-icon" name="settings" class="material-icons-outlined text-purple text-2xl pointer-events-none">settings</span>
+                    <span id="menu-settings-icon" name="settings" class="material-icons-outlined text-white text-2xl pointer-events-none">settings</span>
                 </button>
             </x-tooltip>
 
             <x-tooltip id="tooltip-support" placement="right" message="{{ trans('general.help') }}">
                 <x-link href="{{ url(trans('header.support_link')) }}" target="_blank" class="flex items-center justify-center w-8 h-8 mb-2.5 cursor-pointer js-menu-toggles" override="class">
-                    <span id="menu-support-icon" class="material-icons-outlined text-purple text-2xl pointer-events-none">support</span>
+                    <span id="menu-support-icon" class="material-icons-outlined text-white text-2xl pointer-events-none">support</span>
                 </x-link>
             </x-tooltip>
         </div>
@@ -113,18 +113,18 @@
         <div class="relative mb-5 cursor-pointer">
             <button type="button" class="flex items-center" data-dropdown-toggle="dropdown-menu-company">
                 <div class="w-8 h-8 flex items-center justify-center">
-                    <img src="{{ asset('public/img/akaunting-logo-green.svg') }}" class="w-6 h-6" alt="Akaunting" />
+                    <img src="{{ asset('public/img/new-logo.svg') }}" class="w-6 h-6" alt="Akaunting" />
                 </div>
 
                 <div class="flex ltr:ml-2 rtl:mr-2">
-                    <span class="w-28 ltr:text-left rtl:text-right block text-base truncate">
+                    <span class="w-28 ltr:text-left rtl:text-right block text-base truncate text-white">
                         <x-button.hover>
                             {{ Str::limit(setting('company.name'), 22) }}
                         </x-button.hover>
                     </span>
 
                     <div class="absolute top-2 ltr:-right-1 rtl:-left-1">
-                        <svg class="h-5 w-5 text-gray-400" x-description="Heroicon name: solid/selector" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <svg class="h-5 w-5 text-mainbg-smallsidebar" x-description="Heroicon name: solid/selector" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="white" aria-hidden="true">
                             <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                         </svg>
                     </div>
@@ -135,16 +135,16 @@
                 @foreach($companies as $com)
                     <x-link href="{{ route('companies.switch', $com->id) }}" id="menu-company-{{ $com->id }}" class="h-9 leading-9 flex items-center text-sm px-2" override="class" role="menuitem" tabindex="-1">
                         <div class="w-full h-full flex items-center rounded-md px-2 hover:bg-lilac-100">
-                            <span class="material-icons-outlined text-purple text-xl">business</span>
-                            <span class="ltr:pl-2 rtl:pr-2 text-purple text-xs truncate">{{ Str::limit($com->name, 18) }}</span>
+                            <span class="material-icons-outlined text-white text-xl">business</span>
+                            <span class="ltr:pl-2 rtl:pr-2 text-white text-xs truncate">{{ Str::limit($com->name, 18) }}</span>
                         </div>
                     </x-link>
                 @endforeach
 
-                <x-link href="{{ route('companies.index') }}" class="h-9 leading-9 flex items-center text-sm px-2 mt-2 border-t rounded-bl rounded-br group hover:bg-purple" override="class">
+                <x-link href="{{ route('companies.index') }}" class="h-9 leading-9 flex items-center text-sm px-2 mt-2 border-t rounded-bl rounded-br group hover:bg-white" override="class">
                     <div class="w-full h-full flex items-center rounded-md px-2">
-                        <span class="material-icons-outlined text-purple text-xl group-hover:text-white">settings</span>
-                        <span class="ltr:pl-2 rtl:pr-2 text-purple text-xs truncate group-hover:text-white">
+                        <span class="material-icons-outlined text-white text-xl group-hover:text-white">settings</span>
+                        <span class="ltr:pl-2 rtl:pr-2 text-white text-xs truncate group-hover:text-white">
                             {{ trans('general.title.manage', ['type' => trans_choice('general.companies', 2)]) }}
                         </span>
                     </div>
@@ -164,12 +164,12 @@
             @elseif (is_object(user()->picture))
                 <img src="{{ Storage::url(user()->picture->id) }}" class="w-8 h-8 rounded-full" alt="{{ user()->name }}" title="{{ user()->name }}">
             @else
-                <span name="account_circle" class="material-icons-outlined w-8 h-8 flex items-center justify-center text-purple text-2xl pointer-events-none" alt="{{ user()->name }}" title="{{ user()->name }}">account_circle</span>
+                <span name="account_circle" class="material-icons-outlined w-8 h-8 flex items-center justify-center text-white text-2xl pointer-events-none" alt="{{ user()->name }}" title="{{ user()->name }}">account_circle</span>
             @endif
 
             @stack('navbar_profile_welcome')
 
-            <div class="flex flex-col text-black ml-2">
+            <div class="flex flex-col text-white ml-2">
                 <span class="text-xs">{{ trans('general.welcome') }}</span>
 
                 {{ user()->name }}
@@ -182,9 +182,9 @@
     @can('read-notifications')
     <div class="notifications-menu user-menu menu-list fixed h-full ltr:-left-80 rtl:-right-80">
         <div class="flex items-center mb-3">
-            <span name="notifications" class="material-icons-outlined w-8 h-8 flex items-center justify-center text-purple text-2xl pointer-events-none">notifications</span>
+            <span name="notifications" class="material-icons-outlined w-8 h-8 flex items-center justify-center text-white text-2xl pointer-events-none">notifications</span>
 
-            <div class="text-black ltr:ml-1 rtl:mr-1">
+            <div class="text-white ltr:ml-1 rtl:mr-1">
                 {{ trans_choice('general.your_notifications', 2) }}
             </div>
         </div>
@@ -195,9 +195,9 @@
 
     <div class="settings-menu user-menu menu-list fixed h-full overflow-y-unset ltr:-left-80 rtl:-right-80">
         <div class="flex items-center mb-3">
-            <span name="settings" class="material-icons-outlined w-8 h-8 flex items-center justify-center text-purple text-2xl pointer-events-none">settings</span>
+            <span name="settings" class="material-icons-outlined w-8 h-8 flex items-center justify-center text-white text-2xl pointer-events-none">settings</span>
 
-            <div class="text-black ltr:ml-1 rtl:mr-1">
+            <div class="text-white ltr:ml-1 rtl:mr-1">
                 {{ trans_choice('general.settings', 2) }}
             </div>
         </div>
@@ -207,9 +207,9 @@
 
     <div class="add-new-menu user-menu menu-list fixed h-full ltr:-left-80 rtl:-right-80">
         <div class="flex items-center mb-3">
-            <span name="add_circle_outline" class="material-icons-outlined w-8 h-8 flex items-center justify-center text-purple text-2xl pointer-events-none">add_circle_outline</span>
+            <span name="add_circle_outline" class="material-icons-outlined w-8 h-8 flex items-center justify-center text-white text-2xl pointer-events-none">add_circle_outline</span>
 
-            <div class="text-black ltr:ml-1 rtl:mr-1">
+            <div class="text-white ltr:ml-1 rtl:mr-1">
                 {{ trans('general.new_more') }}
             </div>
         </div>
@@ -218,7 +218,7 @@
     </div>
 
     <button type="button" class="toggle-button absolute ltr:-right-2 rtl:-left-2 top-8 cursor-pointer transition-opacity ease-in-out z-50">
-        <span class="material-icons text-lg text-purple transform ltr:rotate-90 rtl:-rotate-90 pointer-events-none">expand_circle_down</span>
+        <span class="material-icons text-lg text-white transform ltr:rotate-90 rtl:-rotate-90 pointer-events-none">expand_circle_down</span>
     </button>
 
     <span data-menu-close id="menu-cancel" class="material-icons absolute ltr:-right-2 rtl:right-12 transition-all top-8 text-lg text-purple cursor-pointer z-10 hidden">cancel</span>
@@ -229,4 +229,5 @@
 <x-loading.menu />
 
 @stack('menu_end')
+
 

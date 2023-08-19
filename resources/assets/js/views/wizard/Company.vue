@@ -23,7 +23,6 @@
                                         :label="translations.company.phone"
                                         name="phone"
                                         data-name="phone"
-                                        :placeholder="translations.company.phone"
                                         v-model="company.phone_number"
                                         :error="onFailErrorGet('phone')"
                                     />
@@ -36,7 +35,6 @@
                                         :label="translations.company.tax_number"
                                         name="tax_number"
                                         data-name="tax_number"
-                                        :placeholder="translations.company.tax_number"
                                         v-model="company.tax_number"
                                         :error="onFailErrorGet('tax_number')"
                                     />
@@ -47,7 +45,6 @@
                                         not-required
                                         :title="translations.company.financial_start"
                                         data-name="financial_start"
-                                        :placeholder="translations.company.financial_start"
                                         icon="calendar_today"
                                         :date-config="{
                                             dateFormat: 'd-m',
@@ -72,7 +69,7 @@
                                 <div class="sm:col-span-3 grid gap-y-4">
                                     <div class="sm:col-span-3">
                                         <base-input not-required :label="translations.company.address" :error="onFailErrorGet('address')">
-                                            <textarea class="w-full text-sm px-3 py-2.5 mt-1 rounded-lg border border-light-gray text-black placeholder-light-gray bg-white disabled:bg-gray-200 focus:outline-none focus:ring-transparent focus:border-purple" name="address" data-name="address" rows="3" :placeholder="translations.company.address" v-model="company.address"></textarea>
+                                            <textarea class="w-full text-sm px-3 py-2.5 mt-1 rounded-lg border border-light-gray text-black placeholder-light-gray bg-white disabled:bg-gray-200 focus:outline-none focus:ring-transparent focus:border-purple" name="address" data-name="address" rows="3" v-model="company.address"></textarea>
                                         </base-input>
                                     </div>
 

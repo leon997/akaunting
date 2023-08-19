@@ -7,7 +7,7 @@ return [
     'grand_total'               => 'Skupna vsota',
     'accept_payment_online'     => 'Sprejmite plačila preko spleta',
     'transaction'               => 'Plačilo :amount je bilo izvedeno z :account.',
-    'billing'                   => 'Zaračunanje',
+    'billing'                   => 'Zaračunavanje',
     'advanced'                  => 'Dodatno',
 
     'item_price_hidden'         => 'Ta stolpec je skrit za vaš :type.',
@@ -66,7 +66,7 @@ return [
     'form_description' => [
         'companies'             => 'Spremenite naslov, logotip in druge podatke vašega podjetja.',
         'billing'               => 'Podrobnosti za obračun so prikazane v vašem dokumentu.',
-        'advanced'              => 'Izberite kategorijo, dodajte ali uredite footer in dodajte priloge svojemu :type.',
+        'advanced'              => 'Izberite kategorijo, dodajte ali uredite nogo in dodajte priloge svojemu računu.',
         'attachment'            => 'Prenesite datoteke, priložene temu :type',
     ],
 

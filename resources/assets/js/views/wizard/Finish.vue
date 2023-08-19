@@ -7,28 +7,30 @@
                 <span class="material-icons form-spin text-lg animate-spin text-9xl">data_usage</span>
             </div>
 
-            <div class="flex flex-col lg:flex-row mt-6">
+            <div class="flex flex-col lg:flex-row mt-6 mr-8">
                 <div class="w-full lg:w-1/2 ltr:pr-10 rtl:pl-10 mt-3">
-                    <div class="grid sm:grid-cols-6">
+                <div class="relative z-10 max-w-screen-xl px-4  pb-20 pt-10 sm:py-24 mx-auto sm:px-6 lg:px-8">
+                    <div class="max-w-xl sm:mt-1 mt-80 space-y-8 text-center sm:text-right sm:ml-auto">
+                    <h2 class="text-4xl font-bold sm:text-5xl">
+                        Ustvarite
+                        <span class="hidden sm:block text-4xl">
+                            svoj prvi račun
+                        </span>
+                    </h2>
+
+                    <base-button class="btn inline-flex items-center justify-center px-6 py-3 text-base disabled:opacity-50 relative mt-5 mx-auto bg-green hover:bg-green-400 text-white rounded-md py-3 px-5 font-semibold" @click="finish()">
+                    Naprej
+                    </base-button>
                     </div>
 
-                    <div class="lg:hidden">
-                        <base-button class="btn flex items-center justify-center text-base disabled:opacity-50 relative mt-5 mx-auto bg-green hover:bg-gray-100 text-white rounded-md py-3 px-5 font-semibold" @click="finish()">
-                            {{ translations.finish.create_first_invoice }}
-                        </base-button>
-                    </div>
+
+                </div>
                 </div>
 
                 <div class="absolute w-1/2 right-0 ltr:pl-10 rtl:pr-10 mt-3 hidden lg:flex lg:flex-col">
-                    <div class="flex flex-col ltr:items-start rtl:items-end bg-purple ltr:rounded-tl-lg ltr:rounded-bl-lg rtl:rounded-tr-lg rtl:rounded-br-lg p-6">
-                        <div class="w-48 text-white text-left text-2xl font-semibold leading-9">
-                            {{ translations.finish.apps_managing }}
-                        </div>
-
-                        <div style="width:372px; height:372px;"></div>
-
-                        <img :src="image_src" class="absolute top-3 right-2" alt="Akaunting" />
-                    </div>
+                    <div class="absolute inset-0 w-full sm:my-20 sm:pt-1 pt-12 h-full ">
+                    <img class="w-96" src="/public/img/finance-leaders.png"  />
+                </div>
 
                     <base-button
                         class="relative flex items-center justify-center text-base rounded-lg m-auto bottom-48 bg-white hover:bg-gray-100 text-purple py-3 px-5 font-semibold disabled:bg-gray-100 "

@@ -14,7 +14,7 @@ class CashFlow extends Widget
 {
     use Charts, Currencies, DateTime;
 
-    public $default_name = 'widgets.cash_flow';
+    public $default_name = 'Promet';
 
     public $default_settings = [
         'width' => 'w-full my-8 lg:px-12',

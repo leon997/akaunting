@@ -33,7 +33,7 @@
                     :value="$email"
                     :disabled="! is_null($email) ? true : false"
                     label="{{ trans('general.email') }}"
-                    form-group-class="sm:col-span-6"
+                    form-group-class="sm:col-span-6 text-white"
                     input-group-class="input-group-alternative"
                 />
 
@@ -41,14 +41,14 @@
                     name="password"
                     label="{{ trans('auth.password.new') }}"
                     placeholder="{{ trans('auth.password.new') }}"
-                    form-group-class="sm:col-span-6"
+                    form-group-class="sm:col-span-6 text-white"
                     input-group-class="input-group-alternative"
                 />
 
                 <x-form.group.password
                     name="password_confirmation"
                     label="{{ trans('auth.password.new_confirm') }}"
-                    form-group-class="sm:col-span-6"
+                    form-group-class="sm:col-span-6 text-white"
                     input-group-class="input-group-alternative"
                 />
 

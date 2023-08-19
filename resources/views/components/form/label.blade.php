@@ -1,4 +1,4 @@
-<label class="text-lighter-gray text-base font-medium" {{ $attributes }}>
+<label class="text-gray text-base font-medium" {{ $attributes }}>
     {!! $slot !!}
 
     @if ($attributes->has('required') && $attributes->get('required') === true)

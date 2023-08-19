@@ -7,9 +7,9 @@
     </x-layouts.admin.head>
 
     @mobile
-    <body class="bg-body">
+    <body class="bg-mainbg-sidebar">
     @elsemobile
-    <body class="bg-body overflow-y-overlay">
+    <body class="bg-mainbg-sidebar overflow-y-overlay">
     @endmobile
 
         @stack('body_start')

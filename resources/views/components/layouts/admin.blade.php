@@ -13,9 +13,9 @@
     </x-layouts.admin.head>
 
     @mobile
-    <body class="bg-body">
+    <body style="background: linear-gradient(to right, #ece9e6, #ffffff);">
     @elsemobile
-    <body class="bg-body overflow-y-overlay">
+    <body class="overflow-y-overlay" style="background: linear-gradient(to right, #ece9e6, #ffffff);">
     @endmobile
 
         @stack('body_start')
@@ -23,7 +23,7 @@
         <x-layouts.admin.menu />
 
         <!-- loading component will add this line -->
-        
+
         <div class="main-content xl:ltr:ml-64  xl:rtl:mr-64 transition-all ease-in-out" id="panel">
             <div id="main-body">
                 <div class="container">

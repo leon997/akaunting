@@ -12,7 +12,7 @@
     }
 }
 
-@layer utilities { 
+@layer utilities {
     .max-h-0 {
         max-height: 0;
     }
@@ -42,7 +42,7 @@
         content: '';
         @apply w-full h-0.5 absolute left-0 right-0 bottom-0 bg-purple rounded-tl-md rounded-tr-md opacity-0 invisible transition-all;
     }
-    
+
     .tabs-link:hover::before {
        @apply opacity-100 visible;
     }
@@ -50,7 +50,7 @@
     .notifications-menu ul li a {
         border-bottom: 1px solid;
     }
-      
+
     .avatar-attachment {
         @apply text-white inline-flex items-center justify-center;
         background-color: #adb5bd;
@@ -126,11 +126,11 @@
     summary {
         outline:none;
     }
-      
+
     details summary::-webkit-details-marker {
         display:none;
     }
-      
+
       @keyframes details-fade {
         from {
             opacity:0;
@@ -140,7 +140,7 @@
             transform: var(--details-translate, translateY(-0.5em));
         }
       }
-      
+
       .menu-list details[open] > *:not(summary) {
             -webkit-animation: details-fade 500ms ease-out;
             animation: details-fade 500ms ease-out;
@@ -157,7 +157,7 @@
     .d-none {
         display: none;
     }
-    
+
     .d-block {
         display: block;
     }
@@ -179,7 +179,7 @@
         display: -webkit-box;
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
-        overflow: hidden; 
+        overflow: hidden;
         height: 1.5rem;
     }
 
@@ -187,7 +187,7 @@
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
-        overflow: hidden; 
+        overflow: hidden;
         height: 3rem;
     }
 
@@ -195,7 +195,7 @@
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
-        overflow: hidden; 
+        overflow: hidden;
         height: 4rem;
     }
     /* widget container name will change as lg:px-12 on database. When container class name change on database, this code will clean  */
@@ -253,11 +253,11 @@
 
 /* menu */
 .menu-list {
-    @apply w-64 lg:w-56 py-7 px-5 bg-purple-lighter menu-scroll overflow-y-auto overflow-x-hidden transition-all;
+    @apply w-64 lg:w-56 py-7 px-5 bg-mainbg-sidebar menu-scroll overflow-y-auto overflow-x-hidden transition-all;
 }
 
 .menu-list-hidden {
-    @apply w-0 p-0 opacity-0;
+    @apply w-0 p-0 opacity-0 bg-mainbg;
 }
 
 .menu__submenu li::before {
@@ -346,7 +346,7 @@
 .el-select-dropdown__item span:hover {
     background-color: #F5F7FA;
  }
- 
+
  .el-select-dropdown__item.hover, .el-select-dropdown__item:hover {
      background-color: transparent;
  }
@@ -636,7 +636,7 @@ html[dir="rtl"] .lines-radius-border thead td:last-child {
     visibility: visible !important;
     height: auto !important;
   }
-  
+
   .active-accordion i {
     transform: rotate(180deg);
   }
@@ -726,11 +726,11 @@ html[dir="rtl"] .lines-radius-border thead td:last-child {
 }
 
 /* document body selected */
-::-moz-selection { 
+::-moz-selection {
     background: #55588B;
     color: #FFFFFF;
 }
-::selection { 
+::selection {
     background: #55588B;
     color: #FFFFFF;
 }

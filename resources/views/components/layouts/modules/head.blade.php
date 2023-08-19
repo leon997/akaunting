@@ -17,9 +17,9 @@
     <x-layouts.pwa.head />
 
     <link rel="stylesheet" href="{{ asset('public/css/custom_loading.css?v=' . version('short')) }}" type="text/css">
-    
+
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('public/img/favicon.ico') }}" type="image/png">
+    <link rel="icon" href="{{ asset('public/img/favicon1.png') }}" type="image/png">
 
     <!--Icons-->
     <link rel="stylesheet" href="{{ asset('public/css/fonts/material-icons/style.css?v=' . version('short')) }}" type="text/css">
@@ -44,7 +44,7 @@
             line-height: 2rem;
         }
 
-        .app-documentation > p, 
+        .app-documentation > p,
         .app-documentation > li {
             font-size: 1rem;
             line-height: 1.5rem;

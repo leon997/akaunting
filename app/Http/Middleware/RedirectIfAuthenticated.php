@@ -26,9 +26,8 @@ class RedirectIfAuthenticated
                 continue;
             }
 
-            if ($user->hasVerifiedEmail()){
                 return redirect(user()->getLandingPageOfUser());
-            }
+
         }
 
         return $next($request);

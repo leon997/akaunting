@@ -23,7 +23,7 @@ return [
     ],
 
     'docs_link'             => 'https://akaunting.com/docs',
-    'support_link'          => 'https://akaunting.com/support',
+    'support_link'          => 'http://tripcre8.com/',
 
     'favorite' => [
         'added_favorite'    => 'Dodano med priljubljene',

@@ -41,7 +41,7 @@ class SignUp extends Controller
             // Create company
             Installer::createCustomCompany($request->get('company_name'), $request->get('user_email'), 'sl-SI');
             // Create user
-            Installer::createManageUser($request->get('name'), $request->get('user_email'), $request->get('user_password'), 'en-GB', ['2']);
+            Installer::createManageUser($request->get('name'), $request->get('user_email'), $request->get('user_password'), 'sl-SI', ['2']);
         });
 
 

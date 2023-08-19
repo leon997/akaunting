@@ -82,6 +82,7 @@
                 name="order_number"
                 label="{{ trans($textOrderNumber) }}"
                 value="{{ $orderNumber }}"
+                placeholder=" "
                 form-group-class="sm:col-span-2"
                 not-required
             />

@@ -30,45 +30,44 @@
                 <x-form.group.text
                     name="name"
                     label="{{ trans('install.settings.user_name') }}"
-                    value="{{ old('name') }}"
-                    form-group-class="sm:col-span-6" />
+                    value=""
+                    form-group-class="sm:col-span-6 text-white" />
 
                 <x-form.group.text
                     name="user_email"
                     label="{{ trans('settings.company.email') }}"
-                    value="{{ old('user_email') }}"
-                    form-group-class="sm:col-span-6" />
+                    value=""
+                    form-group-class="sm:col-span-6 text-white" />
 
                 <x-form.group.text
                     name="company_name"
                     label="{{ trans('install.settings.company_name') }}"
-                    value="{{ old('company_name') }}"
-                    form-group-class="sm:col-span-6" />
+                    value=""
+                    form-group-class="sm:col-span-6 text-white" />
 
                 <x-form.group.password
                     name="user_password"
                     label="{{ trans('auth.password.pass') }}"
-                    placeholder="{{ trans('auth.password.pass') }}"
-                    form-group-class="sm:col-span-6" />
+                    placeholder=""
+                    form-group-class="sm:col-span-6 text-white" />
 
                 <x-form.group.password
                     name="user_password_confirmation"
-                    label="{{ trans('auth.password.pass_confirm') }}"
-                    placeholder="{{ trans('auth.password.pass') }}"
-                    form-group-class="sm:col-span-6"
+                    label="Ponovi geslo"
+                    placeholder=""
+                    form-group-class="sm:col-span-6 text-white"
                     input-group-class="input-group-alternative"/>
 
                 <x-button
                     type="submit"
                     ::disabled="form.loading"
-                    class="relative flex items-center justify-center bg-purple hover:bg-purple-700 text-white px-6 py-1.5 text-base rounded-lg disabled:bg-green-100 sm:col-span-3 font-bold"
+                    class="relative flex items-center justify-center bg-purple hover:bg-purple-700 text-white px-6 py-1.5 text-base rounded-lg disabled:bg-purple-700 sm:col-span-3 font-bold"
                     override="class"
                     data-loading-text="{{ trans('general.loading') }}"
                 >
-                    <i v-if="form.loading" class="submit-spin absolute w-2 h-2 rounded-full left-0 right-0 -top-3.5 m-auto"></i>
-                    <span :class="[{'opacity-0': form.loading}]">
-                        {{ trans('auth.register') }}
-                    </span>
+                <x-button.loading>
+                    Nadaljuj
+                </x-button.loading>
                 </x-button>
             </div>
         </x-form>

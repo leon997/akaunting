@@ -62,7 +62,7 @@ class ShowInSettings
 
         $title = trim(trans_choice('general.currencies', 2));
         if ($this->canAccessMenuItem($title, 'read-settings-currencies')) {
-            $menu->route('currencies.index', $title, [], 90, ['icon' => 'attach_money', 'search_keywords' => trans('settings.currencies.search_keywords')]);
+            $menu->route('currencies.index', $title, [], 90, ['icon' => 'euro_symbol', 'search_keywords' => trans('settings.currencies.search_keywords')]);
         }
 
         $title = trim(trans_choice('general.taxes', 2));

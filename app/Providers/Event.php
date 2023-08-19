@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as Provider;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 
 class Event extends Provider
 {
@@ -113,6 +115,9 @@ class Event extends Provider
         'App\Events\Email\InvalidEmailDetected' => [
             'App\Listeners\Email\DisablePersonDueToInvalidEmail',
             'App\Listeners\Email\SendInvalidEmailNotification',
+        ],
+        'Illuminate\Auth\Events\Registered' => [
+            SendEmailVerificationNotification::class,
         ],
     ];
 

@@ -7,7 +7,7 @@
         <div>
             <img src="{{ asset('public/img/new_logo.svg') }}" class="w-16" alt="Akaunting" />
 
-            <h1 class="text-xl my-3 text-lighter-gray font-bold">
+            <h1 class="text-xl my-3 text-white font-bold">
                 {{ trans('auth.login_to') }}
             </h1>
         </div>
@@ -29,16 +29,16 @@
                 <x-form.group.email
                     name="email"
                     label="{{ trans('general.email') }}"
-                    placeholder="{{ trans('general.email') }}"
-                    form-group-class="sm:col-span-6"
+                    placeholder=" "
+                    form-group-class="sm:col-span-6 text-white"
                     input-group-class="input-group-alternative"
                 />
 
                 <x-form.group.password
                     name="password"
                     label="{{ trans('auth.password.pass') }}"
-                    placeholder="{{ trans('auth.password.pass') }}"
-                    form-group-class="sm:col-span-6 text-lighter-gray"
+                    placeholder=" "
+                    form-group-class="sm:col-span-6 text-white"
                     input-group-class="input-group-alternative"
                 />
 
@@ -51,13 +51,13 @@
                             value="1"
                             v-model="form.remember"
                             id="checkbox-remember"
-                            class="text-lighter-gray focus:outline-none focus:ring-purple focus:border-purple"
+                            class="text-white focus:outline-none focus:ring-purple focus:border-purple"
                         />
                     </div>
                     @stack('remember_input_end')
 
                     @stack('forgotten-password-start')
-                    <x-link href="{{ route('forgot') }}" class="text-white hover:text-light-gray text-sm" override="class">
+                    <x-link href="{{ route('forgot') }}" class="text-white hover:text-white text-sm" override="class">
                         {{ trans('auth.forgot_password') }}
                     </x-link>
                     @stack('forgotten-password-end')
@@ -66,7 +66,7 @@
                 <x-button
                     type="submit"
                     ::disabled="form.loading"
-                    class="relative flex items-center justify-center bg-purple hover:bg-purple-700 text-white font-bold px-6 py-1.5 text-base rounded-lg disabled:bg-purple-100 sm:col-span-3"
+                    class="relative flex items-center justify-center bg-purple hover:bg-purple-700 text-white font-bold px-6 py-1.5 text-base rounded-lg disabled:bg-purple-700 sm:col-span-3"
                     override="class"
                 >
                     <x-button.loading>
@@ -75,7 +75,7 @@
                 </x-button>
 
                 <div class="sm:col-span-6 flex flex-row justify-between items-center">
-                        <x-link href="{{ route('signUp') }}" class="text-white hover:text-light-gray text-base" override="class">
+                        <x-link href="{{ route('signUp') }}" class="text-white hover:text-white text-base" override="class">
                             {{ trans('auth.sign_up') }}
                         </x-link>
                 </div>

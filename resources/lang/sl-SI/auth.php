@@ -99,9 +99,9 @@ return [
     ],
 
     'information' => [
-        'invoice'           => 'Preprosta kreacija računov',
-        'reports'           => 'Ustvarjanje in izvoz podrobnih poročil',
-        'expense'           => 'Beležite vse stroške',
+        'invoice'           => 'Učinkovito in preprosto vodenje poslovanja',
+        'reports'           => 'Enostavno ustvarjanje računov',
+        'expense'           => 'Pridobite podrobna poročila o svojem poslovanju',
         'customize'         => 'Preuredite svoj Akaunting po meri',
     ],
 

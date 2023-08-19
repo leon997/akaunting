@@ -7,7 +7,7 @@ use App\Models\Banking\Account;
 
 class AccountBalance extends Widget
 {
-    public $default_name = 'widgets.account_balance';
+    public $default_name = 'Stanje na računu';
 
     public $description = 'widgets.description.account_balance';
 

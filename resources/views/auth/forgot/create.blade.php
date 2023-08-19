@@ -29,15 +29,15 @@
                 <x-form.group.email
                     name="email"
                     label="{{ trans('general.email') }}"
-                    placeholder="{{ trans('general.email') }}"
-                    form-group-class="sm:col-span-6"
+                    placeholder=" "
+                    form-group-class="sm:col-span-6 text-white"
                     input-group-class="input-group-alternative"
                 />
 
                 <x-button
                     type="submit"
                     ::disabled="form.loading"
-                    class="relative flex items-center justify-center bg-purple hover:bg-purple-700 text-white px-6 py-1.5 font-bold text-base rounded-lg disabled:bg-purple-100 sm:col-span-3"
+                    class="relative flex items-center justify-center bg-purple hover:bg-purple-700 text-white px-6 py-1.5 font-bold text-base rounded-lg disabled:bg-purple-700 sm:col-span-3"
                     override="class"
                     data-loading-text="{{ trans('general.loading') }}"
                 >

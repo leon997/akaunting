@@ -120,7 +120,7 @@ export default {
 
         locale: {
             type: String,
-            default: 'en',
+            default: 'sl',
         },
 
         hiddenYear: {

@@ -65,19 +65,25 @@ class PlanController extends Controller
     {
         $name = Auth::user()->name;
         $sub_type = DB::table('subscriptions')->where('id', '=', Auth::user()->id)->value('name');
-        $user_expired = Auth::user()->subscription('basic')->ended();
+        $user_expired = PlanController::isSubscriptionCanceled();
+
+        $sub_until = DB::table('subscriptions')->where('id', '=', Auth::user()->id)->value('updated_at');
+        $sub_end = Carbon::parse($sub_until)->addMonth(1)->format('d-m-Y');
 
 
 
-        return view('plan_settings')->with('user_name', $name)->with('sub_name', $sub_type)->with('user_expired', $user_expired);
+
+
+        return view('plan_settings')->with('user_name', $name)->with('sub_name', $sub_type)->with('sub_end', $sub_end)->with('user_expired', $user_expired);
     }
 
     public function subscriptionCancel()
     {
         Auth::user()->subscription('basic')->cancel();
-        $sub_end = DB::table('subscriptions')->where('id', '=', Auth::user()->id)->value('ends_at');
+        $sub_ending = DB::table('subscriptions')->where('id', '=', Auth::user()->id)->value('ends_at');
+        $sub_ended = Carbon::parse($sub_ending)->format('d-m-Y');
 
-        return view('subscription_cancel')->with('sub_end', $sub_end);
+        return view('subscription_cancel')->with('sub_ended', $sub_ended);
 
     }
 
@@ -85,6 +91,15 @@ class PlanController extends Controller
     {
         Auth::user()->subscription('basic')->resume();
         return redirect()->route('dashboard');
+    }
+
+    public function isSubscriptionCanceled(){
+        $user = Auth::user();
+        if ($user->subscription('basic')->canceled() || $user->subscription('basic')->onGracePeriod()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 

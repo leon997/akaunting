@@ -5,7 +5,6 @@
     @if ($value)
     value="{!! $value !!}"
     @endif
-    placeholder="{{ $placeholder }}"
     @if ($disabled)
     disabled="disabled"
     @endif

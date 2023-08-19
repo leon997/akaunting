@@ -16,6 +16,8 @@ return [
     'become_developer'      => 'Ste razvijalec? <a href=":url" target="_blank">Tukaj</a> se lahko naučite kako narediti aplikacijo in jo začnete prodajati danes!',
     'recommended_apps'      => 'Priporočene aplikacije',
     'apps_managing'         => 'Zaključeno. Akaunting je pripravljen za uporabo.',
+    'ready'                 => 'Pričetek',
+
 
     'about'                 => 'Več o',
 

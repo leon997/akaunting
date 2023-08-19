@@ -40,7 +40,7 @@
                                             class="inline-block absolute z-20 py-1 px-2 text-sm font-medium rounded-lg bg-white text-gray-900 w-auto border border-gray-200 shadow-sm whitespace-normal opacity-0 invisible"
                                         >
                                             {{ translations.currencies.default }}
-                                            <div 
+                                            <div
                                                 class="absolute w-2 h-2 before:absolute before:w-2 before:h-2 before:bg-white before:border-gray-200 before:transform before:rotate-45 before:border -left-1 before:border-t-0 before:border-r-0 border-gray-200"
                                                 data-popper-arrow
                                             >
@@ -50,7 +50,7 @@
                                 </td>
 
                                 <td :class="current_tab == index ? 'hidden' : ''" class="w-4/12 ltr:pr-6 rtl:pl-6 py-4 text-center whitespace-nowrap text-sm font-medium text-black">
-                                    {{ item.code }} 
+                                    {{ item.code }}
                                 </td>
 
                                 <td :class="current_tab == index ? 'hidden' : ''" class="w-4/12 relative ltr:pr-6 rtl:pl-6 py-4 ltr:text-right rtl:text-left whitespace-nowrap text-sm font-medium text-black">
@@ -150,9 +150,9 @@
 
                     <div class="flex flex-col items-center">
                         <div v-if="new_datas" class="grid sm:grid-cols-12 gap-x-8 gap-y-6 px-1 py-3.5 w-full border-b hover:bg-gray-100">
-                            <base-input :label="translations.currencies.name" 
-                                name="name" 
-                                data-name="name" 
+                            <base-input :label="translations.currencies.name"
+                                name="name"
+                                data-name="name"
                                 :placeholder="translations.currencies.name"
                                 class="sm:col-span-4"
                                 v-model="model.name"
@@ -203,7 +203,7 @@
                                 </base-button>
 
                                 <button type="submit" :disabled="button_loading" class="relative flex items-center justify-center bg-green hover:bg-green-700 text-white px-6 py-1.5 text-base rounded-lg disabled:bg-green-100" @click="onSubmitForm($event)">
-                                    <i v-if="button_loading" class="animate-submit delay-[0.28s] absolute w-2 h-2 rounded-full left-0 right-0 -top-3.5 m-auto before:absolute before:w-2 before:h-2 before:rounded-full before:animate-submit before:delay-[0.14s] after:absolute after:w-2 after:h-2 after:rounded-full after:animate-submit before:-left-3.5 after:-right-3.5 after:delay-[0.42s]"></i> 
+                                    <i v-if="button_loading" class="animate-submit delay-[0.28s] absolute w-2 h-2 rounded-full left-0 right-0 -top-3.5 m-auto before:absolute before:w-2 before:h-2 before:rounded-full before:animate-submit before:delay-[0.14s] after:absolute after:w-2 after:h-2 after:rounded-full after:animate-submit before:-left-3.5 after:-right-3.5 after:delay-[0.42s]"></i>
                                     <span :class="[{'opacity-0': button_loading}]">
                                         {{ translations.currencies.save }}
                                     </span>
@@ -318,7 +318,7 @@
                     item.id
                     }`,
                     this.translations.currencies.title,
-                    `Confirm Delete <strong>${item.name}</strong> ${this.translations.currencies.title}?`,
+                    `Potrdite izbris<strong>${item.name}</strong> ${this.translations.currencies.title}?`,
                     this.translations.currencies.cancel,
                     this.translations.currencies.delete
                 );
