@@ -23,7 +23,7 @@
 
             @can('create-common-items')
                 <x-dropdown.link href="{{ route('import.create', ['common', 'items']) }}" id="index-more-actions-import-item">
-                    'Uvozite Izdelke'
+                    {{ trans('import.import') }}
                 </x-dropdown.link>
             @endcan
 

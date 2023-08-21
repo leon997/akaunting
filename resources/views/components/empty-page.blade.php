@@ -45,7 +45,7 @@
             @endforeach
 
             @if (! empty($suggestions))
-                @foreach ($suggestions as $suggestion) 
+                @foreach ($suggestions as $suggestion)
                     <li class="border-b p-2  hover:bg-gray-100">
                         <x-link href="{{ url($suggestion->action_url) . '?' . http_build_query((array) $suggestion->action_parameters) }}" class="flex items-center justify-between text-xs" override="class">
                             <div class="truncate">
@@ -64,10 +64,6 @@
                 @endforeach
             @endif
         </ul>
-    </div>
-
-    <div class="w-full lg:w-1/2 flex justify-end mt-8 lg:mt-60">
-        <img src="{{ $image }}" alt="{{ $title }}" class="ltr:scale-x-100 rtl:-scale-x-100" />
     </div>
 </div>
 

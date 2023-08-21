@@ -48,7 +48,7 @@
 
                 <x-form.section>
                     <x-slot name="head">
-                        <x-form.section.head title="{{ trans_choice('general.others', 1) }}" description="{{ trans('transactions.form_description.other') }}" />
+                        <x-form.section.head title="Drugo" description="{{ trans('transactions.form_description.other') }}" />
                     </x-slot>
 
                     <x-slot name="body">

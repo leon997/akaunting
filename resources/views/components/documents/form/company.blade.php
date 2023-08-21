@@ -10,11 +10,14 @@
         <div class="sm:col-span-2 grid gap-x-8 gap-y-6">
             @stack('title_start')
 
-                @if (! $hideDocumentSubheading)
-                    <x-form.group.text name="subheading" label="{{ trans('settings.invoice.subheading') }}" value=" " not-required data-field="setting" form-group-class="sm:col-span-6" />
-                @endif
-            </div>
-        </div>
+            @if (! $hideDocumentTitle)
+                <x-form.group.text
+                    name="title"
+                    label="{{ trans('settings.invoice.title') }}"
+                    value="{{ $title }}"
+                    not-required
+                 />
+            @endif
 
             @stack('subheading_start')
 

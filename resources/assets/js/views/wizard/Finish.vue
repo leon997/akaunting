@@ -38,7 +38,10 @@
                         @click="finish()"
                     >
                         <i v-if="anchor_loading" class="animate-submit_second delay-[0.28s] absolute w-2 h-2 rounded-full left-0 right-0 -top-2.5 m-auto before:absolute before:w-2 before:h-2 before:rounded-full before:animate-submit_second before:delay-[0.14s] after:absolute after:w-2 after:h-2 after:rounded-full after:animate-submit_second before:-left-3.5 after:-right-3.5 after:delay-[0.42s]"></i>
-
+                        <span :class="[{'opacity-0': anchor_loading}]">
+                                {{ translations.company.skip }}
+                            </span>
+                        </base-button>
                         <base-button
                             class="relative ltr:-right-2 rtl:-left-2 flex items-center justify-center text-base rounded-lg m-auto mt-96 bg-default hover:bg-default-hover text-white py-1.5 px-7 font-medium"
                             :disabled="anchor_loading"
