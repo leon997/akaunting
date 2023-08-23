@@ -72,6 +72,7 @@ Route::post('/email/verification-notification', function (Request $request) {
     return back()->with('message', 'Verification link sent!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
+//Naročnina
 Route::get('plans', [PlanController::class, 'index'])->name('plans.index');
 Route::get('plans/{plan}', [PlanController::class, 'show'])->name("plans.show");
 Route::post('subscription', [PlanController::class, 'subscription'])->name("subscription.create");
