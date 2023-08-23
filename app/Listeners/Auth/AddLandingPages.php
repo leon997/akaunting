@@ -62,9 +62,9 @@ class AddLandingPages
                 'permission' => 'read-common-reports',
                 'translate'  => trans_choice('general.reports', 2),
             ],
-            'plans.index' => [
+            'subscribe' => [
                 'permission' => 'read-common-plans',
-                'translate'  => trans_choice('general.plans', 2),
+                'translate'  => trans_choice('general.plans', 1),
             ],
             'categories.index' => [
                 'permission' => 'read-settings-categories',

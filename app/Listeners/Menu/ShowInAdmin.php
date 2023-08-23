@@ -119,9 +119,9 @@ class ShowInAdmin
 
         // Subscriptions
         if (! Auth::user()->subscribed('basic')){
-            $title = trim(trans_choice('general.plans', 2));
+            $title = trim(trans_choice('general.plans', 1));
             if ($this->canAccessMenuItem($title, 'read-common-plans')) {
-                $menu->route('plans.index', $title, [], 60, ['icon' => 'card_membership']);
+                $menu->route('subscribe', $title, [], 60, ['icon' => 'card_membership']);
             }
         }
     }

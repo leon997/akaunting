@@ -1,5 +1,5 @@
 <x-layouts.admin>
-    <x-slot name="title">{{ trans_choice('general.plans', 2) }}</x-slot>
+    <x-slot name="title">{{ trans_choice('general.plans', 1) }}</x-slot>
 
 
     <x-slot name="content">
