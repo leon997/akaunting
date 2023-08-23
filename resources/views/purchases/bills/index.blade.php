@@ -1,6 +1,6 @@
 <x-layouts.admin>
     <x-slot name="title">
-        {{ trans_choice('general.bills', 2) }}
+        {{ trans_choice('general.bills', 1) }}
     </x-slot>
 
     <x-slot name="favorite"

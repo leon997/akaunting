@@ -2,7 +2,7 @@
     <x-slot name="title">Naročnina</x-slot>
 
     <x-slot name="content">
-        <div class="container mt-10 h-screen">
+        <div class="container mt-8 h-screen">
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
@@ -10,9 +10,15 @@
                         </div>
 
                         <div class="card-body">
+                            <x-form.accordion.head
+                            title="Postanite naročnik in si zagotovite neomejeno uporabo aplikacije"
+                            description="Izberite naročnino, ki vam najbolj ustreza. Izbirate lahko med mesečnim ali pa
+                            letnim podaljševanjem naročnine. V obeh primerih je kadarkoli možna odpoved naročnine.
+                             V tem primeru se vam dostop do aplikacije prekine po izteku plačanega obdobja"
+                            />
                             <form id="payment-form" method="POST" action="{{ route("subscribe.post") }}">
                                 @csrf
-                                <div class="mt-4">
+                                <div class="mt-6">
                                     <input type="radio" name="plan" id="standard" value="price_1NESG9KaKNvt1MSKiEclXH1p" checked>
                                     <label for="standard">Mesečna naročnina - 5€ / mesec</label><br>
 
@@ -22,7 +28,7 @@
                                 <div id="payment-element" class="mt-10">
                                     <!--Stripe.js injects the Payment Element-->
                                 </div>
-                                <button id="btnSubmit" class="bg-purple text-white px-4 py-2 rounded mt-5">
+                                <button id="btnSubmit" class="bg-purple hover:bg-purple-700 disabled:bg-purple-700 text-white px-4 py-2 rounded mt-5">
                                     <div class="spinner hidden" id="spinner"></div>
                                     <span id="button-text">Plačaj</span>
                                 </button>
