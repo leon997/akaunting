@@ -10,6 +10,11 @@ return [
         'address'                    => 'Naslov',
         'edit_your_business_address' => 'Uredi naslov podjetja',
         'logo'                       => 'Logotip',
+
+        'form_description' => [
+            'general'                   => 'Te informacije so vidne v zapisih, ki jih ustvarite.',
+            'address'                   => 'Naslov bo uporabljen v izdanih računih, prejetih računih in drugih evidencah, ki jih izdate.',
+        ],
     ],
 
     'localisation' => [
@@ -40,6 +45,11 @@ return [
             'item'          => 'V vrstici',
             'total'         => 'Skupaj',
             'both'          => 'V vrstici in skupaj',
+        ],
+        'form_description' => [
+            'fiscal'                    => 'Nastavite obdobje poslovnega leta, ki ga vaše podjetje uporablja za obdavčenje in poročanje.',
+            'date'                      => 'Izberite obliko datuma, ki jo želite videti v vmesniku.',
+            'other'                     => 'Izberite, kje je prikazan znak za odstotek za davke. Omogočite lahko popuste na vrstične postavke in na vsoto za izdane in prejete račune.',
         ],
     ],
 
@@ -75,6 +85,12 @@ return [
             'price'             => 'Skrij ceno',
             'amount'            => 'Skrij znesek',
         ],
+        'form_description' => [
+            'general'                   => 'Nastavite privzete nastavitve za oblikovanje številk računov in plačilnih pogojev.',
+            'template'                  => 'Izberite eno od spodnjih predlog za svoje izdane račune.',
+            'default'                   => 'Če izberete privzete nastavitve za račune, bodo vnaprej izpolnjeni naslovi, podnaslovi, opombe in noge. Tako vam ni treba vsakič urejati računov, da bi bili videti bolj profesionalni.',
+            'column'                    => 'Prilagodite poimenovanje stolpcev računa. Če želite skriti opise artiklov in zneske v vrsticah, lahko to spremenite tukaj.',
+        ]
     ],
 
     'transfer' => [
@@ -89,12 +105,18 @@ return [
         'use_gravatar'      => 'Uporabi Gravatar',
         'income_category'   => 'Kategorija prihodkov',
         'expense_category'  => 'Stroški po kategorijah',
+        'form_description' => [
+            'general'                   => 'Izberite privzeti račun, davek in način plačila za hitro ustvarjanje zapisov. Nadzorna plošča in poročila so prikazani pod privzeto valuto.',
+            'category'                  => 'Izberite privzete kategorije, da pospešite ustvarjanje zapisa.',
+            'other'                     => 'Prilagodite privzete nastavitve jezika podjetja in delovanje označevanja strani.',
+        ],
     ],
 
     'email' => [
         'description'       => 'Spremeni protokol za pošiljanje in predloge elektronskih pošt',
         'protocol'          => 'Protokol',
         'php'               => 'PHP pošta',
+        'email_service'                 => 'E-poštna storitev',
         'smtp' => [
             'name'          => 'SMTP',
             'host'          => 'SMTP gostitelj',
@@ -107,6 +129,9 @@ return [
         'sendmail'          => 'Sendmail',
         'sendmail_path'     => 'Pot za Sendmail',
         'log'               => 'Dnevnik elektronske pošte',
+        'form_description' => [
+            'general'                   => 'Pošiljajte redna e-poštna sporočila svoji ekipi in stikom. Nastavite lahko nastavitve protokola in SMTP.',
+        ],
 
         'templates' => [
             'subject'                   => 'Zadeva',
@@ -143,6 +168,11 @@ Samodejni opomniki in ukazi za ponavljajoče se',
         'bill_days'         => 'Pošlji pred zapadlim dnem',
         'cron_command'      => 'Cron ukaz',
         'schedule_time'     => 'Čas zagona',
+        'form_description' => [
+            'invoice'                   => 'Omogočite ali onemogočite ter nastavite opomnike za svoje račune, ko zapadejo.',
+            'bill'                      => 'Omogočite ali onemogočite ter nastavite opomnike za račune, preden zapadejo.',
+            'cron'                      => 'Kopirajte ukaz cron, ki bi ga moral izvajati vaš strežnik. Nastavite čas za sprožitev dogodka.',
+        ]
     ],
 
     'categories' => [

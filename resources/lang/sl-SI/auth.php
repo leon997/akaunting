@@ -17,7 +17,7 @@ return [
     'reset'                 => 'Ponastavi',
     'never'                 => 'nikoli',
     'landing_page'          => 'Ciljna stran',
-    'personal_information'  => 'Personal Information',
+    'personal_information'  => 'Osebni podatki',
     'register_user'         => 'Registracija uporabnika',
     'register'              => 'Registracija',
     'sign_up'               => 'Postanite uporabnik',

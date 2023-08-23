@@ -2,12 +2,13 @@
 
 return [
 
-    'whoops'              => 'Ops!',
-    'hello'               => 'Dobrodošli!',
-    'salutation'          => 'S spoštovanjem,<br> : company_name',
+    'whoops'              => 'Ups!',
+    'hello'               => 'Pozdravljeni!',
+    'salutation'          => 'Lepo vas pozdravljamo',
     'subcopy'             => 'Če imate težave s klikom na gumb ": besedilo", kopirajte in prilepite spodnji URL v spletni brskalnik: [: url](:url)',
     'reads'               => 'Preberi|Preberi',
     'read_all'            => 'Preberi vse',
+    'empty'               => 'Nimate novih obvestil',
     'mark_read'           => 'Označi kot prebrano',
     'mark_read_all'       => 'Označi vse kot prebrano',
     'new_apps'            => 'Nova aplikacija|Novih aplikacij',
