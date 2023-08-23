@@ -240,7 +240,7 @@
                     {{ translations.currencies.previous }}
                 </base-button>
 
-                <base-button class="w-1/2 relative flex items-center justify-center bg-green hover:bg-green-700 text-white px-6 py-1.5 text-base rounded-lg disabled:bg-green-100" @click="next()">
+                <base-button class="w-1/2 relative flex items-center justify-center bg-purple hover:bg-purple-700 disabled:bg-purple-700 text-white px-6 py-1.5 text-base rounded-lg disabled:bg-green-100" @click="next()">
                     {{ translations.currencies.next }}
                 </base-button>
             </div>

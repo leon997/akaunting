@@ -5,6 +5,10 @@ namespace App\Providers;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as Provider;
 use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Config;
+
 
 class Auth extends Provider
 {
@@ -28,9 +32,23 @@ class Auth extends Provider
 
         VerifyEmail::toMailUsing(function ($notifiable, $url) {
             return (new MailMessage)
+                ->greeting('Pozdravljeni,')
                 ->subject('Potrdite svoj e-poštni naslov')
-                ->line('Kliknite na spodnji gumb, da potrdite svoj e-poštni naslov.')
+                ->line('Kliknite na spodnji gumb, da potrdite svoj e-poštni naslov in dokončate registracijo vašega uporabniškega računa.')
                 ->action('Potrdi', $url);
+        });
+
+        VerifyEmail::createUrlUsing(function ($notifiable)
+        {
+            return URL::temporarySignedRoute(
+                'verification.verify',
+                Carbon::now()->addMinutes(Config::get('auth.verification.expire', 60)),
+                [
+                    'company_id' => $notifiable->getKey(),
+                    'id' => $notifiable->getKey(),
+                    'hash' => sha1($notifiable->getEmailForVerification()),
+                ]
+                );
         });
     }
 }

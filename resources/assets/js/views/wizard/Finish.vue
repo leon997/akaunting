@@ -18,7 +18,7 @@
                         </span>
                     </h2>
 
-                    <base-button class="btn inline-flex items-center justify-center px-6 py-3 text-base disabled:opacity-50 relative mt-5 mx-auto bg-green hover:bg-green-400 text-white rounded-md py-3 px-5 font-semibold" @click="finish()">
+                    <base-button class="btn inline-flex items-center justify-center px-6 py-3 text-base disabled:opacity-50 relative mt-5 mx-auto bg-purple hover:bg-purple-700 disabled:bg-purple-700 text-white rounded-md py-3 px-5 font-semibold" @click="finish()">
                     Naprej
                     </base-button>
                     </div>
@@ -43,7 +43,7 @@
                             </span>
                         </base-button>
                         <base-button
-                            class="relative ltr:-right-2 rtl:-left-2 flex items-center justify-center text-base rounded-lg m-auto mt-96 bg-default hover:bg-default-hover text-white py-1.5 px-7 font-medium"
+                            class="relative ltr:-right-2 rtl:-left-2 flex items-center justify-center text-base rounded-lg m-auto mt-96 bg-purple hover:bg-purple-700 disabled:bg-purple-700 text-white py-1.5 px-7 font-medium"
                             :disabled="anchor_loading"
                             @click="finish()"
                             style="top: 5.9rem;"
