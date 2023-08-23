@@ -16,7 +16,7 @@
             'p-4',
             'text-black font-bold',
             'rounded-lg',
-            { 
+            {
                 'alert-with-icon': icon
             },
             verticalAlign,
@@ -122,7 +122,7 @@
 
                     return acceptedValues.indexOf(value) !== -1;
                 },
-                description: 'Notification type of notification (gray-300|blue-300|gray-300|red-300|orange-300|green-300)'
+                description: 'Notification type of notification (gray-300|blue-300|gray-300|red-300|orange-300|purple-300)'
             },
 
             timeout: {
@@ -173,7 +173,7 @@
                     'primary': 'black-100',
                     'danger':  'red-100',
                     'warning': 'orange-100',
-                    'success': 'green-100',
+                    'success': 'purple-100',
                 },
 
                 textByClass: {
@@ -182,7 +182,7 @@
                     'primary': 'black-600',
                     'danger':  'red-600',
                     'warning': 'orange-600',
-                    'success': 'green-600',
+                    'success': 'purple-600',
                 }
             };
         },
