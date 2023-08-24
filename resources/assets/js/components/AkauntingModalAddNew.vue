@@ -17,7 +17,7 @@
                                     <h4 class="text-base font-medium" v-html="title"></h4>
 
                                     <button type="button" class="text-lg" @click="onCancel" aria-hidden="true">
-                                        <span class="rounded-md border-b-2 px-2 py-1 text-sm bg-gray-100">esc</span>
+                                        <span class="rounded-md border-b-2 px-2 py-1 text-sm bg-gray-100">Zapri</span>
                                     </button>
                                 </slot>
                             </div>

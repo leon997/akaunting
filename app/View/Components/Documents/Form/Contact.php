@@ -99,7 +99,7 @@ class Contact extends Component
         }
 
         #todo  3rd part apps
-        $this->placeholder = trans('general.placeholder.contact_search', ['type' => trans_choice('general.' . Str::plural($this->type, 2), 1)]);
+        $this->placeholder = trans('general.placeholder.contact_search', ['type' => trans_choice('general.' . Str::plural($this->type, 2), 3)]);
 
         return view('components.documents.form.contact');
     }

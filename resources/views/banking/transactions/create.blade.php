@@ -1,6 +1,6 @@
 <x-layouts.admin>
     <x-slot name="title">
-        {{ trans('general.title.new', ['type' => trans_choice('general.' . Str::plural($real_type), 1)]) }}
+        {{ trans('general.title.new', ['type' => trans_choice('general.' . Str::plural($real_type), 2)]) }}
     </x-slot>
 
     @php $fav_icon = ($real_type == 'income') ? 'request_quote' : 'paid'; @endphp

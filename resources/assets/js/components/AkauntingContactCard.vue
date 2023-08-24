@@ -52,11 +52,11 @@
                         </div>
                     </div>
                 </div>
-            </div>  
+            </div>
             <div v-else class="document-contact-with-contact-bill-to">
                 <div>
                     <span class="text-sm">{{ contactInfoText }}</span>
-                </div>  
+                </div>
                 <div class="overflow-x-visible mt-0">
                     <table class="table table-borderless p-0">
                         <tbody>
@@ -93,7 +93,7 @@
                         </tbody>
                     </table>
                 </div>
-            </div>  
+            </div>
             <div :class="show.contact_selected ? 'flex' : 'hidden'" class="absolute flex-col mt-2">
                 <button type="button" class="p-0 text-xs text-purple ltr:text-left rtl:text-right" @click="onContactEdit">
                     <span class="bg-no-repeat bg-0-2 bg-0-full hover:bg-full-2 bg-gradient-to-b from-transparent to-purple transition-backgroundSize">
@@ -105,7 +105,7 @@
                         {{ chooseDifferentContactText }}
                     </span>
                 </button>
-            </div>  
+            </div>
             <component v-bind:is="add_new_html" @submit="onSubmit" @cancel="onCancel"></component>
         </div>
     </div>
@@ -541,7 +541,7 @@ export default {
                         location: (contact.location) ? contact.location : '',
                         reference: (contact.reference) ? contact.reference : ''
                     });
-                    
+
                     this.$emit('new', contact);
                     this.$emit('change', this.contact);
 
