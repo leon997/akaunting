@@ -29,7 +29,7 @@
 
                 <div class="absolute w-1/2 right-0 ltr:pl-10 rtl:pr-10 mt-3 hidden lg:flex lg:flex-col">
                     <div class="absolute inset-0 w-full sm:my-20 sm:pt-1 pt-12 h-full ">
-                    <img class="w-96" src="/public/img/finance-leaders.png"  />
+                    <img :src="image_src" class="absolute top-12 ltr:right-2 rtl:left-2 w-10/12 p-3 -mt-12" alt="Akaunting" />
                 </div>
 
                     <base-button
@@ -89,7 +89,7 @@ export default {
         return {
             active: 3,
             route_url: url,
-            image_src: app_url + "/public/img/wizard-rocket.gif",
+            image_src: app_url + "/public/img/finance-leaders.png",
             anchor_loading: false
         };
     },
