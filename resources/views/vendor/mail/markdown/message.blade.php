@@ -21,7 +21,7 @@
     {{-- Footer --}}
     @slot('footer')
         @component('mail::footer')
-            © {{ date('Y') }} {{ setting('company.name', config('mail.from.name', config('app.name'))) }}. All rights reserved.
+            © {{ date('Y') }} Thrive d.o.o
         @endcomponent
     @endslot
 @endcomponent

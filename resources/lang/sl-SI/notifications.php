@@ -5,7 +5,7 @@ return [
     'whoops'              => 'Ups!',
     'hello'               => 'Pozdravljeni!',
     'salutation'          => 'Lepo vas pozdravljamo',
-    'subcopy'             => 'Če imate težave s klikom na gumb, kopirajte in prilepite spodnjo povezavo v spletni brskalnik: [: url](:povezava)',
+    'subcopy'             => 'Če imate težave s klikom na gumb, kopirajte in prilepite spodnjo povezavo v spletni brskalnik: [(:url))](:url)',
     'reads'               => 'Preberi|Preberi',
     'read_all'            => 'Preberi vse',
     'empty'               => 'Nimate novih obvestil',
