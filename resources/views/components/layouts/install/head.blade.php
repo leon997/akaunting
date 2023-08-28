@@ -17,7 +17,7 @@
     <x-layouts.pwa.head />
 
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('public/img/favicon1.png') }}" type="image/png">
+    <link rel="icon" href="{{ asset('public/img/favicon.svg') }}" type="image/png">
 
     <!--Icons-->
     <link rel="stylesheet" href="{{ asset('public/css/fonts/material-icons/style.css?v=' . version('short')) }}" type="text/css">
