@@ -9,7 +9,9 @@ use Illuminate\Support\Facades\Route;
  * @see \modules\PaypalStandard\Routes\guest.php for module example
  */
 
-Route::get('/', 'Auth\Login@landingPage')->name('landing');
+ Route::get('/', function () {
+    return redirect()->route('login');
+});
 
 Route::group(['prefix' => 'auth'], function () {
     Route::get('login', 'Auth\Login@create')->name('login');
