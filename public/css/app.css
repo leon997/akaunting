@@ -65004,6 +65004,10 @@ body{
   right: 1px;
 }
 
+:is([dir="rtl"] .rtl\:-right-20){
+  right: -5rem;
+}
+
 :is([dir="rtl"] .rtl\:float-right){
   float: right;
 }

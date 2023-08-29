@@ -28,10 +28,16 @@
                                 <div id="payment-element" class="mt-10">
                                     <!--Stripe.js injects the Payment Element-->
                                 </div>
-                                <button id="btnSubmit" class="bg-purple hover:bg-purple-700 disabled:bg-purple-700 text-white px-4 py-2 rounded mt-5">
-                                    <div class="spinner hidden" id="spinner"></div>
-                                    <span id="button-text">Plačaj</span>
-                                </button>
+                                <x-button
+                                    type="btnSubmit"
+                                    ::disabled="form.loading"
+                                    class="flex items-center justify-center text-white bg-purple hover:bg-purple-700 px-3 py-2 mt-2 text-base rounded-lg disabled:bg-purple-700"
+                                    override="class"
+                                >
+                                    <x-button.loading>
+                                        Plačaj
+                                    </x-button.loading>
+                                </x-button>
                                 <div id="payment-message" class="hidden"></div>
                             </form>
                         </div>

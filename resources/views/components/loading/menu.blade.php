@@ -2,7 +2,7 @@
     x-data="{ }"
     x-init="setTimeout(() => $refs.loadingMenu.remove(), 1000)"
     x-ref="loadingMenu"
-    class="w-70 h-screen hidden lg:flex fixed top-0 js-menu z-20 transition-all ltr:-left-80 rtl:-right-80 xl:ltr:left-0 xl:rtl:right-0"
+    class="w-70 h-screen hidden lg:flex fixed top-0 js-menu z-20 transition-all ltr:-left-80 rtl:-right-20 xl:ltr:left-0 xl:rtl:right-0"
 >
     <div class="w-14 py-7 px-1 bg-mainbg-smallsidebar z-10 menu-scroll overflow-y-auto overflow-x-hidden">
         <div class="flex flex-col items-center justify-center mb-7 cursor-pointer">
