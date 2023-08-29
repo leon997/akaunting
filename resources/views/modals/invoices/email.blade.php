@@ -76,7 +76,6 @@
                                     </x-table.td>
 
                                     <x-table.td class="w-1/6">
-                                        {{ $attachment->readableSize() }}
                                     </x-table.td>
                                 </x-table.tr>
                             @endforeach

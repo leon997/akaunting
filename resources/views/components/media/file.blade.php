@@ -17,7 +17,6 @@
                 </span>
 
                 <span class="text-xs mb-0">
-                    {{ $file->readableSize() }}
                 </span>
             </div>
         </div>  
