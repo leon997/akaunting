@@ -24,7 +24,7 @@ class ShowInNeww
             $menu->route('invoices.create', $title, [], 10, ['icon' => 'description']);
         }
 
-        $title = trim(trans_choice('general.incomes', 1));
+        $title = trim(trans_choice('general.incomes', 2));
         if ($this->canAccessMenuItem($title, 'create-banking-transactions')) {
             $menu->route('transactions.create', $title, ['type' => 'income'], 20, ['icon' => 'request_quote']);
         }
@@ -34,12 +34,12 @@ class ShowInNeww
             $menu->route('customers.create', $title, [], 30, ['icon' => 'person']);
         }
 
-        $title = trim(trans_choice('general.bills', 1));
+        $title = trim(trans_choice('general.bills', 2));
         if ($this->canAccessMenuItem($title, 'create-purchases-bills')) {
             $menu->route('bills.create', $title, [], 40, ['icon' => 'file_open']);
         }
 
-        $title = trim(trans_choice('general.expenses', 1));
+        $title = trim(trans_choice('general.expenses', 2));
         if ($this->canAccessMenuItem($title, 'create-banking-transactions')) {
             $menu->route('transactions.create', $title, ['type' => 'expense'], 50, ['icon' => 'paid']);
         }
