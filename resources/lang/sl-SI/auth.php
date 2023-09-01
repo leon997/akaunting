@@ -21,7 +21,7 @@ return [
     'register_user'         => 'Registracija uporabnika',
     'register'              => 'Registracija',
     'sign_up'               => 'Postanite uporabnik',
-    'sign_up_to'            => 'Ustvarite Akaunting račun',
+    'sign_up_to'            => 'Ustvarite nov račun',
 
     'form_description' => [
         'personal'          => 'Povezava s povabilom bo poslana novemu uporabniku, zato se prepričajte, da je e-poštni naslov pravilen. Prejemnik bo lahko sam vnesel svoje poljubno geslo.',

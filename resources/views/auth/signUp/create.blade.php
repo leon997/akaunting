@@ -41,7 +41,7 @@
 
                 <x-form.group.text
                     name="company_name"
-                    label="{{ trans('install.settings.company_name') }}"
+                    label="{{ trans('general.company_name') }}"
                     value=""
                     form-group-class="sm:col-span-6 text-white" />
 

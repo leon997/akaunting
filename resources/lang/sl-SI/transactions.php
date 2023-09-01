@@ -12,7 +12,7 @@ return [
     'recurring_expense'     => 'Recurring Expense',
 
     'form_description' => [
-        'general'           => 'Tukaj lahko vnesete splošne informacije o transakciji, kot so ime, tip, opis itd.',
+        'general'           => 'Tukaj lahko vnesete splošne informacije o transakciji.',
         'assign_income'     => 'Izberite kategorijo in stranko, da bodo vaša poročila podrobnejša.',
         'assign_expense'    => 'Izberite kategorijo in stranko, da bodo vaša poročila podrobnejša.',
         'other'             => 'Vnesite številko in sklic, da bo transakcija povezana z vašimi evidencami.',

@@ -83,7 +83,7 @@
 
                         <x-form.group.textarea name="notes" label="{{ trans_choice('general.notes', 2) }}" :value="setting('invoice.notes')" form-group-class="sm:col-span-3" not-required />
 
-                        <x-form.group.textarea name="footer" label="{{ trans('general.footer') }}" :value="setting('invoice.footer')" form-group-class="sm:col-span-3" not-required />
+                        <x-form.group.textarea name="footer" placeholder="Vpiši nogo" label="{{ trans('general.footer') }}" :value="setting('invoice.footer')" form-group-class="sm:col-span-3" not-required />
                     </x-slot>
                 </x-form.section>
 

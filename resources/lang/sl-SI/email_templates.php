@@ -3,8 +3,8 @@
 return [
 
     'invoice_new_customer' => [
-        'subject'       => 'Račun {invoice_number} ustvarjen',
-        'body'          => 'Spoštovani {customer_name}, <br /> <br /> Za vas smo pripravili naslednji račun: <strong> {invoice_number} </strong>. <br /> <br /> Ogledate si lahko podatke o računu in nadaljujete z plačilom na tej povezavi: <a href="{invoice_guest_link}"> {invoice_number} </a>. <br /> <br /> Za vsa vprašanja nas lahko kontaktirate. <br /> <br /> Lep pozdrav, <br /> {company_name}',
+        'subject'       => 'Račun {invoice_number}',
+        'body'          => 'Spoštovani {customer_name}, <br /> <br /> Za vas smo pripravili naslednji račun: <strong> {invoice_number} </strong>. <br /> <br /> Podatke o računu si lahko ogledate na sledeči povezavi: <a href="{invoice_guest_link}"> {invoice_number} </a>. <br /> <br /> Za vsa vprašanja nas lahko kontaktirate. <br /> <br /> Lep pozdrav, <br /> {company_name}',
     ],
 
     'invoice_remind_customer' => [
@@ -19,7 +19,7 @@ return [
 
     'invoice_recur_customer' => [
         'subject'       => 'Ponavljajoči račun {invoice_number} ustvarjen.',
-        'body'          => 'Spoštovani {customer_name}, <br /> <br /> Na podlagi vašega ponavljajočega se kroga smo za vas pripravili naslednji račun: <strong> {invoice_number} </strong>. <br /> <br /> Podatke o računu si lahko ogledate in nadaljujte s plačilom na naslednji povezavi: <a href="{invoice_guest_link}"> {invoice_number} </a>. <br /> <br /> Za vsa vprašanja nas lahko kontaktirate. /> <br /> Lep pozdrav, <br /> {company_name}',
+        'body'          => 'Spoštovani {customer_name}, <br /> <br /> Na podlagi vašega ponavljajočega se obračuncavanja smo za vas pripravili naslednji račun: <strong> {invoice_number} </strong>. <br /> <br /> Podatke o računu si lahko ogledate in nadaljujte s plačilom na naslednji povezavi: <a href="{invoice_guest_link}"> {invoice_number} </a>. <br /> <br /> Za vsa vprašanja nas lahko kontaktirate. /> <br /> Lep pozdrav, <br /> {company_name}',
     ],
 
     'invoice_recur_admin' => [

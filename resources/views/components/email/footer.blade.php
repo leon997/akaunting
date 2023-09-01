@@ -18,7 +18,8 @@
         </tr>
         <tr>
             <td style="text-align: center; padding: 5px 0 5px 0; color: #595959;">
-                {!! trans('footer.tag_line', ['get_started_url' => 'www.tripcre8.com']) !!}
+                Pošiljajte račune , spremljajte plačila in vodite svoje poslovanje z našim spletnim računovodstvom.
+                {{-- {!! trans('footer.tag_line', ['get_started_url' => 'www.tripcre8.com']) !!} --}}
             </td>
         </tr>
     </tbody>

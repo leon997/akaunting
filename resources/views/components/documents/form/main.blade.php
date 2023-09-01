@@ -4,7 +4,7 @@
     </x-slot>
 
     <x-slot name="body">
-        <x-documents.form.metadata type="{{ $type }}" />
+        <x-documents.form.metadata type="{{ $type }}"  />
 
         <x-documents.form.items type="{{ $type }}" />
 

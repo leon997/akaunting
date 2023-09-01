@@ -71,7 +71,7 @@ return [
     ],
 
     'messages' => [
-        'email_sent'        => ':type elektronska pošta je bila poslana!',
+        'email_sent'        => ':type je bil poslan!',
         'marked_as'         => ':type označen kot :status!',
         'marked_sent'       => ':type označen kot poslan!',
         'marked_paid'       => ':type označen kot plačan!',

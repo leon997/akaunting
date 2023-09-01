@@ -75,7 +75,7 @@
                 </x-button>
 
                 <div class="sm:col-span-6 flex flex-row justify-between items-center">
-                        <x-link href="{{ route('signUp') }}" class="text-white hover:text-white text-base" override="class">
+                        <x-link href="{{ route('signUp') }}" class="text-white hover:underline text-base" override="class">
                             {{ trans('auth.sign_up') }}
                         </x-link>
                 </div>

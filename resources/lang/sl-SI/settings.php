@@ -26,6 +26,7 @@ return [
             'begins'        => 'Leto, v katerem se začne',
             'ends'          => 'Leto, v katerem se konča',
         ],
+        'preferred_date'    => 'Oblika datuma',
         'date' => [
             'format'        => 'Zapis datuma',
             'separator'     => 'Besedilno ločilo za datum',
@@ -78,6 +79,7 @@ return [
         'default'           => 'Privzeto',
         'classic'           => 'Klasično',
         'modern'            => 'Sodobno',
+        'column'            => 'Stolpec|Stolpci',
         'hide'              => [
             'item_name'         => 'Skrij ime',
             'item_description'  => 'Skrij opis',
@@ -88,7 +90,7 @@ return [
         'form_description' => [
             'general'                   => 'Nastavite privzete nastavitve za oblikovanje številk računov in plačilnih pogojev.',
             'template'                  => 'Izberite eno od spodnjih predlog za svoje izdane račune.',
-            'default'                   => 'Če izberete privzete nastavitve za račune, bodo vnaprej izpolnjeni naslovi, podnaslovi, opombe in noge. Tako vam ni treba vsakič urejati računov, da bi bili videti bolj profesionalni.',
+            'default'                   => 'Če določite privzete nastavitve za račune, bodo z njimi vnaprej izpolnjeni naslovi, podnaslovi, opombe in noge. Tako vam ni treba vsakič znova urejati računov.',
             'column'                    => 'Prilagodite poimenovanje stolpcev računa. Če želite skriti opise artiklov in zneske v vrsticah, lahko to spremenite tukaj.',
         ]
     ],

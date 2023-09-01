@@ -1,4 +1,4 @@
-<x-form id="form-create-customer" route="customers.store">
+<x-form id="form-create-customer" route="customers.store" class="z-1">
     <x-tabs active="general" class="grid grid-cols-3" override="class">
         <x-slot name="navs">
             <x-tabs.nav id="general">
@@ -29,7 +29,7 @@
         <x-slot name="content">
             <x-tabs.tab id="general">
                 <div class="grid sm:grid-cols-6 gap-x-8 gap-y-6 my-3.5">
-                    <x-form.group.text name="name" label="{{ trans('general.name') }}" form-group-class="col-span-6" />
+                    <x-form.group.text name="name" label="{{ trans('general.company_name') }}" form-group-class="col-span-6" />
 
                     <x-form.group.text name="email" label="{{ trans('general.email') }}" form-group-class="col-span-6" not-required />
 
@@ -37,7 +37,7 @@
 
                     <x-form.group.text name="tax_number" label="{{ trans('general.tax_number') }}" form-group-class="col-span-6" not-required />
 
-                    <x-form.group.currency without-add-new form-group-class="col-span-6" :add-new-text="trans_choice('general.currencies', 1)" />
+                    <x-form.group.currency without-add-new form-group-class="col-span-6" :add-new-text="trans_choice('general.currencies', 2)" />
                 </div>
             </x-tabs.tab>
 
