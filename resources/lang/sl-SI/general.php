@@ -90,7 +90,7 @@ return [
     'histories'             => 'Zgodovina|Zgodovina',
     'your_notifications'    => 'Tvoje obvestilo|Tvoja obvestila',
     'employees'             => 'Zaposlen|Zaposleni',
-    'plans'                 => 'Naročina|Naročnine',
+    'plans'                 => 'Naročnina|Naročnine',
     'subscriptions'         => 'Naročnina|Naročnine',
     'company_name'         => 'Naziv podjetja',
 
