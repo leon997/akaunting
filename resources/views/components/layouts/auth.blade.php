@@ -15,7 +15,7 @@
         @stack('body_start')
 
         <div id="app" class="h-screen lg:h-auto bg-no-repeat bg-cover bg-center" style="background-color: #1F2023">
-{{--             @desktop
+<!--             @desktop
             @if ( ! Route::is('login'))
                 <a href="{{ route('login') }}">
                 <x-button
@@ -30,9 +30,9 @@
                     </x-button>
                 </a>
             @endif
-            @enddesktop --}}
+            @enddesktop -->
             @mobile
-            <div class="relative w-full lg:max-w-7xl flex items-center m-auto">
+            <div class="relative mt-12 w-full lg:max-w-7xl flex items-center m-auto">
             @elsemobile
             <div class="relative w-full lg:max-w-7xl flex items-center m-auto">
             @endmobile
