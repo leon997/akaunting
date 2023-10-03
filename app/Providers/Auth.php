@@ -44,7 +44,7 @@ class Auth extends Provider
                 'verification.verify',
                 Carbon::now()->addMinutes(Config::get('auth.verification.expire', 60)),
                 [
-                    'company_id' => $notifiable->getKey(),
+                    'company_id' => $notifiable->getCompanyKey(),
                     'id' => $notifiable->getKey(),
                     'hash' => sha1($notifiable->getEmailForVerification()),
                 ]

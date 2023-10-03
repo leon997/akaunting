@@ -437,4 +437,10 @@ class User extends Authenticatable implements HasLocalePreference, MustVerifyEma
     {
         return \Database\Factories\User::new();
     }
+
+    public function getCompanyKey()
+    {
+        $company_key = $this->companies->pluck('id');
+        return trim($company_key, '[]');
+    }
 }
