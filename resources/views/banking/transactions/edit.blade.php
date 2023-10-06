@@ -1,6 +1,6 @@
 <x-layouts.admin>
     <x-slot name="title">
-        {{ trans('general.title.edit', ['type' => trans_choice('general.' . Str::plural($type), 1)]) }}
+        {{ trans('general.title.edit', ['type' => trans_choice('general.' . Str::plural($type), 2)]) }}
     </x-slot>
 
     <x-slot name="content">

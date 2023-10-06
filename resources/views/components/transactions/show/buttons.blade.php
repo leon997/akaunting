@@ -3,7 +3,7 @@
 @if (! $hideButtonAddNew)
     @can($permissionCreate)
         <x-link href="{{ route($routeButtonAddNew, ['type' => $type]) }}" kind="primary" id="show-more-actions-new-{{ $transaction->type }}">
-            {{ trans($textButtonAddNew) }}
+            Nov Prihodek
         </x-link>
     @endcan
 @endif

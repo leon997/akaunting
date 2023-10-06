@@ -1,5 +1,5 @@
 <x-layouts.admin>
-    <x-slot name="title">{{ trans('general.title.new', ['type' => trans_choice('general.reports', 1)]) }}</x-slot>
+    <x-slot name="title">Novo Poročilo</x-slot>
 
     <x-slot name="content">
         <x-form.container>

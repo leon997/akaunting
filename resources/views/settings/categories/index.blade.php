@@ -12,7 +12,7 @@
     <x-slot name="buttons">
         @can('create-settings-categories')
             <x-link href="{{ route('categories.create') }}" kind="primary" id="index-more-actions-new-category">
-                {{ trans('general.title.new', ['type' => trans_choice('general.categories', 1)]) }}
+                Nova Kategorija
             </x-link>
         @endcan
     </x-slot>

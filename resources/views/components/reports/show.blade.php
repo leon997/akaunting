@@ -25,7 +25,6 @@
 
             @include($class->views[$class->type])
 
-            <x-loading.content />
         </div>
     </x-slot>
 

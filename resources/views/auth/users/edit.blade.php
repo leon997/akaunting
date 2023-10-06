@@ -38,7 +38,7 @@
                     </x-slot>
                 </x-form.section>
 
-                <x-form.section>
+<!--                 <x-form.section>
                     <x-slot name="head">
                         <x-form.section.head title="{{ trans('general.assign') }}" description="{!! trans('auth.form_description.assign', ['url' => $roles_url]) !!}" />
                     </x-slot>
@@ -56,7 +56,7 @@
                             @endrole
                         @endif
                     </x-slot>
-                </x-form.section>
+                </x-form.section> -->
 
                 <x-form.section>
                     <x-slot name="head">

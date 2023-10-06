@@ -1,4 +1,3 @@
-<x-loading.content />
 <div class="relative mt-4">
     <x-form 
         id="{{ $formId }}"

@@ -28,7 +28,7 @@
                     </x-slot>
                 </x-form.section>
 
-                <x-form.section>
+<!--                 <x-form.section>
                     <x-slot name="head">
                         <x-form.section.head title="{{ trans('settings.scheduling.cron_command') }}" description="{{ trans('settings.scheduling.form_description.cron') }}" />
                     </x-slot>
@@ -43,7 +43,7 @@
 
                         <x-form.group.text name="time" label="{{ trans('settings.scheduling.schedule_time') }}" value="{{ setting('schedule.time') }}" not-required />
                     </x-slot>
-                </x-form.section>
+                </x-form.section> -->
 
                 @can('update-settings-schedule')
                 <x-form.section>
