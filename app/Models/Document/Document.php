@@ -333,7 +333,7 @@ class Document extends Model
 
         $code = $this->currency_code;
         $rate = $this->currency_rate;
-        $precision = config('money.currencies.' . $code . '.precision');
+        $precision = currency($code)->getPrecision();
 
         if ($this->transactions->count()) {
             foreach ($this->transactions as $transaction) {
@@ -365,7 +365,7 @@ class Document extends Model
 
         $code = $this->currency_code;
         $rate = $this->currency_rate;
-        $precision = config('money.currencies.' . $code . '.precision');
+        $precision = currency($code)->getPrecision();
 
         if ($this->transactions->count()) {
             foreach ($this->transactions as $transaction) {
@@ -395,7 +395,7 @@ class Document extends Model
      */
     public function getAmountDueAttribute()
     {
-        $precision = config('money.currencies.' . $this->currency_code . '.precision');
+        $precision = currency($this->currency_code)->getPrecision();
 
         return round($this->amount - $this->paid, $precision);
     }
@@ -540,7 +540,12 @@ class Document extends Model
             ];
         } catch (\Exception $e) {}
 
-        if ($this->status != 'paid' && (empty($this->transactions->count()) || (! empty($this->transactions->count()) && $this->paid != $this->amount))) {
+        if (
+            $this->status != 'paid'
+            && ! str_contains($this->type, 'recurring')
+            && (empty($this->transactions->count())
+            || (! empty($this->transactions->count()) && $this->paid != $this->amount))
+        ) {
             try {
                 if ($this->totals->count()) {
                     $actions[] = [
@@ -660,6 +665,7 @@ class Document extends Model
                     'title' => $translation_prefix,
                     'route' => $prefix . '.destroy',
                     'permission' => 'delete-' . $group . '-' . $permission_prefix,
+                    'model-name' => 'document_number',
                     'attributes' => [
                         'id' => 'index-line-actions-delete-' . $this->type . '-' . $this->id,
                     ],
@@ -667,17 +673,19 @@ class Document extends Model
                 ];
             } catch (\Exception $e) {}
         } else {
-            try {
-                $actions[] = [
-                    'title' => trans('general.end'),
-                    'icon' => 'block',
-                    'url' => route($prefix. '.end', $this->id),
-                    'permission' => 'update-' . $group . '-' . $permission_prefix,
-                    'attributes' => [
-                        'id' => 'index-line-actions-end-' . $this->type . '-' . $this->id,
-                    ],
-                ];
-            } catch (\Exception $e) {}
+            if ($this->recurring && $this->recurring->status != 'ended') {
+                try {
+                    $actions[] = [
+                        'title' => trans('general.end'),
+                        'icon' => 'block',
+                        'url' => route($prefix. '.end', $this->id),
+                        'permission' => 'update-' . $group . '-' . $permission_prefix,
+                        'attributes' => [
+                            'id' => 'index-line-actions-end-' . $this->type . '-' . $this->id,
+                        ],
+                    ];
+                } catch (\Exception $e) {}
+            }
         }
 
         return $actions;

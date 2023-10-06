@@ -161,7 +161,7 @@ trait Transactions
 
         $file_name = $this->getTransactionFileName($transaction);
 
-        $pdf_path = storage_path('app/temp/' . $file_name);
+        $pdf_path = get_storage_path('app/temp/' . $file_name);
 
         // Save the PDF file into temp folder
         $pdf->save($pdf_path);

@@ -20,9 +20,9 @@
                     <tr>
                         @stack('move_td_start')
 
-                        <td class="align-middle border-b-0 flex items-center justify-center" style="width:24px; height:100px; color: #8898aa;">
+                        <td class="align-top" style="width:24px; height:100px; color: #8898aa;">
                             <div class="handle mt-2 hidden lg:block cursor-move">
-                                <span class="w-6 material-icons">list</span>
+                                <span class="w-6 material-icons mt-0.5">list</span>
                             </div>
                         </td>
 
@@ -33,7 +33,7 @@
                         @if (! $hideItems || (! $hideItemName && ! $hideItemDescription))
                             @stack('name_td_start')
 
-                            <td class="px-3 py-3 ltr:pl-2 rtl:pr-2 ltr:text-left rtl:text-right align-middle border-b-0 name">
+                            <td class="px-3 py-3 ltr:pl-2 rtl:pr-2 ltr:text-left rtl:text-right align-top border-b-0 name">
                                 @if (! $hideItemName)
                                     <span class="flex items-center text-sm" tabindex="0" v-if="row.item_id">
                                         <div v-html="row.name"></div>
@@ -45,7 +45,7 @@
                                         <input
                                             type="text"
                                             :ref="'items-' + index + '-name'"
-                                            class="w-full text-sm px-3 py-2.5 mt-0 rounded-lg border border-light-gray text-black placeholder-light-gray bg-white disabled:bg-gray-200 focus:outline-none focus:ring-transparent focus:border-purple mt-0"
+                                            class="w-full text-sm px-3 py-2.5 rounded-lg border border-light-gray text-black placeholder-light-gray bg-white disabled:bg-gray-200 focus:outline-none focus:ring-transparent focus:border-purple mt-0"
                                             :name="'items.' + index + '.name'"
                                             autocomplete="off"
                                             required="required"
@@ -55,7 +55,7 @@
                                             @change="form.errors.clear('items.' + index + '.name')"
                                         />
 
-                                        <div class="text-red text-sm mt-1 block"
+                                        <div class="text-red text-sm mt-1 mb-3 block"
                                             v-if="form.errors.has('items.' + index + '.name')"
                                             v-html="form.errors.get('items.' + index + '.name')"
                                         ></div>
@@ -69,11 +69,11 @@
 
                             @stack('description_td_start')
 
-                            <td class="px-3 py-3 border-b-0 description">
+                            <td class="px-3 py-3 border-b-0 align-top description">
                                 @if (! $hideItemDescription)
                                     <textarea
-                                        class="w-full text-sm px-3 py-2.5 mt-1.5 rounded-lg border border-light-gray text-black placeholder-light-gray bg-white disabled:bg-gray-200 focus:outline-none focus:ring-transparent focus:border-purple"
-                                        style="height:42px;"
+                                        class="w-full text-sm px-3 py-2.5 rounded-lg border border-light-gray text-black placeholder-light-gray bg-white disabled:bg-gray-200 focus:outline-none focus:ring-transparent focus:border-purple"
+                                        style="height:42px; min-height:42px;"
                                         :ref="'items-' + index + '-description'"
                                         placeholder="{{ trans('items.enter_item_description') }}"
                                         :name="'items.' + index + '.description'"
@@ -92,7 +92,7 @@
 
                         @stack('quantity_td_start')
 
-                        <td class="px-3 py-3 border-b-0 quantity">
+                        <td class="px-3 py-3 border-b-0 align-top quantity">
                             @if (! $hideItemQuantity)
                                 <div>
                                     @stack('quantity_input_start')
@@ -111,8 +111,8 @@
                                         @change="form.errors.clear('items.' + index + '.quantity')"
                                     />
 
-                                    <div class="text-red text-sm mt-1 block"
-                                        v-if="form.errors.has('items.' + index + '.quantity')"
+                                    <div class="text-red text-sm mt-1 mb-3 block"
+                                        v-if="!form.errors.has('items.' + index + '.quantity')"
                                         v-html="form.errors.get('items.' + index + '.quantity')">
                                     </div>
 
@@ -125,7 +125,7 @@
 
                         @stack('price_td_start')
 
-                        <td class="px-3 py-3 pr-1 border-b-0 price">
+                        <td class="px-3 py-3 pr-1 border-b-0 align-top price">
                             <div>
                                 @stack('price_input_start')
 
@@ -152,7 +152,7 @@
 
                         @stack('total_td_start')
 
-                        <td class="px-3 py-3 text-right border-b-0 total">
+                        <td class="px-3 py-3 text-right border-b-0 align-top total">
                             @if (! $hideItemAmount)
                                 <div>
                                     <x-form.input.money
@@ -175,8 +175,8 @@
 
                         @stack('delete_td_start')
 
-                        <td class="text-right group">
-                            <button type="button" @click="onDeleteItem(index)" class="w-6 h-7 flex items-center rounded-lg p-0 group-hover:bg-gray-100">
+                        <td class="text-right align-top group">
+                            <button type="button" @click="onDeleteItem(index)" class="w-6 h-7 flex items-center rounded-lg p-0 group-hover:bg-gray-100 mt-4">
                                 <span class="w-full material-icons-outlined text-lg text-gray-300 group-hover:text-gray-500">delete</span>
                             </button>
                         </td>
@@ -248,7 +248,7 @@
                                             @change="form.errors.clear('items.' + index + '.discount')"
                                         />
 
-                                        <div class="text-red text-sm mt-1 block"
+                                        <div class="text-red text-sm mt-1 mb-3 block"
                                             v-if="form.errors.has('items.' + index + '.discount')"
                                             v-html="form.errors.get('items.' + index + '.discount')">
                                         </div>
@@ -296,7 +296,7 @@
                                         :title="''"
                                         :placeholder="'{{ trans('general.form.select.field', ['field' => trans_choice('general.taxes', 1)]) }}'"
                                         :name="'items.' + index + '.taxes.' + row_tax_index"
-                                        :options="{{ json_encode($taxes->pluck('title', 'id')) }}"
+                                        :options="{{ json_encode($taxes) }}"
                                         :dynamic-options="dynamic_taxes"
                                         :disabled-options="form.items[index].tax_ids"
                                         :value="row_tax.id"
@@ -327,7 +327,36 @@
                                         :form-error="form.errors.get('items.' + index + '.taxes')"
                                         :no-data-text="'{{ trans('general.no_data') }}'"
                                         :no-matching-data-text="'{{ trans('general.no_matching_data') }}'"
-                                    ></akaunting-select>
+                                    >
+                                        <template #option="{option}">
+                                            <span class="tax-group flex items-center">
+                                                <span class="float-left">
+                                                    @{{ option.value }}
+                                                </span>
+
+                                                <span 
+                                                    class="inline-flex items-center h-5 rounded-md bg-gray-50 font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10"
+                                                    style="width: auto; font-size: 0.56rem;"
+                                                >
+                                                    <template v-if="option.option.type == 'normal'">
+                                                        {{ trans('taxes.normal') }}
+                                                    </template>
+                                                    <template v-if="option.option.type == 'fixed'">
+                                                        {{ trans('taxes.fixed') }}
+                                                    </template>
+                                                    <template v-if="option.option.type == 'inclusive'">
+                                                        {{ trans('taxes.inclusive') }}
+                                                    </template>
+                                                    <template v-if="option.option.type == 'withholding'">
+                                                        {{ trans('taxes.withholding') }}
+                                                    </template>
+                                                    <template v-if="option.option.type == 'compound'">
+                                                        {{ trans('taxes.compound') }}
+                                                    </template>
+                                                </span>
+                                            </span>
+                                        </template>
+                                    </akaunting-select>
 
                                     @stack('taxes_input_end')
                                 </div>
@@ -370,7 +399,7 @@
                                         :title="''"
                                         :placeholder="'{{ trans('general.form.select.field', ['field' => trans_choice('general.taxes', 1)]) }}'"
                                         :name="'items.' + index + '.taxes.999'"
-                                        :options="{{ json_encode($taxes->pluck('title', 'id')) }}"
+                                        :options="{{ json_encode($taxes) }}"
                                         :dynamic-options="dynamic_taxes"
                                         :disabled-options="form.items[index].tax_ids"
                                         :value="tax_id"
@@ -401,7 +430,36 @@
                                         :form-error="form.errors.get('items.' + index + '.taxes')"
                                         :no-data-text="'{{ trans('general.no_data') }}'"
                                         :no-matching-data-text="'{{ trans('general.no_matching_data') }}'"
-                                    ></akaunting-select>
+                                    >
+                                        <template #option="{option}">
+                                            <span class="tax-group flex items-center">
+                                                <span class="float-left">
+                                                    @{{ option.value }}
+                                                </span>
+
+                                                <span 
+                                                    class="inline-flex items-center h-5 rounded-md bg-gray-50 font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10"
+                                                    style="width: auto; font-size: 0.56rem;"
+                                                >
+                                                    <template v-if="option.option.type == 'normal'">
+                                                        {{ trans('taxes.normal') }}
+                                                    </template>
+                                                    <template v-if="option.option.type == 'fixed'">
+                                                        {{ trans('taxes.fixed') }}
+                                                    </template>
+                                                    <template v-if="option.option.type == 'inclusive'">
+                                                        {{ trans('taxes.inclusive') }}
+                                                    </template>
+                                                    <template v-if="option.option.type == 'withholding'">
+                                                        {{ trans('taxes.withholding') }}
+                                                    </template>
+                                                    <template v-if="option.option.type == 'compound'">
+                                                        {{ trans('taxes.compound') }}
+                                                    </template>
+                                                </span>
+                                            </span>
+                                        </template>
+                                    </akaunting-select>
 
                                     @stack('taxes_input_end')
                                 </div>

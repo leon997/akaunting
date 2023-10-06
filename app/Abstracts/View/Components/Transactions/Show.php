@@ -285,6 +285,9 @@ abstract class Show extends Component
     public $hideChildren;
 
     /** @var bool */
+    public $hideConnect;
+
+    /** @var bool */
     public $hideTransfer;
 
     /** @var bool */
@@ -331,7 +334,7 @@ abstract class Show extends Component
         string $textRelatedTransansaction = '', string $textRelatedDocumentNumber = '', string $textRelatedContact = '', string $textRelatedDocumentDate = '', string $textRelatedDocumentAmount = '', string $textRelatedAmount = '',
         string $routeDocumentShow = '', string $routeTransactionShow = '', string $textButtonAddNew = '',
 
-        bool $hideSchedule = false, bool $hideChildren = false, bool $hideTransfer = false, bool $hideAttachment = false, $attachment = [],
+        bool $hideSchedule = false, bool $hideChildren = false, bool $hideConnect = false, bool $hideTransfer = false, bool $hideAttachment = false, $attachment = [],
         array $connectTranslations = [], string $textRecurringType = '', bool $hideRecurringMessage = false, bool $hideCreated = false
     ) {
         $this->type = $type;
@@ -387,6 +390,9 @@ abstract class Show extends Component
 
         // Hide Children
         $this->hideChildren = $hideChildren;
+
+        // Hide Connect
+        $this->hideConnect = $hideConnect;
 
         // Hide Transfer
         $this->hideTransfer = $hideTransfer;
@@ -493,6 +499,12 @@ abstract class Show extends Component
             return $logo;
         }
 
+        static $content;
+
+        if (! empty($content)) {
+            return $content;
+        }
+
         $media_id = (!empty($this->transaction->contact->logo) && !empty($this->transaction->contact->logo->id)) ? $this->transaction->contact->logo->id : setting('company.logo');
 
         $media = Media::find($media_id);
@@ -538,7 +550,9 @@ abstract class Show extends Component
 
         $extension = File::extension($path);
 
-        return 'data:image/' . $extension . ';base64,' . base64_encode($image);
+        $content = 'data:image/' . $extension . ';base64,' . base64_encode($image);
+
+        return $content;
     }
 
     protected function getRouteButtonAddNew($type, $routeButtonAddNew)

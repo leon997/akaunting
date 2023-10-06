@@ -4,8 +4,10 @@ use App\Models\Common\Company;
 use App\Traits\DateTime;
 use App\Traits\Sources;
 use App\Traits\Modules;
+use App\Traits\SearchString;
 use App\Utilities\Date;
 use App\Utilities\Widgets;
+use Illuminate\Support\Facades\Storage;
 
 if (! function_exists('user')) {
     /**
@@ -35,9 +37,7 @@ if (! function_exists('company_date_format')) {
      */
     function company_date_format(): string
     {
-        $date_time = new class() {
-            use DateTime;
-        };
+        $date_time = new class() { use DateTime; };
 
         return $date_time->getCompanyDateFormat();
     }
@@ -246,5 +246,55 @@ if (! function_exists('env_is_testing')) {
     function env_is_testing(): bool
     {
         return config('app.env') === 'testing';
+    }
+}
+
+if (! function_exists('is_local_storage')) {
+    /**
+     * Determine if the storage is local.
+     */
+    function is_local_storage(): bool
+    {
+        $driver = config('filesystems.disks.' . config('filesystems.default') . '.driver');
+
+        return $driver == 'local';
+    }
+}
+
+if (! function_exists('is_cloud_storage')) {
+    /**
+     * Determine if the storage is cloud.
+     */
+    function is_cloud_storage(): bool
+    {
+        return ! is_local_storage();
+    }
+}
+
+if (! function_exists('get_storage_path')) {
+    /**
+     * Get the path from the storage.
+     */
+    function get_storage_path(string $path = ''): string
+    {
+        return is_local_storage()
+                ? storage_path($path)
+                : Storage::path($path);
+    }
+}
+
+if (! function_exists('user_model_class')) {
+    function user_model_class(): string
+    {
+        return config('auth.providers.users.model');
+    }
+}
+
+if (! function_exists('search_string_value')) {
+    function search_string_value(string $name, string $default = '', string $input = ''): string|array
+    {
+        $search = new class() { use SearchString; };
+
+        return $search->getSearchStringValue($name, $default, $input);
     }
 }

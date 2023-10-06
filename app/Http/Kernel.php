@@ -178,6 +178,7 @@ class Kernel extends HttpKernel
         'company.identify' => \App\Http\Middleware\IdentifyCompany::class,
         'dropzone' => \App\Http\Middleware\Dropzone::class,
         'header.x' => \App\Http\Middleware\AddXHeader::class,
+        'plan.limits' => \App\Http\Middleware\RedirectIfHitPlanLimits::class,
         'menu.admin' => \App\Http\Middleware\AdminMenu::class,
         'menu.portal' => \App\Http\Middleware\PortalMenu::class,
         'date.format' => \App\Http\Middleware\DateFormat::class,

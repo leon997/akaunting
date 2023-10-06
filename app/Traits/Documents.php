@@ -187,7 +187,7 @@ trait Documents
 
         $file_name = $this->getDocumentFileName($document);
 
-        $pdf_path = storage_path('app/temp/' . $file_name);
+        $pdf_path = get_storage_path('app/temp/' . $file_name);
 
         // Save the PDF file into temp folder
         $pdf->save($pdf_path);
@@ -208,7 +208,7 @@ trait Documents
         $documents = $documents ?: Document::type($type)->with('transactions')->future();
 
         $documents->each(function ($document) use (&$totals, $today) {
-            if (!in_array($document->status, $this->getDocumentStatusesForFuture())) {
+            if (! in_array($document->status, $this->getDocumentStatusesForFuture())) {
                 return;
             }
 

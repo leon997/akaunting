@@ -247,10 +247,12 @@ return [
     'last_sent'             => 'Nazadnje poslano :date',
     'preview_in_window'     => 'Predogled v novem oknu',
     'copied'                => 'Kopirano',
-    'preview_mode'          => 'Način predogleda',
-    'go_back'               => 'Nazaj na :type',
-    'validation_error'      => 'Napaka pri preverjanju',
-    'dismiss'               => 'Opustite',
+    'preview_mode'          => 'Predogled',
+    'go_back'               => 'Vrnite se na :type',
+    'validation_error'      => 'Napaka pri vnosu',
+    'dismiss'               => 'Opusti',
+    'size'                  => 'Velikost',
+    'media'                 => 'Predstavnost',
 
     'card' => [
         'cards'                 => 'Kartica|Kartice',
