@@ -3,7 +3,7 @@
 return [
 
     'success' => [
-        'added'             => ':type dodan!',
+        'added'             => ':type dodan! | :type dodana!',
         'updated'           => ':type posodobljen!',
         'deleted'           => ':type izbrisan!',
         'duplicated'        => ':type podvojen!',

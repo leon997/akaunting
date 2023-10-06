@@ -4,7 +4,7 @@ return [
 
     'payment_received'      => 'Payment Received',
     'payment_made'          => 'Payment Made',
-    'paid_by'               => 'Paid By',
+    'paid_by'               => 'Plačal',
     'paid_to'               => 'Paid To',
     'related_invoice'       => 'Related Invoice',
     'related_bill'          => 'Related Bill',
@@ -19,8 +19,8 @@ return [
     ],
 
     'slider' => [
-        'create'            => ':user created this transaction on :date',
-        'attachments'       => 'Download the files attached to this transaction',
+        'create'            => ':user je ustvaril to transakcijo dne :date',
+        'attachments'       => 'Prenesite datoteke, priložene tej transakciji',
         'create_recurring'  => ':user created this recurring template on :date',
         'schedule'          => 'Repeat every :interval :frequency since :date',
         'children'          => ':count transactions were created automatically',

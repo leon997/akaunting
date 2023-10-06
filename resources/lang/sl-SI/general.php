@@ -3,7 +3,7 @@
 return [
 
     'dashboards'            => 'Nadzorna plošča | Nadzorne plošče',
-    'items'                 => 'izdelek|Izdelki',
+    'items'                 => 'Izdelek|Izdelki',
     'invoices'              => 'Račun|Računi',
     'recurring_invoices'    => 'Ponavljajoči se račun|Ponavljajoči se računi',
     'customers'             => 'Stranka|Stranke|Stranko',
@@ -30,7 +30,7 @@ return [
     'recurring_transactions'=> 'Ponavljajoče se transakcija|Ponavljajoče se transakcije',
     'reports'               => 'Poročilo | Poročila',
     'settings'              => 'Nastavitve',
-    'categories'            => 'Kategorije',
+    'categories'            => 'Kategorije | Kategorija',
     'currencies'            => 'Valute|Valuta',
     'tax_rates'             => 'Davčne stopnje',
     'users'                 => 'Uporabnik | Uporabniki',
@@ -220,7 +220,7 @@ return [
     'created'               => 'Ustvarjeno',
     'state'                 => 'Regija',
     'zip_code'              => 'Poštna številka',
-    'parent'                => 'Matično',
+    'parent'                => 'Matična',
     'split'                 => 'Razdeli',
     'email_send_me'         => 'Pošlji kopijo sebi na :email',
     'connect'               => 'Poveži',
