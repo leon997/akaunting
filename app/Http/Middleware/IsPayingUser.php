@@ -22,8 +22,8 @@ class IsPayingUser
         if (Auth::user() && ! $this->isSubscribed() && $this->trialOver()) {
             // This user is not a paying customer...
             if (! $this->isAdmin()) {
-                Auth::user()->detachRole('manager');
-                Auth::user()->syncRoles(['neplacnik']);
+                return $next($request);
+
             } else {
                 return $next($request);
             }
@@ -49,6 +49,6 @@ class IsPayingUser
     }
 
     public function isAdmin(){
-        return Auth::user()->hasRole('admin');
+        return Auth::user()->hasRole('admin', 'customerProle');
     }
 }

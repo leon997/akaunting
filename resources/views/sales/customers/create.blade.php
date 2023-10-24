@@ -1,6 +1,6 @@
 <x-layouts.admin>
     <x-slot name="title">
-        {{ trans('Nova', ['type' => trans_choice('general.customers', 1)]) }}
+        {{ trans('general.title.new_a', ['type' => trans_choice('general.customers', 1)]) }}
     </x-slot>
 
     <x-slot name="favorite"

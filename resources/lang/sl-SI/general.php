@@ -93,6 +93,8 @@ return [
     'plans'                 => 'Naročnina|Naročnine',
     'subscriptions'         => 'Naročnina|Naročnine',
     'company_name'         => 'Naziv podjetja',
+    'contact_persons'       => 'Kontaktna oseba|Kontanktne osebe',
+
 
     'welcome'               => 'Dobrodošli',
     'banking'               => 'Denar',
@@ -266,7 +268,7 @@ return [
     'title' => [
         'show'              => 'Pokaži :type',
         'new'               => 'Nov :type',
-        'new2'              => 'Nova :type',
+        'new_a'              => 'Nova :type',
         'edit'              => 'Uredi :type',
         'delete'            => 'Izbriši :type',
         'create'            => 'Ustvari :type',

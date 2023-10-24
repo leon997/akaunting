@@ -19,6 +19,7 @@ return [
     'landing_page'          => 'Ciljna stran',
     'personal_information'  => 'Osebni podatki',
     'register_user'         => 'Registracija uporabnika',
+    'register_user_tekst'   => 'Določite geslo računa za dostop do svojega portala za stranke.',
     'register'              => 'Registracija',
     'sign_up'               => 'Postanite uporabnik',
     'sign_up_to'            => 'Ustvarite nov račun',

@@ -1,4 +1,4 @@
-<div id="widget-{{ $class->model->id }}" class="{{ $class->model->settings->width }} py-8 bg-mainbg-widgets rounded-lg shadow-lg">
+<div id="widget-{{ $class->model->id }}" class="{{ $class->model->settings->width }} py-8 bg-mainbg-widgets">
     @include($class->views['header'], ['header_class' => 'border-b-0'])
 
     <div class="my-3 text-black-400 text-sm">

@@ -42,7 +42,7 @@ class PlanLimits
             }
         }
 
-        $invoice_routes = [
+       /*  $invoice_routes = [
             'invoices.index',
             'invoices.show',
             'invoices.create',
@@ -72,6 +72,6 @@ class PlanLimits
             'type'      => 'warning',
             'title'     => trans('general.action_required'),
             'message'   => $message,
-        ]));
+        ])); */
     }
 }

@@ -19,8 +19,8 @@ class CreateDocument extends Job implements HasOwner, HasSource, ShouldCreate
 
     public function handle(): Document
     {
-        $this->authorize();
-
+/*         $this->authorize();
+ */
         if (empty($this->request['amount'])) {
             $this->request['amount'] = 0;
         }

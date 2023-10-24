@@ -20,6 +20,7 @@ return [
         'general'               => 'Kontaktni podatki vaše stranke bodo prikazani na računih in njihovih profilih. Prav tako lahko dovolite svojim strankam, da se prijavijo in spremljajo račune, ki jim jih pošiljate, tako da označite spodnje polje.',
         'billing'               => 'Davčna številka je navedena na vsakem računu, izdanem kupcu. Izbrana valuta postane privzeta valuta za to stranko.',
         'address'               => 'Naslov je potreben za račune, zato morate dodati podrobnosti naslova za izstavitev računa za svojo stranko.',
+        'contact_persons'       => 'Če želite vključiti dodatne prejemnike v e-poštno sporočilo jih lahko dodate kot kontaktne osebe.',
     ],
 
     'no_records' => [

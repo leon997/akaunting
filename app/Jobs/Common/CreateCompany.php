@@ -22,8 +22,8 @@ class CreateCompany extends Job implements HasOwner, HasSource, ShouldCreate
 
     public function handle(): Company
     {
-        $this->authorize();
-
+/*         $this->authorize();
+ */
         $current_company_id = company_id();
 
         event(new CompanyCreating($this->request));

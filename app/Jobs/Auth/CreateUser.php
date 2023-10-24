@@ -21,8 +21,8 @@ class CreateUser extends Job implements HasOwner, HasSource, ShouldCreate
 
     public function handle()
     {
-        $this->authorize();
-
+/*         $this->authorize();
+ */
         event(new UserCreating($this->request));
 
         \DB::transaction(function () {
@@ -84,9 +84,15 @@ class CreateUser extends Job implements HasOwner, HasSource, ShouldCreate
 
         event(new UserCreated($this->model, $this->request));
 
-        event(new Registered($this->model));
+        if ($this->model->hasrole('customer')){
+            $this->model->markEmailAsVerified();
+        }
 
-        Auth::login($this->model);
+        if ($this->model->hasrole('manager')){
+            event(new Registered($this->model));
+
+            Auth::login($this->model);
+        }
 
 
         return $this->model;
@@ -117,6 +123,6 @@ class CreateUser extends Job implements HasOwner, HasSource, ShouldCreate
             return false;
         }
         // spremen v true za production
-        return false;
+        return true;
     }
 }

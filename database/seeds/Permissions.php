@@ -82,6 +82,7 @@ class Permissions extends Seeder
             'manager' => [
                 'admin-panel' => 'r',
                 'auth-profile' => 'r,u',
+                'auth-users' => 'c,u,d',
                 'banking-accounts' => 'c,r,u,d',
                 'banking-reconciliations' => 'c,r,u,d',
                 'banking-transactions' => 'c,r,u,d',

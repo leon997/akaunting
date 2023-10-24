@@ -2,4 +2,5 @@
     {!! $slot !!}
 </div>
 
-<x-loading.content />
+<!-- <x-loading.content />
+-->
