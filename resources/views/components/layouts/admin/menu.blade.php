@@ -135,21 +135,21 @@
                 </div>
             </button>
 
-            <div id="dropdown-menu-company" class="absolute right-0 mt-3 pt-2 bg-mainbg rounded-md shadow-xl z-20" style="left: auto; min-width: 10rem;">
+            <div id="dropdown-menu-company" class="absolute right-0 mt-3 pt-2 bg-gray-600 rounded-md shadow-xl z-20 hidden" style="left: auto; min-width: 10rem;">
                 @foreach($companies as $com)
                     <x-link href="{{ route('companies.switch', $com->id) }}" id="menu-company-{{ $com->id }}" class="h-9 leading-9 flex items-center text-sm px-2" override="class" role="menuitem" tabindex="-1">
-                        <div class="w-full h-full flex items-center rounded-md px-2 hover:bg-lilac-100">
+                        <div class="w-full h-full flex items-center rounded-md px-2 hover:bg-gray-300">
                             <span class="material-icons-outlined text-white text-xl">business</span>
                             <span class="ltr:pl-2 rtl:pr-2 text-white text-xs truncate">{{ Str::limit($com->name, 18) }}</span>
                         </div>
                     </x-link>
                 @endforeach
 
-                <x-link href="{{ route('companies.index') }}" class="h-9 leading-9 flex items-center text-sm px-2 mt-2 border-t rounded-bl rounded-br group hover:bg-white" override="class">
+                <x-link href="{{ route('companies.index') }}" class="h-9 leading-9 flex items-center text-sm px-2 mt-2 border-t rounded-bl rounded-br group hover:bg-gray-300" override="class">
                     <div class="w-full h-full flex items-center rounded-md px-2">
                         <span class="material-icons-outlined text-white text-xl group-hover:text-white">settings</span>
                         <span class="ltr:pl-2 rtl:pr-2 text-white text-xs truncate group-hover:text-white">
-                            {{ trans('general.title.manage', ['type' => trans_choice('general.companies', 2)]) }}
+                            {{ trans('general.title.manage_alt', ['type' => trans_choice('general.companies', 2)]) }}
                         </span>
                     </div>
                 </x-link>
@@ -268,7 +268,7 @@
     @stack('add_new_menu_end')
 
     <button type="button" class="toggle-button absolute ltr:-right-2 rtl:-left-2 top-8 cursor-pointer transition-opacity ease-in-out z-50">
-        <span class="material-icons text-lg text-white transform ltr:rotate-90 rtl:-rotate-90 pointer-events-none">expand_circle_down</span>
+        <span class="material-icons text-lg text-white transform ltr:rotate-90 rtl:-rotate-90 pointer-events-none">cancel</span>
     </button>
 
     <span data-menu-close id="menu-cancel" class="material-icons-outlined text-white absolute ltr:-right-2 rtl:right-12 transition-all top-8 text-lg cursor-pointer z-10 hidden">cancel</span>
