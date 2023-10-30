@@ -122,6 +122,10 @@ class CreateUser extends Job implements HasOwner, HasSource, ShouldCreate
         if (request()->isInstall()) {
             return false;
         }
+
+        if ($this->model->hasrole('manager')); {
+            return false;
+        }
         // spremen v true za production
         return true;
     }
