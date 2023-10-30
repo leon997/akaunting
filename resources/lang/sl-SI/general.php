@@ -95,7 +95,7 @@ return [
     'company_name'         => 'Naziv podjetja',
     'contact_persons'       => 'Kontaktna oseba|Kontanktne osebe',
 
-
+    'save_and_send'         => 'Shrani in pošlji',
     'welcome'               => 'Dobrodošli',
     'banking'               => 'Denar',
     'general'               => 'Splošno',

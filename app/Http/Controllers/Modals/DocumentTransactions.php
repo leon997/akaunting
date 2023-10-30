@@ -67,6 +67,7 @@ class DocumentTransactions extends Controller
                 'text' => trans('general.cancel'),
                 'class' => 'btn-outline-secondary'
             ],
+            /*
             'payment' => [
                 'text' => trans('invoices.accept_payments'),
                 'class' => 'long-texts',
@@ -79,6 +80,7 @@ class DocumentTransactions extends Controller
                     'utm_campaign' => 'payment_method',
                 ])
             ],
+            */
             'send' => [
                 'text' => trans('general.save_and_send'),
                 'class' => 'disabled:bg-green-100'
@@ -101,7 +103,7 @@ class DocumentTransactions extends Controller
             'message' => 'null',
             'html' => $html,
             'data' => [
-                'title' => trans('general.title.new', ['type' => trans_choice('general.payments', 1)]),
+                'title' => trans('general.title.new_o', ['type' => trans_choice('general.payments', 1)]),
                 'buttons' => $buttons,
             ]
         ]);
@@ -266,7 +268,7 @@ class DocumentTransactions extends Controller
             ];
 
             $quin = '?';
-    
+
             if (Str::contains($redirect, '?')) {
                 $quin = '&';
             }

@@ -38,7 +38,7 @@
             @endif
 
             @stack('timeline_get_paid_body_button_payment_end')
-
+            {{--
             @if (! $hideAcceptPayment)
                 <x-link href="{{ route('apps.categories.show', [
                         'alias' => 'payment-method',
@@ -55,6 +55,7 @@
                     </x-link.hover>
                 </x-link>
             @endif
+            --}}
         </div>
 
         <div class="text-xs mt-6" style="margin-left: 0 !important;">
