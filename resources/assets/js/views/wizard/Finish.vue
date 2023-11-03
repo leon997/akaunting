@@ -32,7 +32,7 @@
                     <img :src="image_src" class="absolute top-12 ltr:right-2 rtl:left-2 w-10/12 p-3 -mt-12" alt="Akaunting" />
                 </div>
 
-                    <div class="flex">
+                    <!-- <div class="flex">
                         <base-button
                             class="relative rtl:right-20 flex items-center justify-center text-base rounded-lg m-auto mt-96 hover:underline py-1.5 -right-20 font-semibold disabled:bg-gray-100 "
                             :disabled="anchor_loading"
@@ -57,7 +57,7 @@
                                 {{ translations.finish.create_first_invoice }}
                             </span>
                         </base-button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
