@@ -1,6 +1,6 @@
 <x-layouts.portal>
     <x-slot name="title">
-        {{ trans('general.title.edit', ['type' => trans('auth.profile')]) }}
+        {{ trans('general.title.edit', ['type' => trans('auth.edit_profile')]) }}
     </x-slot>
 
     <x-slot name="content">
@@ -47,7 +47,7 @@
                         <x-form.group.text name="tax_number" label="{{ trans('general.tax_number') }}" value="{{ $user->contact->tax_number }}" not-required />
 
                         <x-form.group.locale />
-                            
+
                         <x-form.group.textarea name="address" label="{{ trans('general.address') }}" :value="$user->contact->address" v-model="form.address" not-required />
 
                         <x-form.group.text name="city" label="{{ trans_choice('general.cities', 1) }}" value="{{ $user->contact->city }}" not-required />
