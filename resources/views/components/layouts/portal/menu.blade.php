@@ -84,7 +84,7 @@
         <div class="relative mb-5 cursor-pointer">
             <button type="button" class="flex items-center" data-dropdown-toggle="dropdown-menu-company">
                 <div class="w-8 h-8 flex items-center justify-center">
-                    <img src="{{ asset('public/img/akaunting-logo-green.svg') }}" class="w-6 h-6" alt="Akaunting" />
+                    <img src="{{ asset('public/img/new_logo.svg') }}" class="w-6 h-6" alt="Akaunting" />
                 </div>
 
                 <div class="flex ltr:ml-2 rtl:mr-2">
