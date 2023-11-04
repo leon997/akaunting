@@ -24,8 +24,8 @@ return [
     ],
 
     'no_records' => [
-        'invoices'              => 'Za to stranko še ni računa. Ustvarite prvi račun.',
-        'transactions'          => 'Za to stranko še ni transakcije. Ustvarite prvo transakcijo.',
+        'invoices'              => 'Za to stranko še ni računov',
+        'transactions'          => 'Za to stranko še ni transakcij',
     ],
 
 ];

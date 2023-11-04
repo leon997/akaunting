@@ -4,6 +4,7 @@ return [
 
     'auth'                  => 'Avtentikacija',
     'profile'               => 'Moj profil',
+    'edit_profile'          => 'profil',
     'logout'                => 'Odjava',
     'login'                 => 'Prijava',
     'forgot'                => 'Pozabljeno',
@@ -19,7 +20,7 @@ return [
     'landing_page'          => 'Ciljna stran',
     'personal_information'  => 'Osebni podatki',
     'register_user'         => 'Registracija uporabnika',
-    'register_user_tekst'   => 'Določite geslo računa za dostop do svojega portala za stranke.',
+    'register_user_tekst'   => 'Določite geslo računa',
     'register'              => 'Registracija',
     'sign_up'               => 'Postanite uporabnik',
     'sign_up_to'            => 'Ustvarite nov račun',
@@ -58,9 +59,10 @@ return [
     ],
 
     'invitation' => [
-        'message_1'         => 'To e-pošto ste prejeli, ker ste vabljeni, da se pridružite Programu Akaunting.',
-        'message_2'         => 'Če se ne želite pridružiti, vam ni treba storiti ničesar več.',
-        'button'            => 'Ponastavite geslo',
+        'subject'           => 'SpletniRačunovodja - Vabilo na portal za stranke',
+        'message_1'         => 'To e-pošto ste prejeli, ker vas je naš uporabnik povabil, da se pridružite portalu za stranke na naši aplikaciji SpletniRačunovodja.',
+        'message_2'         => 'Če se ne želite pridružiti, preprosto ignorirajte sporočilo.',
+        'button'            => 'Pridruži se',
     ],
 
     'information' => [

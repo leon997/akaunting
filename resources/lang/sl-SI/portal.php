@@ -9,45 +9,45 @@ return [
     'create_your_invoice'   => 'Ustvarite svoj račun brezplačno',
     'get_started'           => 'Pričnite brezplačno',
     'billing_address'       => 'Naslov za pošiljanje računa',
-    'see_all_details'       => 'See all account details',
-    'all_payments'          => 'Login to view all payments',
-    'received_date'         => 'Received Date',
-    'redirect_description'  => 'You will be redirected to the :name website to make the payment.',
+    'see_all_details'       => 'Oglejte si vse podrobnosti računa',
+    'all_payments'          => 'Prijavite se za ogled vseh plačil',
+    'received_date'         => 'Datum prejema',
+    'redirect_description'  => 'Preusmerjeni boste na spletno mesto :name, da lahko izvedete plačilo.',
 
     'last_payment'          => [
-        'title'             => 'Last Payment Made',
-        'description'       => 'You have made this payment on :date',
-        'not_payment'       => 'You have not made any payment, yet.',
+        'title'             => 'Zadnje plačilo',
+        'description'       => 'To plačilo ste opravili :date',
+        'not_payment'       => 'Niste opravili še nobenega plačila.',
     ],
 
     'outstanding_balance'   => [
-        'title'             => 'Outstanding balance',
-        'description'       => 'Your outstanding balance is:',
-        'not_payment'       => 'You have not outstanding balance, yet.',
+        'title'             => 'Neporavnan znesek',
+        'description'       => 'Vaš neporavnan znesek je:',
+        'not_payment'       => 'Nimate neporavnanega zneska.',
     ],
 
     'latest_invoices'       => [
-        'title'             => 'Latest Invoices',
-        'description'       => ':date - You were billed with invoice number :invoice_number.',
-        'no_data'           => 'You have not invoice, yet.',
+        'title'             => 'Zadnji računi',
+        'description'       => ':date - Zaračunali so vam račun številka :invoice_number.',
+        'no_data'           => 'Nimate še računov',
     ],
 
     'invoice_history'       => [
-        'title'             => 'Invoice History',
-        'description'       => ':date - You were billed with invoice number :invoice_number.',
-        'no_data'           => 'You have not invoice history, yet.',
+        'title'             => 'Pretekli računi',
+        'description'       => ':date - so vam zaračunali račun številka :invoice_number.',
+        'no_data'           => 'Nimate preteklih računov.',
     ],
 
     'payment_history'       => [
-        'title'             => 'Payment History',
-        'description'       => ':date - You made a payment of :amount.',
-        'invoice_description'=> ':date - You made a payment of :amount for invoice number :invoice_number.',
+        'title'             => 'Pretekla plačila',
+        'description'       => ':date - ste izvedli plačilo v znesku :amount.',
+        'invoice_description'=> ':date - ste izvedli plačilo v znesku :amount za račun številka :invoice_number.',
 
-        'no_data'           => 'You have not payment history, yet.',
+        'no_data'           => 'Nimate še nobenih preteklih plačil.',
     ],
 
     'payment_detail'        => [
-        'description'       => 'You made a :amount payment on :date for this invoice.'
+        'description'       => 'Opravili ste plačilo v znesku :amount dne :date za ta račun'
     ],
 
 ];
