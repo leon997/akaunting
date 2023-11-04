@@ -1,11 +1,11 @@
 <x-layouts.admin>
     <x-slot name="title">
-        {{ trans('general.title.new', ['type' => trans_choice('general.' . Str::plural($real_type), 2)]) }}
+        {{ trans('general.title.new_a', ['type' => trans_choice('general.' . Str::plural($real_type), 2)]) }}
     </x-slot>
 
     @php $fav_icon = ($real_type == 'income') ? 'request_quote' : 'paid'; @endphp
     <x-slot name="favorite"
-        title="{{ trans('general.title.new', ['type' => trans_choice('general.' . Str::plural($real_type), 1)]) }}"
+        title="{{ trans('general.title.new_a', ['type' => trans_choice('general.' . Str::plural($real_type), 1)]) }}"
         icon="{{ $fav_icon }}"
         url="{{ route('transactions.create', ['type' => $real_type]) }}"
     ></x-slot>

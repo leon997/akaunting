@@ -8,7 +8,7 @@
 
     <x-slot name="body">
         @if (! $hideName)
-            <x-form.group.text name="name" label="{{ trans($textName) }}" form-group-class="{{ $classNameFromGroupClass }}" />
+            <x-form.group.text name="name" label="{{ trans($textName) }} stranke" form-group-class="{{ $classNameFromGroupClass }}" />
         @endif
 
         <div class="sm:col-span-3">

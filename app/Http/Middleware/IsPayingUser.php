@@ -19,7 +19,7 @@ class IsPayingUser
 {
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::user() && ! $this->isSubscribed() && $this->trialOver()) {
+/*         if (Auth::user() && ! $this->isSubscribed() && $this->trialOver()) {
             // This user is not a paying customer...
             if (! $this->isAdmin()) {
                 return $next($request);
@@ -50,5 +50,9 @@ class IsPayingUser
 
     public function isAdmin(){
         return Auth::user()->hasRole('admin', 'customerProle');
+    } */
+
+
+        return $next($request);
     }
 }

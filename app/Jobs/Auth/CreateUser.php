@@ -74,25 +74,24 @@ class CreateUser extends Job implements HasOwner, HasSource, ShouldCreate
                     'company' => $company->id,
                 ]);
             }
-
-            if ($this->shouldSendInvitation()) {
-                $this->dispatch(new CreateInvitation($this->model));
-            }
         });
 
         $this->clearPlansCache();
 
         event(new UserCreated($this->model, $this->request));
 
-        if ($this->model->hasrole('customer')){
+        if ($this->model->hasrole('admin')){
             $this->model->markEmailAsVerified();
-        }
-
-        if ($this->model->hasrole('manager')){
-            event(new Registered($this->model));
-
+        } else if ($this->model->hasrole('customer')){
+            $this->model->markEmailAsVerified();
+            if ($this->shouldSendInvitation()) {
+                $this->dispatch(new CreateInvitation($this->model));
+            }
+        } else if ($this->model->hasrole('manager')){
             Auth::login($this->model);
         }
+
+            event(new Registered($this->model));
 
 
         return $this->model;
@@ -123,9 +122,6 @@ class CreateUser extends Job implements HasOwner, HasSource, ShouldCreate
             return false;
         }
 
-        if ($this->model->hasrole('manager')); {
-            return false;
-        }
         // spremen v true za production
         return true;
     }

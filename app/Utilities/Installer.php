@@ -296,7 +296,7 @@ class Installer
     {
         // Update .env file
         $env = [
-            'APP_LOCALE'            =>  session('locale'),
+            'APP_LOCALE'            =>  'sl-SI',
             'APP_INSTALLED'         =>  'true',
             'APP_DEBUG'             =>  'false',
             'FIREWALL_ENABLED'      =>  'true',
