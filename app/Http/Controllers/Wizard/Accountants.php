@@ -27,7 +27,7 @@ class Accountants extends Controller
 
     public function edit()
     {
-        $accountants = User::whereRoleIs('računovodski servis')->get();
+        $accountants = User::whereRoleIs('servis')->get();
 
         return $this->response('wizard.accountants.edit', compact('accountants'));
     }

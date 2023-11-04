@@ -175,7 +175,7 @@ class Permissions extends Seeder
                 'notifications' => 'r',
             ],
 
-            'Računovodski servis' => [
+            'servis' => [
                 'admin-panel' => 'r',
                 'api' => 'r',
                 'auth-profile' => 'r,u',
@@ -196,7 +196,6 @@ class Permissions extends Seeder
                 'purchases-vendors' => 'c,r,u,d',
                 'sales-customers' => 'c,r,u,d',
                 'sales-invoices' => 'c,r,u,d',
-                'install-updates' => 'r,u',
                 'notifications' => 'r,u',
                 'reports-expense-summary' => 'r',
                 'reports-income-summary' => 'r',

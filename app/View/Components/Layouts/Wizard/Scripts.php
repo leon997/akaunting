@@ -77,7 +77,7 @@ class Scripts extends Component
     }
 
     protected function getAccountants(){
-        $accountants = User::whereRoleIs('računovodski servis')->get();
+        $accountants = User::whereRoleIs('servis')->get();
 
         return $accountants;
     }

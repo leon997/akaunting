@@ -51,7 +51,7 @@
                                 <x-form.group.select name="roles" label="{{ trans_choice('general.roles', 1) }}" :options="$roles" change="onChangeRole" selected-key="roles.id" />
                             @endcan
                         @else
-                            @role('admin|manager|računovodski servis')
+                            @role('admin|manager|servis')
                                 <x-form.group.select name="roles" label="{{ trans_choice('general.roles', 1) }}" :options="$roles" change="onChangeRole" selected-key="roles.id" />
                             @endrole
                         @endif
