@@ -7,6 +7,7 @@
     <script type="text/javascript">
         var wizard_translations = {!! json_encode($translations) !!};
         var wizard_company = {!! json_encode($company) !!};
+        var wizard_accountants = {!! json_encode($accountants) !!};
         var wizard_countries = {!! json_encode(trans('countries')) !!};
         var wizard_currencies = {!! json_encode($currencies) !!};
         var wizard_currency_codes = {!! json_encode($currency_codes) !!};

@@ -7,12 +7,15 @@ use App\Abstracts\View\Component;
 use App\Models\Common\Media;
 use App\Models\Setting\Currency;
 use App\Traits\Modules;
+use App\Models\Auth\User;
 
 class Scripts extends Component
 {
     use Modules;
 
     public $company;
+
+    public $accountants;
 
     public $translations;
 
@@ -30,6 +33,8 @@ class Scripts extends Component
     public function render()
     {
         $this->company = $this->getCompany();
+
+        $this->accountants = $this->getAccountants();
 
         $this->translations = $this->getTransalations();
 
@@ -71,6 +76,12 @@ class Scripts extends Component
         return $company;
     }
 
+    protected function getAccountants(){
+        $accountants = User::whereRoleIs('računovodski servis')->get();
+
+        return $accountants;
+    }
+
     /* Wizard page transactions */
     protected function getTransalations()
     {
@@ -87,6 +98,7 @@ class Scripts extends Component
                 'skip' => trans('companies.skip_step'),
                 'save' => trans('general.save'),
                 'country' => trans_choice('general.countries', 1),
+                'accounting' => "Računovodski servis",
                 'phone' => trans('settings.company.phone'),
             ],
 

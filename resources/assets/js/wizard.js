@@ -9,6 +9,7 @@ Vue.use(VueRouter);
 
 import Wizard from './Wizard.vue';
 import Company from './views/wizard/Company.vue';
+import Accountants from './views/wizard/Accountants.vue';
 import Currencies from './views/wizard/Currencies.vue';
 import Finish from './views/wizard/Finish.vue';
 
@@ -25,12 +26,17 @@ const router = new VueRouter({
             path: '/wizard',
             name: 'Wizard',
             component: Company
-        }, 
+        },
         {
             path: '/wizard/companies',
             name: 'Company',
             component: Company
-        }, 
+        },
+        {
+            path: '/wizard/accountants',
+            name: 'Accountants',
+            component: Accountants
+        },
         {
             path: '/wizard/currencies',
             name: 'Currencies',
@@ -40,7 +46,7 @@ const router = new VueRouter({
             path: '/wizard/finish',
             name: 'Finish',
             component: Finish
-        } 
+        }
     ],
 
     linkActiveClass: 'active',

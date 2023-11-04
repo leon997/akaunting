@@ -20,11 +20,11 @@
                 	</span>
               	</li>
 
-                <li class="w-1/3">
-                    <span class="px-3 flex flex-col">
+                  <li class="w-1/3">
+                	<span class="pr-6 flex flex-col">
                         <span
-                            class="w-full h-1 bg-gray-300 rounded-xl text-transparent"
-                            :class="[{ 'bg-purple': active_state >= 1 }]"
+                           	class="w-full h-1 bg-gray-300 rounded-xl text-transparent"
+                          	:class="[{ 'bg-purple': active_state >= 1 }]"
                         >
                             Text
                         </span>
@@ -32,6 +32,24 @@
                         <span
                             class="text-sm font-normal mt-2"
                             :class="[{ 'font-bold': active_state >= 1 }]"
+                        >
+                            Računovodski servis
+                        </span>
+                	</span>
+              	</li>
+
+                <li class="w-1/3">
+                    <span class="px-3 flex flex-col">
+                        <span
+                            class="w-full h-1 bg-gray-300 rounded-xl text-transparent"
+                            :class="[{ 'bg-purple': active_state >= 2 }]"
+                        >
+                            Text
+                        </span>
+
+                        <span
+                            class="text-sm font-normal mt-2"
+                            :class="[{ 'font-bold': active_state >= 2 }]"
                         >
                             {{ translations.currencies.title }}
                         </span>
@@ -49,7 +67,7 @@
 
                         <span
                             class="text-sm font-normal mt-2"
-                            :class="[{ 'font-bold': active_state == 2 }]"
+                            :class="[{ 'font-bold': active_state == 3 }]"
                         >
                             {{ translations.finish.title }}
                         </span>
@@ -80,6 +98,7 @@
             return {
                 translations: {
                     company: {},
+                    accountants: {},
                     currencies: {},
                     finish: {},
                 },

@@ -405,14 +405,14 @@
             },
 
             prev() {
-                if (this.active-- > 2);
+                if (this.active-- > 3);
                 //history.back()
 
                 this.$router.push("/wizard/companies");
             },
 
             next() {
-                if (this.active++ > 2);
+                if (this.active++ > 3);
 
                 this.$router.push("/wizard/finish");
             },

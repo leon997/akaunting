@@ -120,7 +120,7 @@ export default {
 
     methods: {
         prev() {
-            if (this.active-- > 2);
+            if (this.active-- > 4);
 
             this.$router.push("/wizard/currencies");
         },

@@ -368,7 +368,7 @@
                 .then((response) => {
                     this.onSuccessMessage(response);
 
-                    this.$router.push("/wizard/currencies");
+                    this.$router.push("/wizard/accountants");
                     this.button_loading_company = false;
                 }, this)
                 .catch((error) => {
@@ -380,7 +380,7 @@
             next() {
                 if (this.active++ > 2);
 
-                this.$router.push("/wizard/currencies");
+                this.$router.push("/wizard/accountants");
             },
         },
 

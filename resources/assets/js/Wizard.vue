@@ -5,6 +5,7 @@
       :modules="modules.data"
       :currency_codes="currency_codes"
       :company="company"
+      :accountants="accountants"
       :countries="countries"
       :pageLoad="page_loaded"
     ></router-view>
@@ -17,6 +18,7 @@
         created() {
             this.translations = wizard_translations;
             this.company = wizard_company;
+            this.accountants = wizard_accountants;
             this.countries = wizard_countries;
             this.currencies = wizard_currencies;
             this.currency_codes = wizard_currency_codes;
