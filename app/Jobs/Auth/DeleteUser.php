@@ -21,7 +21,7 @@ class DeleteUser extends Job implements ShouldDelete
         \DB::transaction(function () {
             $this->deleteRelationships($this->model, ['invitation']);
 
-            $this->model->delete();
+            $this->model->forceDelete();
 
             $this->model->flushCache();
         });
