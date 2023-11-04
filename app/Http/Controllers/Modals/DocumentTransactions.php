@@ -158,7 +158,7 @@ class DocumentTransactions extends Controller
                 'text' => trans('general.cancel'),
                 'class' => 'btn-outline-secondary'
             ],
-            'payment' => [
+/*             'payment' => [
                 'text' => trans('invoices.accept_payments'),
                 'before_text' => trans('general.get_paid_faster'),
                 'class' => 'px-6 py-1.5 text-xs bg-gray-200 hover:bg-purple-200 font-medium rounded-lg leading-6 long-texts',
@@ -167,7 +167,7 @@ class DocumentTransactions extends Controller
                     'utm_source' => $document->type . '_payment',
                     'utm_medium' => 'app',
                     'utm_campaign' => 'payment_method',
-                ])
+                ]) */
             ],
             'confirm' => [
                 'text' => trans('general.save'),

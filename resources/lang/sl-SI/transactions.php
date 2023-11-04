@@ -2,14 +2,14 @@
 
 return [
 
-    'payment_received'      => 'Payment Received',
-    'payment_made'          => 'Payment Made',
-    'paid_by'               => 'Paid By',
-    'paid_to'               => 'Paid To',
-    'related_invoice'       => 'Related Invoice',
-    'related_bill'          => 'Related Bill',
-    'recurring_income'      => 'Recurring Income',
-    'recurring_expense'     => 'Recurring Expense',
+    'payment_received'      => 'Plačilo prejeto',
+    'payment_made'          => 'Plačilo opravljeno',
+    'paid_by'               => 'Plačala oseba',
+    'paid_to'               => 'Plačano osebi',
+    'related_invoice'       => 'Povezani izdani računi',
+    'related_bill'          => 'Povezani prejeti računi',
+    'recurring_income'      => 'Ponavljajoči prihodki',
+    'recurring_expense'     => 'Ponavljajoči stroški',
 
     'form_description' => [
         'general'           => 'Tukaj lahko vnesete splošne informacije o transakciji.',
@@ -19,29 +19,29 @@ return [
     ],
 
     'slider' => [
-        'create'            => ':user created this transaction on :date',
-        'attachments'       => 'Download the files attached to this transaction',
-        'create_recurring'  => ':user created this recurring template on :date',
-        'schedule'          => 'Repeat every :interval :frequency since :date',
-        'children'          => ':count transactions were created automatically',
-        'transfer_headline' => '<div> <span class="font-bold"> From: </span> :from_account </div> <div> <span class="font-bold"> to: </span> :to_account </div>',
-        'transfer_desc'     => 'Transfer created on :date.',
+        'create'            => ':user je opravil to transakcijo dne :date',
+        'attachments'       => 'Prenesite datoteke priložene tej transakciji',
+        'create_recurring'  => ':user je ustvaril to ponavljajočo predlogo dne :date',
+        'schedule'          => 'Ponovi vsakih :interval :frequency od dne :date',
+        'children'          => ':count transakcij je bilo avtomatsko izvedenih',
+        'transfer_headline' => '<div> <span class="font-bold"> Pošiljatelj: </span> :from_account </div> <div> <span class="font-bold"> Prejemnik: </span> :to_account </div>',
+        'transfer_desc'     => 'Prenos ustvarjen dne :date.',
     ],
 
     'share' => [
         'income' => [
-            'show_link'     => 'Your customer can view the transaction at this link',
-            'copy_link'     => 'Copy the link and share it with your customer.',
+            'show_link'     => 'Vaša stranka si lahko transakcijo ogleda na tej povezavi',
+            'copy_link'     => 'Kopirajte povezavo in jo delite s strankami.',
         ],
 
         'expense' => [
-            'show_link'     => 'Your vendor can view the transaction at this link',
-            'copy_link'     => 'Copy the link and share it with your vendor.',
+            'show_link'     => 'Vaš ponudnik si lahko transakcijo ogleda na tej povezavi',
+            'copy_link'     => 'Kopirajte povezavo in jo delite s ponudnikom.',
         ],
     ],
 
     'sticky' => [
-        'description'       => 'You are previewing how your customer will see the web version of your payment.',
+        'description'       => 'Predogled, kako bo vaša stranka videla spletno različico vašega plačila.',
     ],
 
 ];

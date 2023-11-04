@@ -67,10 +67,10 @@ class AddUser extends Command
 
         DB::transaction(function () {
             $this->line('Creating company');
-            Installer::createCustomCompany($this->company_name, $this->company_email, 'en-GB');
+            Installer::createCustomCompany($this->company_name, $this->company_email, 'sl-SI');
 
             $this->line('Creating admin');
-            Installer::createManageUser($this->admin_email, $this->admin_password, 'en-GB', ['1']);
+            Installer::createManageUser($this->admin_email, $this->admin_password, 'sl-SI', ['1']);
 
         });
 
